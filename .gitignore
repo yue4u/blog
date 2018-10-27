@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+posts/.vuepress/dist
+# ignore old hexo
+hexo
+.deploy*/
+# public/
+Thumbs.db
+*.log
+db.json
