@@ -6,7 +6,7 @@
 
   <div class="article" v-for="(page, index) in pagesDisplay" :key="index">
 
-    <router-link  :to="page.path"><h2 class="article-title">{{page.title}}</h2></router-link>
+    <router-link class="article-link"  :to="page.path"><h2 class="article-title">{{page.title}}</h2></router-link>
 
     {{getDate(page.frontmatter.date)}}
 
@@ -95,17 +95,23 @@ export default {
 <style lang="stylus" scoped>
 .article 
   transition 0.5s all ease-in-out
-  padding 1rem
+  padding 2rem
+  margin 2rem 0 2rem
   padding-top 0
   border-radius 1rem
+  border 1px solid transparent
+  //box-shadow 0 0 1rem #eee
 
-  &:hover 
-    background-color #fefdff
-  
+  &:hover
+    border 1px solid skyblue
+
   &-title 
     padding-top 0.5rem
-    margin-top 2rem
-  
+    margin-top 1rem
+
+  &-link
+    transition .5s all ease-in-out
+    text-decoration none
 
   &-tag 
     padding 0.2rem
@@ -115,8 +121,6 @@ export default {
     padding-right @padding-left
     border-radius 1rem
     background #cbedff
-  
-
 
 .bread 
   width 100%
@@ -142,9 +146,6 @@ export default {
       cursor pointer
       background-color #6390F7
       color #fff
-    
-  
-
 
 .now 
   font-weight: bold

@@ -1,9 +1,29 @@
 <template>
 
 <div class="page-container">
-<h1 class="page-title">{{$page.title}}</h1>
-<p class="page-date">{{getDate($page.frontmatter.date)}}</p>
+
+<nav-bar />
+
+<div class="page-title-container">
+  <h1 class="page-title">{{$page.title}}</h1>
+<div class="page-date">
+  <time>{{getDate($page.frontmatter.date)}}</time>
+ </div>
+</div>
+ 
+<main>
+
  <Content/>
+<div
+  class="last-updated"
+  v-if="lastUpdated"
+>
+  <span class="prefix">{{ lastUpdatedText }}: </span>
+  <time class="time">{{ lastUpdated }}</time>
+  </div>
+</main>
+
+
 <Footer/>
 </div>
 
@@ -11,12 +31,30 @@
 
 <script>
 import Footer from "./Footer.vue";
+import NavBar from "@vuepress/theme-default/components/Navbar"
 export default {
   data() {
     return {};
   },
   components: {
-    Footer
+    Footer,
+    NavBar
+  },
+  computed: {
+    lastUpdated() {
+      if (this.$page.lastUpdated) {
+        return new Date(this.$page.lastUpdated).toLocaleString(this.$lang);
+      }
+    },
+    lastUpdatedText() {
+      if (typeof this.$themeLocaleConfig.lastUpdated === "string") {
+        return this.$themeLocaleConfig.lastUpdated;
+      }
+      if (typeof this.$site.themeConfig.lastUpdated === "string") {
+        return this.$site.themeConfig.lastUpdated;
+      }
+      return "Last Updated";
+    }
   },
   methods: {
     getDate(dateString) {
@@ -30,8 +68,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.page {
-  &-container {
+
+.page
+  &-container
     max-width: 740px;
     margin: 0 auto;
     padding: 2rem 2.5rem;
@@ -39,26 +78,41 @@ export default {
     // width 80%
     // height 80%
     // margin-left: 10%
-  }
+  
 
-  &-title {
+  &-title
+
     text-align: center;
     padding-bottom: 0.5rem;
     margin-bottom: 0;
-    border-bottom: 1px solid #eeeeee;
-  }
+    &-container
+      text-align center
+      margin-top 5rem
+    &:after
+      content ''
+      width 100%
+      border-bottom: 1px solid skyblue;
+  
 
-  &-date {
+  &-date
+    display inline-block
+    width 60%
+    padding-top .5rem
     margin-top: 0.5rem;
-    width: 100%;
     text-align: center;
-    margin-bottom: 3rem;
-  }
-}
+    border-top 1px solid skyblue
+    //margin-bottom: 3rem;
 
-@media (max-width: 959px) {
-  .page-container {
+@media (max-width: 959px) 
+  .page-container 
     padding: 2rem;
-  }
-}
+  
+
+
+.last-updated 
+  text-align: right;
+
+.prefix 
+  color: #2749b3;
+
 </style>

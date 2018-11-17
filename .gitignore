@@ -8,3 +8,4 @@ hexo
 Thumbs.db
 *.log
 db.json
+.deploy
