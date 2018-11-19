@@ -8,7 +8,7 @@ module.exports = {
         //['script', {type:"text/x-mathjax-config"},"MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});"]
     ],
     ga: 'UA-127908059-1',
-    serviceWorker: true,
+    serviceWorker: false,//true,
     markdown: {
         lineNumbers: true
       },
