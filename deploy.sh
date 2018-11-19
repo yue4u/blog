@@ -16,7 +16,7 @@ git commit -m "site update $DATE"
 
 git push origin master
 
-cd -
+cd .
 
 git add -A
 
