@@ -11,10 +11,11 @@ tags:
 
 虽然全是新的名词，意外的感觉不是那么无聊。
   
+  <!-- more --> 
+  
 使用的书：  
 ![](https://images-cn.ssl-images-amazon.com/images/I/51wtqEI3x9L.jpg) 
-
-<!-- more -->   
+  
 
 以下是笔记：  
 
