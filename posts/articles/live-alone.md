@@ -1,6 +1,8 @@
 ---
 title:  ひとり暮らし...
 date: 2018-05-05 03:04:19
+sidebar: false
+layout: Post
 tags:  
 - 日常
 ---

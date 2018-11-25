@@ -8,6 +8,8 @@ yarn build
 
 cp -rf posts/.vuepress/dist/* .deploy
 
+cd .deploy
+
 git add -A
 
 DATE=`date '+%Y-%m-%d %H:%M:%S'`
