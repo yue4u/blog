@@ -29,7 +29,7 @@ tags:
 
 ### React
 
-+ `JSX`赛高 <del>明明不是我很喜欢xml</del>
++ `JSX`赛高 <del>明明我不是很喜欢xml</del>
 + 实际使用在了公司项目上，现代化的开发环境还是舒服
 + `CSS in JS`中尝试了`styled-components`，总体感受良好，IDE的支持也还算到位。
 + 尝试了`preact`，但是感觉还是赶不上`react`本家的更新。比如`Fragment`至今还没有很好的支持。
