@@ -41,4 +41,4 @@
 # Friends of mine
 
 
-[Master Eric](http://www.eric2017.tk/)
+[Master Eric](http://www.ericxiang.com/)
