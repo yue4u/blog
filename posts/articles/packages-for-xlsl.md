@@ -1,6 +1,8 @@
 ---
 title: packages-for-xlsl
 date: 2019-02-02 23:54:28
+sidebar: false
+layout: Post
 tags:
  - node
  - python
