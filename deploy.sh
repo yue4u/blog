@@ -25,3 +25,4 @@ git add -A
 DATE=`date '+%Y-%m-%d %H:%M:%S'`
 
 git commit -m "site-source update $DATE"
+git push origin master

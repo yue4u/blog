@@ -21,7 +21,7 @@ xlsx: [https://github.com/SheetJS/js-xlsx](https://github.com/SheetJS/js-xlsx)
 
 ### Install 
 
-`yarn install xlsx` 
+`yarn add xlsx` 
 
 ### Example
 
