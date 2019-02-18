@@ -1,18 +1,15 @@
 <template>
-    <footer>
-© 2018 yue
-    </footer>
+  <footer>© {{new Date().getFullYear()}} yue</footer>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 
 <style lang="stylus" scoped>
-footer
-    text-align: center
-    margin-top: 2rem
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
 </style>
