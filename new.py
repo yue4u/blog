@@ -16,8 +16,7 @@ def new(title='new'):
     print(now)
 
     with open(filename, 'w') as new:
-        new.write(f'''
----
+        new.write(f'''---
 title: {title}
 date: {now}
 tags:
