@@ -60,3 +60,4 @@ $result = array_values(array_intersect($array1, $array2))[0];
 1. 真爱生命远离PHP
 2. 团队合作时format工具和IDE设置尽可能保持一致。
 3. 设置`formatter`/`linter`工具时要注意对应语言版本。
+4. 弱类型语言真可怕
