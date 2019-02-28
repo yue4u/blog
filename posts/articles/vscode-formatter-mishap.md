@@ -55,7 +55,7 @@ $result = array_values(array_intersect($array1, $array2))[0];
 
 > 不说了都是泪。
 
-## sum up
+## Sum up
 
 1. 真爱生命远离PHP
 2. 团队合作时format工具和IDE设置尽可能保持一致。
