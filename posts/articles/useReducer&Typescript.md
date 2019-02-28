@@ -19,14 +19,15 @@ tags:
 ```tsx
 import React, { useReducer } from "react";
 
-export default function Demo() {
-  type State = {
-    count: number;
-  };
+type State = {
+  count: number;
+};
 
-  type Action = {
-    type: "increase" | "decrease";
-  };
+type Action = {
+  type: "increase" | "decrease";
+};
+
+export default function Demo() {
 
   const initialState: State = {
     count: 0
