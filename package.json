@@ -7,8 +7,8 @@
     "dev": "vuepress dev posts",
     "build": "vuepress build posts"
   },
-  "devDependencies": {},
-  "dependencies": {
-    "vuepress": "^1.0.0-alpha.22"
-  }
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.42"
+  },
+  "dependencies": {}
 }
