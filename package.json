@@ -5,10 +5,22 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev posts",
-    "build": "vuepress build posts"
+    "build": "vuepress build posts",
+    "imgs": "ts-node scripts/imgs.ts"
   },
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.42"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/imagemin": "^6.0.0",
+    "@types/imagemin-jpegtran": "^5.0.0",
+    "@types/node": "^11.11.6",
+    "@types/sharp": "^0.22.0",
+    "imagemin": "^6.1.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "sharp": "^0.22.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
+  }
 }

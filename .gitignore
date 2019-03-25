@@ -1,3 +1,4 @@
+.env
 .DS_Store
 node_modules/
 posts/.vuepress/dist
@@ -11,3 +12,6 @@ db.json
 .deploy
 .idea
 scripts
+
+imgs
+posts/.vuepress/theme
