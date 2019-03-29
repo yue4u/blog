@@ -2,7 +2,7 @@
 title: Arch Linux Thinkpad x230 - Hardware
 date: 2019-03-24 01:24:50
 sidebar: false
-layout: Test
+layout: Post
 tags:
  - arch linux
  - thinkpad
@@ -68,12 +68,12 @@ google了一大圈`Best Laptops For Linux`，推荐最多的是`DELL XPS 13`和`
 
 |model | `Samsung SSD 500GB 860EVO 2.5inch MZ-76E500B/EC` |
 |-|-|
-|price | ￥ 2,980 |
+|price | ￥ 8,980 |
 |seller| amazon |
 
 |model | `Samsung SSD 500GB 860EVO mSATA MZ-M6E500B/EC` |
 |-|-|
-|price | ￥ 2,980 |
+|price | ￥ 11,800 |
 |seller| amazon |
 
 ### display
