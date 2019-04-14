@@ -18,6 +18,9 @@ const CourseList = styled.ul`
   justify-content: space-between;
   width: 80%;
   margin-bottom: 5rem;
+  li {
+    width: 40%;
+  }
   @media screen and (max-width: 700px) {
     li {
       width: 100%;
