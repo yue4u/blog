@@ -15,3 +15,5 @@ scripts
 
 imgs
 posts/.vuepress/theme
+.cache
+public

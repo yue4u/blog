@@ -1,26 +1,56 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev": "vuepress dev posts",
-    "build": "vuepress build posts",
-    "imgs": "ts-node scripts/imgs.ts"
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^2.3.3",
+    "gatsby-image": "^2.0.35",
+    "gatsby-paginate": "^1.0.17",
+    "gatsby-plugin-manifest": "^2.0.25",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-remark-prismjs": "^3.2.8",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prismjs": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.5.0",
+    "react-spring": "^8.0.19",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
-    "vuepress": "^1.0.0-alpha.42"
+    "@types/react": "^16.8.10",
+    "@types/react-helmet": "^5.0.8",
+    "@types/styled-components": "^4.1.12",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typescript": "^2.0.11",
+    "prettier": "^1.16.4",
+    "styled-components": "^4.2.0",
+    "ts-node": "^8.0.3"
   },
-  "dependencies": {
-    "@types/imagemin": "^6.0.0",
-    "@types/imagemin-jpegtran": "^5.0.0",
-    "@types/node": "^11.11.6",
-    "@types/sharp": "^0.22.0",
-    "imagemin": "^6.1.0",
-    "imagemin-jpegtran": "^6.0.0",
-    "imagemin-pngquant": "^7.0.0",
-    "sharp": "^0.22.0",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.4000"
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "lint": "prettier --write src/**/*.{ts,tsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

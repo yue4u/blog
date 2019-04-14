@@ -2,11 +2,11 @@
 
 
 set -e
-rm -rf posts/.vuepress/dist
+rm -rf public
 
 yarn build
 
-cp -rf posts/.vuepress/dist/* .deploy
+cp -rf public/* .deploy
 
 cd .deploy
 

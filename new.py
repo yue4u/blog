@@ -8,7 +8,7 @@ import os
 
 
 def new(title='new'):
-    os.chdir('./posts/articles/')
+    os.chdir('./posts/')
 
     filename = f'{title}.md'
 
@@ -19,8 +19,6 @@ def new(title='new'):
         new.write(f'''---
 title: {title}
 date: {now}
-sidebar: false
-layout: Post
 tags:
  - new
 ---
