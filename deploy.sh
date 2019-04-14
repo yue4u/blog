@@ -2,8 +2,8 @@
 
 
 set -e
-rm -rf public
 
+rm -rf .deploy/*
 yarn build
 
 cp -rf public/* .deploy

@@ -12,6 +12,10 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/`,
+        ignore: [
+          `**/\.*`,
+          `${__dirname}/.cache/`,
+        ]
       },
     },
     {

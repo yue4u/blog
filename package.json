@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@types/sharp": "^0.22.1",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.0.35",
     "gatsby-paginate": "^1.0.17",
@@ -24,7 +26,8 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
     "react-spring": "^8.0.19",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "typescript": "^3.4.3"
   },
   "devDependencies": {
     "@types/react": "^16.8.10",
