@@ -18,22 +18,27 @@ const CourseList = styled.ul`
   justify-content: space-between;
   width: 80%;
   margin-bottom: 5rem;
+  @media screen and (max-width: 700px) {
+    li {
+      width: 100%;
+    }
+  }
 `
 
-export default function Notes({ data }) {
-  const nodes = data.allDirectory.edges.map(({ node }) => node)
+export default function Notes({ data }: any) {
+  const nodes = data.allDirectory.edges.map(({ node }: any) => node)
   const CourseBlock = () => (
     <CourseList>
       <Transition
         items={nodes}
         keys={node => node.id}
-        from={{ opacity: 0, transform: "translateY(40px)", width: "45%" }}
-        enter={{ opacity: 1, transform: "translateY(0px)", width: "45%" }}
-        leave={{ opacity: 0, transform: "translateY(40px)", width: "45%" }}
+        from={{ opacity: 0, transform: "translateY(40px)" }}
+        enter={{ opacity: 1, transform: "translateY(0px)" }}
+        leave={{ opacity: 0, transform: "translateY(40px)" }}
       >
         {node => style => (
           <animated.li style={style}>
-            <Course node={node} />
+            <Course style={style} node={node} />
           </animated.li>
         )}
       </Transition>

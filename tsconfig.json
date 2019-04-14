@@ -11,6 +11,7 @@
       "allowJs": false,
       "removeComments": true,
       "target": "es6",
+      "jsx": "react",
       "skipLibCheck": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,

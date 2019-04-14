@@ -31,9 +31,14 @@ const Nav = styled.ul`
   margin: 0 auto;
   justify-content: space-around;
   width: 80%;
-
+  li {
+    width: 60%;
+  }
   @media screen and (max-width: 700px) {
     width: 90%;
+    li {
+      width: 90%;
+    }
   }
 `
 const NavLink = styled.div`
@@ -80,9 +85,9 @@ export default function IndexPage() {
       <Transition
         items={navList}
         keys={nav => nav.label}
-        from={{ opacity: 0, transform: "translateY(40px)", width: "60%" }}
-        enter={{ opacity: 1, transform: "translateY(0px)", width: "60%" }}
-        leave={{ opacity: 0, transform: "translateY(40px)", width: "60%" }}
+        from= {{ opacity: 0, transform: "translateY(40px)",  }}
+        enter={{ opacity: 1, transform: "translateY(0px)",   }}
+        leave={{ opacity: 0, transform: "translateY(40px)",  }}
       >
         {nav => style => (
           <animated.li style={style}>

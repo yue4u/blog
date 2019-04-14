@@ -3,6 +3,7 @@ module.exports = {
     title: `浅色圆锥曲线爱好者`,
     description: `random notes`,
     author: `yue`,
+    theme_color: "#333333"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,8 +49,6 @@ module.exports = {
         icon: `src/imgs/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+     `gatsby-plugin-offline`,
   ],
 }

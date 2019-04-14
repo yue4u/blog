@@ -18,6 +18,13 @@ const GlobalHeader = styled.header`
 type HeaderProps = {
   siteTitle: string
 }
+
+const LeftCorner = styled.span`
+  @media screen and (max-width: 700px) {
+    font-size: 10px;
+    visibility: hidden;
+  }
+`
 const RightCorner = styled.span`
   & > a {
     margin: 0 10px;
@@ -26,12 +33,13 @@ const RightCorner = styled.span`
 export default function Header({ siteTitle }: HeaderProps) {
   return (
     <GlobalHeader>
-      <Link to="/">{siteTitle}</Link>
-
+      <LeftCorner>
+        <Link to="/">{siteTitle}</Link>
+      </LeftCorner>
       <RightCorner>
         <Link to="/posts">Posts</Link>
         <Link to="/notes">Notes</Link>
-        <Link to="/aboutme">About Me</Link>
+        <Link to="/aboutme">About</Link>
       </RightCorner>
     </GlobalHeader>
   )
