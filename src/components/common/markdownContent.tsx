@@ -19,7 +19,7 @@ export default styled(CodeBlock)`
     color: #eee;
     position: relative;
     &::before {
-      content: "◆";
+      content: "○";
       position: absolute;
       color: #607d8b;
       top: 0;
@@ -31,6 +31,13 @@ export default styled(CodeBlock)`
     border-bottom: 1px solid #555;
     &::before {
       content: "#";
+    }
+  }
+
+  h3 {
+    border-bottom: 1px solid #555;
+    &::before {
+      content: "◆";
     }
   }
   del {
@@ -49,20 +56,23 @@ export default styled(CodeBlock)`
   }
   a {
     position: relative;
+    z-index: 1;
     &::after {
       transition: 0.3s all ease-in-out;
       content: " ";
       position: absolute;
       width: 100%;
       height: 4px;
-      background-color: #37474F;
+      background-color: #607d8b;
       left: 0;
       bottom: 0;
       z-index: -1;
     }
     &:hover {
+      color: #fff;
+      text-shadow: 0 0 3px #000;
       &::after {
-        height: 80%;
+        height: 100%;
       }
     }
   }

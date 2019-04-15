@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
-import Sidebar from "./sidebar/index"
+import NoteList from "./list/index"
 import styled from "styled-components"
 import MarkdownContent from "../../components/common/markdownContent"
+import SideBar from "../../components/global/sidebar"
 const NoteLayout = styled.div`
   display: flex;
   padding: 1rem;
@@ -18,7 +19,7 @@ export default function Note({ data }) {
   return (
     <Layout>
       <NoteLayout>
-        <Sidebar data={data.sideBar} />
+        <NoteList data={data.sideBar} />
         <Content>
           <h1>{post.frontmatter.title}</h1>
 

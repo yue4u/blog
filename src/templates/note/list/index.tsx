@@ -45,6 +45,23 @@ type TreeSpringProps = {
   transform: string
 }
 
+const TreeName = styled.span`
+  color: #ccc;
+  vertical-align: middle;
+  a {
+    transition: 0.3s all ease-in-out;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    word-break: break-word;
+    border-radius: 5px;
+    padding: 1px 5px;
+    background-color: #616161;
+    &:hover {
+      background-color: #0097a7;
+    }
+  }
+`
+
 const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
   const [isOpen, setOpen] = useState(open)
   const previous = usePrevious(isOpen)
@@ -65,7 +82,7 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
         style={{ ...toggle, opacity: children ? 1 : 0.3 }}
         onClick={() => setOpen(!isOpen)}
       />
-      <span style={{ verticalAlign: "middle", ...style }}>{name}</span>
+      <TreeName>{name}</TreeName>
       <Content
         style={{
           opacity,
@@ -82,9 +99,12 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
 
 const SideBarBlock = styled.aside`
   text-align: left;
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 `
 
-export default function SideBar({data}: any) {
+export default function NoteList({ data }: any) {
   return (
     <SideBarBlock>
       <Tree name={""} open={true}>

@@ -19,7 +19,7 @@ const CourseList = styled.ul`
   width: 80%;
   margin-bottom: 5rem;
   li {
-    width: 40%;
+    width: 48%;
   }
   @media screen and (max-width: 700px) {
     li {

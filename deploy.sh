@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 
-
 set -e
 
 rm -rf .deploy/*
 yarn build
 
-cp -rf public/* .deploy
-
 cd .deploy
+git pull origin master
+
+cp -rf ../public/* .
 
 git add -A
 

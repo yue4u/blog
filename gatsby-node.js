@@ -87,14 +87,14 @@ exports.createPages = ({
   })
 
   const noteArchivePages = graphql(`
-  query {
-    allDirectory(filter: { relativeDirectory: { eq: "notes" } }) {
+  {
+    allDirectory(filter: {relativeDirectory: {eq: "notes"}},sort:{fields:changeTime,order:DESC}) {
       edges {
         node {
           id
           name
           modifiedTime
-          fields{
+          fields {
             courseTitle
           }
         }

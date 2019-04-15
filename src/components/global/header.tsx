@@ -18,16 +18,17 @@ const GlobalHeader = styled.header`
 type HeaderProps = {
   siteTitle: string
 }
+const Humbergur = styled.p`
 
-const LeftCorner = styled.span`
-  @media screen and (max-width: 700px) {
-    font-size: 10px;
-    visibility: hidden;
-  }
 `
+
+const LeftCorner = styled.span``
 const RightCorner = styled.span`
   & > a {
     margin: 0 10px;
+  }
+  @media screen and (max-width: 700px) {
+    display: none;
   }
 `
 export default function Header({ siteTitle }: HeaderProps) {
