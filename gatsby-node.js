@@ -160,7 +160,8 @@ exports.createPages = ({
         context: {
           slug: node.fields.slug,
           prev,
-          next
+          next,
+          identifier: node.id
         },
       })
     })

@@ -7,6 +7,8 @@ import GradientFont from "../../components/common/gradientFont"
 import MarkdownContent from "../../components/common/markdownContent"
 import Link from "gatsby-link"
 import { PaginationLink, PaginationNav } from "./pagination"
+import Comments from '../../components/common/comments'
+
 const PostTitle = styled.h1`
   font-size: 4rem;
   word-break: break-word;
@@ -31,7 +33,7 @@ const PostLink = ({ data, linkType }) => {
 
 export default function Post({ data, pageContext }) {
   const post = data.markdownRemark
-  const { prev, next } = pageContext
+  const { prev, next, identifier } = pageContext
   return (
     <Layout>
       <SEO title={post.frontmatter.title} keywords={post.frontmatter.tags} />
@@ -47,6 +49,7 @@ export default function Post({ data, pageContext }) {
         <PostLink data={prev} linkType={"prev"} />
         <PostLink data={next} linkType={"next"} />
       </PaginationNav>
+      <Comments url={`https://blog.rainy.me/${pageContext.slug}`} identifier={identifier} title={post.frontmatter.title} />
     </Layout>
   )
 }

@@ -3,7 +3,7 @@ import CodeBlock from "./codeBlock"
 
 export default styled(CodeBlock)`
   margin: 0 auto;
-  padding-bottom: 5rem;
+  padding-bottom: 1rem;
   text-align: left;
   max-width: 1000px;
   word-break: break-all;
