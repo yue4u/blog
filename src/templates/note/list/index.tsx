@@ -20,6 +20,7 @@ const Content = styled(animated.div)`
   will-change: transform, opacity, height;
   margin-left: 6px;
   padding: 0px 0px 0px 14px;
+  font-size: 0.9rem;
   border-left: 1px dashed rgba(255, 255, 255, 0.4);
   overflow: hidden;
 `
@@ -49,6 +50,11 @@ const TreeName = styled.span`
   color: #ccc;
   vertical-align: middle;
   a {
+    display: table-cell;
+    width: 100%;
+    max-width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: 0.3s all ease-in-out;
     color: #fff;
     text-shadow: 0 0 5px #000;
