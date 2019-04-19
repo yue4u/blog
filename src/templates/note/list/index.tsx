@@ -105,6 +105,7 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
 
 const SideBarBlock = styled.aside`
   text-align: left;
+  max-width: 25%;
   @media screen and (max-width: 700px) {
     display: none;
   }
