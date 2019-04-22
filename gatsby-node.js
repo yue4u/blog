@@ -1,19 +1,11 @@
 const path = require(`path`)
-const courseTitle = require('./src/i18n/courseTitle.json')
-exports.onCreateNode = ({
-  node,
-  getNode,
-  actions
-}) => {
-  const {
-    createNodeField
-  } = actions
+const courseTitle = require("./src/i18n/courseTitle.json")
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-
     const parent = getNode(node.parent)
-      .relativePath
-      .replace("/index", "")
+      .relativePath.replace("/index", "")
       .replace(".md", "")
 
     createNodeField({
@@ -25,90 +17,84 @@ exports.onCreateNode = ({
     createNodeField({
       node,
       name: `regex`,
-      value: `/${parent.split('/')[1]}/`,
+      value: `/${parent.split("/")[1]}/`,
     })
   }
 
-  if (node.relativeDirectory === 'notes') {
-
+  if (node.relativeDirectory === "notes") {
     console.log(node.name)
 
     createNodeField({
       node,
       name: `courseTitle`,
-      value: courseTitle[node.name],
+      value: courseTitle[node.name] || node.name,
     })
-
   }
 }
 
-exports.createPages = ({
-  graphql,
-  actions
-}) => {
-  const {
-    createPage
-  } = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
 
   const notePages = graphql(`
-  query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/notes/"}}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            tags
-          }
-          fields {
-            slug
-            regex
+    query {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fileAbsolutePath: { regex: "/notes/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              tags
+            }
+            fields {
+              slug
+              regex
+            }
           }
         }
       }
     }
-  }
   `).then(result => {
-
-    result.data.allMarkdownRemark.edges.forEach(({
-      node
-    }) => {
-
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`src/templates/note/index.tsx`),
         context: {
           slug: node.fields.slug,
-          regex: node.fields.regex
+          regex: node.fields.regex,
         },
       })
     })
   })
 
   const noteArchivePages = graphql(`
-  {
-    allDirectory(filter: {relativeDirectory: {eq: "notes"}},sort:{fields:changeTime,order:DESC}) {
-      edges {
-        node {
-          id
-          name
-          modifiedTime
-          fields {
-            courseTitle
+    {
+      allDirectory(
+        filter: { relativeDirectory: { eq: "notes" } }
+        sort: { fields: changeTime, order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            name
+            modifiedTime
+            fields {
+              courseTitle
+            }
           }
         }
       }
     }
-  }
   `).then(result => {
-
     const notes = result.data.allDirectory.edges
     const notesPerPage = 20
     const numPages = Math.ceil(notes.length / notesPerPage)
 
     Array.from({
-      length: numPages
+      length: numPages,
     }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/notes` : `/notes/${i + 1}`,
@@ -117,43 +103,41 @@ exports.createPages = ({
           limit: notesPerPage,
           skip: i * notesPerPage,
           numPages,
-          currentPage: i + 1
+          currentPage: i + 1,
         },
       })
     })
   })
 
   const postPages = graphql(`
-  query {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {fileAbsolutePath: {regex: "/posts/"}}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            tags
-          }
-          fields{
-            slug
+    query {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { fileAbsolutePath: { regex: "/posts/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              tags
+            }
+            fields {
+              slug
+            }
           }
         }
       }
     }
-  }
-   `).then(result => {
-
-
+  `).then(result => {
     const posts = result.data.allMarkdownRemark.edges
     const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
 
-    result.data.allMarkdownRemark.edges.forEach(({
-      node
-    }, i) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }, i) => {
       const prev = i === 0 ? false : posts[i - 1].node
-      const next =
-        i === posts.length - 1 ? false : posts[i + 1].node
+      const next = i === posts.length - 1 ? false : posts[i + 1].node
       createPage({
         path: node.fields.slug,
         component: path.resolve(`src/templates/post/index.tsx`),
@@ -161,13 +145,13 @@ exports.createPages = ({
           slug: node.fields.slug,
           prev,
           next,
-          identifier: node.id
+          identifier: node.id,
         },
       })
     })
 
     Array.from({
-      length: numPages
+      length: numPages,
     }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/posts` : `/posts/${i + 1}`,
@@ -176,7 +160,7 @@ exports.createPages = ({
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1
+          currentPage: i + 1,
         },
       })
     })
