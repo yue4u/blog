@@ -1,5 +1,5 @@
 ---
-title: Lecture　2
+title: Lecture 2
 date: 2019-04-24 12:44:44
 ---
 
