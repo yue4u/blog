@@ -5,7 +5,7 @@ date: 2019-05-08 14:44:44
 
 [Nicholas Negroponte](https://en.wikipedia.org/wiki/Nicholas_Negroponte)
 
-> コンピュータ　＝＝＝　メフィア
+> コンピュータ　＝＝＝　メディア
 
 `ARCHITECTURE MACHINE GROUP` 1978
 
