@@ -9,7 +9,7 @@ export default styled(CodeBlock)`
   word-break: break-all;
   width: 90%;
   color: #ccc;
-
+  font-family: "Fira Code";
   h2,
   h3,
   h4,
