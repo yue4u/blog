@@ -147,7 +147,7 @@ const HamburgerWrapper = styled.div`
 export default function NoteList({ data }: any) {
   const [open, setOpen] = useState(false)
   const [props, set] = useSpring(() => ({
-    opacity: 1,
+    opacity: 0,
     transform: "translateY(1rem)",
     zIndex: -1,
   }))

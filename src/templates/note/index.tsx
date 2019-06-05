@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 import NoteList from "./list/index"
 import styled from "styled-components"
 import MarkdownContent from "../../components/common/markdownContent"
-import SideBar from "../../components/global/sidebar"
+
 const NoteLayout = styled.div`
   display: flex;
   padding: 1rem;

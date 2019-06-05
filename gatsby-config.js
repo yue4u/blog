@@ -44,7 +44,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#1d1d1d`,
         theme_color: `#333333`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `static/eon.jpg`, // This path is relative to the root of the site.
       },
     },
