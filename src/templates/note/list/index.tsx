@@ -103,29 +103,84 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
   )
 })
 
-const SideBarBlock = styled.aside`
+const SideBarBlock = styled(animated.aside)`
   text-align: left;
   max-width: 25%;
   @media screen and (max-width: 700px) {
-    display: none;
+    opacity: 0;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    width: -webkit-fill-available;
+    max-width: initial;
+    z-index: -1;
+    min-height: 100vh;
+    background-color: #333;
+    box-shadow: 0 0 1rem #000;
   }
 `
 
+const Line = styled.span`
+  transition: 0.3s all ease-in-out;
+  height: 0.5rem;
+  width: 80%;
+  border-bottom: 3px solid #607d8b;
+`
+
+const HamburgerWrapper = styled.div`
+  cursor: pointer;
+  position: absolute;
+  top: 0.3rem;
+  right: 5px;
+  height: 1.4rem;
+  z-index: 50;
+  display: none;
+  width: 2rem;
+  flex-direction: column;
+  @media screen and (max-width: 700px) {
+    display: inline-flex;
+  }
+`
+//const Hamburger = () => (
+//
+//)
 export default function NoteList({ data }: any) {
+  const [open, setOpen] = useState(false)
+  const [props, set] = useSpring(() => ({
+    opacity: 1,
+    transform: "translateY(1rem)",
+    zIndex: -1,
+  }))
+
+  const toggleSideBar = () => {
+    set({
+      opacity: open ? 0 : 1,
+      transform: `translateY(${open ? "1rem" : "0"})`,
+      zIndex: open ? -1 : 100,
+    })
+    setOpen(!open)
+  }
   return (
-    <SideBarBlock>
-      <Tree name={""} open={true}>
-        {data.edges.map(({ node }, i) => (
-          <Tree
-            name={<Link to={node.fields.slug}>{node.frontmatter.title}</Link>}
-            key={`node-${i}`}
-          >
-            {node.headings.map((heading, i) => (
-              <Tree name={heading.value} key={`heading-${i}`} />
-            ))}
-          </Tree>
-        ))}
-      </Tree>
-    </SideBarBlock>
+    <>
+      <HamburgerWrapper onClick={toggleSideBar}>
+        <Line />
+        <Line />
+        <Line />
+      </HamburgerWrapper>
+      <SideBarBlock style={props}>
+        <Tree name={""} open={true}>
+          {data.edges.map(({ node }, i) => (
+            <Tree
+              name={<Link to={node.fields.slug}>{node.frontmatter.title}</Link>}
+              key={`node-${i}`}
+            >
+              {node.headings.map((heading, i) => (
+                <Tree name={heading.value} key={`heading-${i}`} />
+              ))}
+            </Tree>
+          ))}
+        </Tree>
+      </SideBarBlock>
+    </>
   )
 }

@@ -2,6 +2,9 @@ import styled from "styled-components"
 import CodeBlock from "./codeBlock"
 
 export default styled(CodeBlock)`
+  & > * {
+    max-width: 100%;
+  }
   margin: 0 auto;
   padding-bottom: 1rem;
   text-align: left;
