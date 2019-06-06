@@ -106,14 +106,19 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
 const SideBarBlock = styled(animated.aside)`
   text-align: left;
   max-width: 25%;
+  @media screen and (min-width: 700px) {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
   @media screen and (max-width: 700px) {
     opacity: 0;
+    visibility: hidden;
     left: 0;
     padding: 1rem;
     position: absolute;
     width: -webkit-fill-available;
     max-width: initial;
-    z-index: -1;
+    z-index: 100;
     min-height: 100vh;
     background-color: #333;
     box-shadow: 0 0 1rem #000;
@@ -141,22 +146,20 @@ const HamburgerWrapper = styled.div`
     display: inline-flex;
   }
 `
-//const Hamburger = () => (
-//
-//)
+
 export default function NoteList({ data }: any) {
   const [open, setOpen] = useState(false)
   const [props, set] = useSpring(() => ({
+    visibility: "hidden",
     opacity: 0,
     transform: "translateY(1rem)",
-    zIndex: -1,
   }))
 
   const toggleSideBar = () => {
     set({
+      visibility: open ? "hidden" : "visible",
       opacity: open ? 0 : 1,
       transform: `translateY(${open ? "1rem" : "0"})`,
-      zIndex: open ? -1 : 100,
     })
     setOpen(!open)
   }
