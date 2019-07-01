@@ -7,7 +7,7 @@ tags:
 ---
  第四天。嵐山、自行车道、喫茶店、御所、めん馬鹿一代。  
  
-<!-- more -->  
+  
 今天的地图 <font color=red>（仅供参考）</font>： 
 
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1kGIm5A72qf1dwhi7vYdX9rzuLIo" width="640" height="480"></iframe>

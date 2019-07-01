@@ -3,7 +3,7 @@ const courseTitle = require("./src/i18n/courseTitle.json")
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent)
       .relativePath.replace("/index", "")
       .replace(".md", "")
@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   const notePages = graphql(`
     query {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { fileAbsolutePath: { regex: "/notes/" } }
       ) {
@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`src/templates/note/index.tsx`),
@@ -111,7 +111,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   const postPages = graphql(`
     query {
-      allMarkdownRemark(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { fileAbsolutePath: { regex: "/posts/" } }
       ) {
@@ -131,11 +131,11 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMdx.edges
     const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }, i) => {
+    result.data.allMdx.edges.forEach(({ node }, i) => {
       const prev = i === 0 ? false : posts[i - 1].node
       const next = i === posts.length - 1 ? false : posts[i + 1].node
       createPage({

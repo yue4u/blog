@@ -10,7 +10,7 @@ tags:
 
 <del>其实我完全不想写关于PHP的文章。</del>
 
-<!-- more -->
+
 
 ## Reproduce
 

@@ -9,7 +9,7 @@ tags:
 
 What happens when one grows old.
 
-<!-- more --> 
+ 
 
 <span style="font-size:2rem;margin-right: 0.5rem">THIS</span>week I spent several hours on reading the book <b><i>Being Mortal</i></b> by Atul Gawande, which is on the recommendation list everywhere. The English vision is available on domestic Amazon, and I'm personally interested in this kind of topic as well. 
 

@@ -25,7 +25,7 @@ const PostCount = styled.p`
   color: #777;
 `
 export default function Posts({ data, pageContext }) {
-  const nodes = data.allMarkdownRemark.edges.map(({ node }) => node)
+  const nodes = data.allMdx.edges.map(({ node }) => node)
 
   return (
     <Layout>
@@ -66,7 +66,7 @@ export default function Posts({ data, pageContext }) {
 
 export const query = graphql`
   query postArchiveQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/posts/" } }
       limit: $limit
@@ -86,7 +86,7 @@ export const query = graphql`
         }
       }
     }
-    pageCount: allMarkdownRemark(
+    pageCount: allMdx(
       filter: { fileAbsolutePath: { regex: "/posts/" } }
     ) {
       edges {

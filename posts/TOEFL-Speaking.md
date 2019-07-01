@@ -34,7 +34,7 @@ color: black;
 </style>
 
 
-<!-- more --> 
+ 
 
 
 <p style="font-size:20px" ><span class="pound">※</span> Mathjax 渲染可能需要一点时间</p>

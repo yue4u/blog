@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import NoteList from "./list/index"
 import styled from "styled-components"
+import { MDXRenderer } from 'gatsby-mdx'
 import MarkdownContent from "../../components/common/markdownContent"
 
 const NoteLayout = styled.div`
@@ -16,7 +17,7 @@ const Content = styled.div`
 `
 
 export default function Note({ data }) {
-  const post = data.markdownRemark
+  const post = data.mdx
   return (
     <Layout>
       <NoteLayout>
@@ -24,7 +25,9 @@ export default function Note({ data }) {
         <Content>
           <h1>{post.frontmatter.title}</h1>
 
-          <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
+                 <MarkdownContent >
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </MarkdownContent>
         </Content>
       </NoteLayout>
     </Layout>
@@ -33,13 +36,15 @@ export default function Note({ data }) {
 
 export const query = graphql`
   query($slug: String!, $regex: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      code{
+          body
+      }
       frontmatter {
         title
       }
     }
-    sideBar: allMarkdownRemark(
+    sideBar: allMdx(
       sort: { fields: [frontmatter___date], order: ASC }
       filter: { fileAbsolutePath: { regex: $regex } }
     ) {

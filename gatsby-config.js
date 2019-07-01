@@ -13,13 +13,14 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/`,
-        ignore: [`**/\.*`, `${__dirname}/.cache/`],
+        ignore: [`**/\.*`, `*.cache/`],
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-mdx',
       options: {
-        plugins: [
+        extensions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -30,8 +31,8 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
-        ],
-      },
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,

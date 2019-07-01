@@ -8,7 +8,7 @@ tags:
 
 + 地址 [nightly-espeon](https://nightly-espeon.tumblr.com/)
 
-<!-- more -->
+
 
 虽然在 [第一篇文章](/articles/about-this-blog.html)中提到过说要做绘画日记，但是一直没什么机会开始。从结果来说ins和微博都不是很合适，ins那边现在基本在做<ruby>食物照片<rt> 黑暗料理 </rt></ruby> ，微博就不用说多智障了。最近正好有说不定会写Tumblr的[custom theme](https://www.tumblr.com/docs/custom_themes)，就先用着试试看。之后估计在自己也会拿<ruby>二级域名<rt> 新坑 </rt></ruby> 之类的再做一份。
 

@@ -8,7 +8,7 @@ tags:
 
 `Thinkpad`和`arch linux`真是太棒了。
 
-<!-- more -->
+
 
 ## 先上图
 

@@ -13,7 +13,7 @@ tags:
 
 解决docker-compose时pip intall lxml发生gcc内存不足的错误。
 
-<!-- more -->
+
 
 记忆中python的`lxml`库安装好像一直不是很顺利，每次环境变更都要折腾不少时间。这次又再次遇到了相似的问题。
 

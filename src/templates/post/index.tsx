@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/global/seo"
 import styled from "styled-components"
+import { MDXRenderer } from 'gatsby-mdx'
+
 import GradientFont from "../../components/common/gradientFont"
 import MarkdownContent from "../../components/common/markdownContent"
 import Link from "gatsby-link"
@@ -32,7 +34,7 @@ const PostLink = ({ data, linkType }) => {
 }
 
 export default function Post({ data, pageContext }) {
-  const post = data.markdownRemark
+  const post = data.mdx
   const { prev, next, identifier } = pageContext
   return (
     <Layout>
@@ -43,7 +45,9 @@ export default function Post({ data, pageContext }) {
             dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}
           />
         </PostTitle>
-        <MarkdownContent dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MarkdownContent >
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </MarkdownContent>
       </div>
       <PaginationNav>
         <PostLink data={prev} linkType={"prev"} />
@@ -56,8 +60,10 @@ export default function Post({ data, pageContext }) {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      code{
+          body
+      }
       frontmatter {
         title
         date

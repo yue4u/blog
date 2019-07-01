@@ -85,9 +85,9 @@ export default function IndexPage() {
       <Transition
         items={navList}
         keys={nav => nav.label}
-        from= {{ opacity: 0, transform: "translateY(40px)",  }}
-        enter={{ opacity: 1, transform: "translateY(0px)",   }}
-        leave={{ opacity: 0, transform: "translateY(40px)",  }}
+        from={{ opacity: 0, transform: "translateY(40px)" }}
+        enter={{ opacity: 1, transform: "translateY(0px)" }}
+        leave={{ opacity: 0, transform: "translateY(40px)" }}
       >
         {nav => style => (
           <animated.li style={style}>

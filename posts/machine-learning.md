@@ -11,7 +11,7 @@ tags:
 
 "端正态度~" "仔细读题~" "快去写作业～"
 
-<!-- more --> 
+ 
 
 <!--<script type="text/x-mathjax-config">
 MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});

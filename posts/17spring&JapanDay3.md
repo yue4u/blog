@@ -7,7 +7,7 @@ tags:
 ---
  第三天。知恩院、円山公園、清水寺、智積院、高台寺、泉涌寺。  
  
-<!-- more -->  
+  
 今天的地图 <font color=red>（仅供参考）</font>： 
 
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gMdLjEidkK5Abzh-WGDNPddJUuA" width="640" height="480"></iframe>

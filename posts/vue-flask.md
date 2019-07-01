@@ -29,7 +29,7 @@ font-size:25px;
 上周用vue做前端、flask做后端独立做了一个个人网站，大致做了登录验证、词汇查询储存、和在线聊天室几个部分。因为是第一次接触vue查阅资料还是折腾蛮久。
 
 
-<!-- more --> 
+ 
 
 <p style="font-size:25px; font-family:Lucida Console, Monaco, monospace">(Vue, Flask, ...rest) => website</p>
 

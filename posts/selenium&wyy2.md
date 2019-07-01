@@ -9,7 +9,7 @@ tags:
 
 尝试改进与优化。
 
-<!-- more --> 
+ 
 
 再上一篇[文章](https://minatsuki-yui.github.io/2017/11/27/selenium&wyy/)中，主要记述了基本使用和查找元素的方法。但是非常难受的是，`Chromedriver`现在并不支持arm芯片，也没机会使用`headless Chromium`，那么就选择`PhantomJS`代替吧。
 

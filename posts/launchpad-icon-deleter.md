@@ -7,7 +7,7 @@ tags:
 ---
 
 一个删除Launchpad中图标的shell script
-<!-- more --> 
+ 
 
 项目地址: [Github](https://github.com/minatsuki-yui/Launchpad-icon-deleter)
 

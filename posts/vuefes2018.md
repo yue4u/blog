@@ -11,7 +11,7 @@ tags:
 
 [Homepage](https://vuefes.jp/)
 [官推](https://twitter.com/vuefes)
-<!-- more -->
+
 
 ## Vue3.0
 

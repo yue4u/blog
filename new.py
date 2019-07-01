@@ -23,7 +23,7 @@ tags:
  - new
 ---
 
-<!-- more -->
+
 
 ''')
     os.system(f'open {filename}')

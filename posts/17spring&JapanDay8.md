@@ -7,7 +7,7 @@ tags:
 ---
  第八天。 国営ひたち海浜公園。
  
-<!-- more -->  
+  
 
 
 官网[http://hitachikaihin.jp/](http://hitachikaihin.jp/)

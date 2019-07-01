@@ -7,7 +7,7 @@ tags:
 ---
  第五天。下鸭神社、上贺茂神社、常照寺、源光庵、银阁寺、大文字山。  
  
-<!-- more -->  
+  
 今天的地图 <font color=red>（仅供参考）</font>： 
 
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zg_GCBHqneYKM2ar88o1Sry96gI" width="640" height="480"></iframe>

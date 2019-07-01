@@ -8,7 +8,7 @@ tags:
 
 `useReducer`与Typescript的类型计算。
 
-<!-- more -->
+
 
 ## 例子
 

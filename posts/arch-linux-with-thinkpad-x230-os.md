@@ -8,7 +8,7 @@ tags:
 
 `Thinkpad`和`arch linux`真是太棒了。 * 2
 
-<!-- more -->
+
 
 > 截图为未更新vim colorscheme前
 

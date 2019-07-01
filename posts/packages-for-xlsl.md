@@ -9,7 +9,7 @@ tags:
 
 node与python的excel库使用分享
 
-<!-- more -->
+
 
 因为工作原因需要读写excel文件，试着用了下python和node的对应库都不错，记录一下基础使用。
 
