@@ -1,12 +1,21 @@
 const path = require(`path`)
 const courseTitle = require("./src/i18n/courseTitle.json")
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'extra'), 'node_modules']
+    }
+  });
+};
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent)
       .relativePath.replace("/index", "")
-      .replace(".md", "")
+      .replace(/\.mdx?/, "")
 
     createNodeField({
       node,
