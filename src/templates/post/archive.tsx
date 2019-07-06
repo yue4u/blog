@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import { animated } from "react-spring"
 import { Transition } from "react-spring/renderprops"
+import SEO from "../../components/global/seo"
+
 import Layout from "../../components/layout"
 import PostSummary from "./summay"
 import GradientFont from "../../components/common/gradientFont"
@@ -29,6 +31,7 @@ export default function Posts({ data, pageContext }) {
 
   return (
     <Layout>
+      <SEO title="Posts" keywords={[`posts`]} />
       <Content>
         <PostsTitle>
           <GradientFont>Posts</GradientFont>
@@ -86,9 +89,7 @@ export const query = graphql`
         }
       }
     }
-    pageCount: allMdx(
-      filter: { fileAbsolutePath: { regex: "/posts/" } }
-    ) {
+    pageCount: allMdx(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
       edges {
         node {
           id

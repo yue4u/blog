@@ -49,7 +49,7 @@ export default function Notes({ data }: any) {
   )
   return (
     <Layout>
-      <SEO title="Home" keywords={[`note`]} />
+      <SEO title="Notes" keywords={[`note`]} />
       <H1>
         <GradientFont>Notes</GradientFont>
       </H1>

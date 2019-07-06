@@ -3,13 +3,13 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/global/seo"
 import styled from "styled-components"
-import { MDXRenderer } from 'gatsby-mdx'
+import { MDXRenderer } from "gatsby-mdx"
 
 import GradientFont from "../../components/common/gradientFont"
 import MarkdownContent from "../../components/common/markdownContent"
 import Link from "gatsby-link"
 import { PaginationLink, PaginationNav } from "./pagination"
-import Comments from '../../components/common/comments'
+import Comments from "../../components/common/comments"
 
 const PostTitle = styled.h1`
   font-size: 4rem;
@@ -38,14 +38,17 @@ export default function Post({ data, pageContext }) {
   const { prev, next, identifier } = pageContext
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} keywords={post.frontmatter.tags} />
+      <SEO
+        title={post.frontmatter.title}
+        keywords={post.headings.map(h => h.value)}
+      />
       <div>
         <PostTitle>
           <GradientFont
             dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}
           />
         </PostTitle>
-        <MarkdownContent >
+        <MarkdownContent>
           <MDXRenderer>{post.code.body}</MDXRenderer>
         </MarkdownContent>
       </div>
@@ -53,7 +56,11 @@ export default function Post({ data, pageContext }) {
         <PostLink data={prev} linkType={"prev"} />
         <PostLink data={next} linkType={"next"} />
       </PaginationNav>
-      <Comments url={`https://blog.rainy.me/${pageContext.slug}`} identifier={identifier} title={post.frontmatter.title} />
+      <Comments
+        url={`https://blog.rainy.me/${pageContext.slug}`}
+        identifier={identifier}
+        title={post.frontmatter.title}
+      />
     </Layout>
   )
 }
@@ -61,13 +68,16 @@ export default function Post({ data, pageContext }) {
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code{
-          body
+      code {
+        body
       }
       frontmatter {
         title
         date
         tags
+      }
+      headings {
+        value
       }
     }
   }

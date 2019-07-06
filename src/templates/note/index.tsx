@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import NoteList from "./list/index"
 import styled from "styled-components"
-import { MDXRenderer } from 'gatsby-mdx'
+import { MDXRenderer } from "gatsby-mdx"
+import SEO from "../../components/global/seo"
 import MarkdownContent from "../../components/common/markdownContent"
 
 const NoteLayout = styled.div`
@@ -18,16 +19,24 @@ const Content = styled.div`
 
 export default function Note({ data }) {
   const post = data.mdx
+
+  const headings = data.sideBar.edges.flatMap(({ node }) => {
+    return post.frontmatter.title === node.frontmatter.title
+      ? node.headings.map(h => h.value)
+      : []
+  })
+
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} keywords={headings} />
       <NoteLayout>
         <NoteList data={data.sideBar} />
         <Content>
           <h1>{post.frontmatter.title}</h1>
 
-                 <MarkdownContent >
-          <MDXRenderer>{post.code.body}</MDXRenderer>
-        </MarkdownContent>
+          <MarkdownContent>
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </MarkdownContent>
         </Content>
       </NoteLayout>
     </Layout>
@@ -37,8 +46,8 @@ export default function Note({ data }) {
 export const query = graphql`
   query($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code{
-          body
+      code {
+        body
       }
       frontmatter {
         title
