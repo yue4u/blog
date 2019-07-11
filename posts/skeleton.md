@@ -18,57 +18,57 @@ tags:
 以下是笔记：  
 
 <h2>概述</h2> 
-<img src="https://c1.staticflickr.com/3/2929/32888650473_784024f226_o.png" width="1326" height="768" alt="骨 bone">  
+![](https://c1.staticflickr.com/3/2929/32888650473_784024f226_o.png)  
 
 <h2>上半身</h2>  
 <h3>颅骨</h3>
-<img src="https://c1.staticflickr.com/3/2863/33832673652_e4cc69b191_o.png" width="1381" height="763" alt="颅骨 skull">  
+![](https://c1.staticflickr.com/3/2863/33832673652_e4cc69b191_o.png)  
 
 <h3>脊柱（脊椎）</h3>  
 
-<img src="https://c2.staticflickr.com/4/3755/32921154843_800f1a384a_o.png" width="1368" height="805" alt="脊柱（脊椎） vertebral column"> 
+![](https://c2.staticflickr.com/4/3755/32921154843_800f1a384a_o.png) 
 
 <h3>胸廓&锁骨</h3>  
 
-<img src="https://c2.staticflickr.com/4/3836/33605270211_b12b5f6aab_o.png" width="1178" height="755" alt="胸廓  rib cage锁骨collarbone">   
+![](https://c2.staticflickr.com/4/3836/33605270211_b12b5f6aab_o.png)   
 
 
 <h3>肩胛骨</h3>  
 
-<img src="https://c1.staticflickr.com/3/2868/33990202225_08f03cc922_o.png" width="1201" height="575" alt="肩胛骨 scapula">
+![](https://c1.staticflickr.com/3/2868/33990202225_08f03cc922_o.png)
 
 <h3> 肱骨 </h3>   
 
-<img src="https://c1.staticflickr.com/3/2882/33990197545_75e8bf4155_o.png" width="779" height="691" alt="肱骨 humerus">  
+![](https://c1.staticflickr.com/3/2882/33990197545_75e8bf4155_o.png)  
 
 <h3>桡骨&尺骨</h3>  
 
-<img src="https://c1.staticflickr.com/3/2806/33990202725_300ed1826c_o.png" width="1237" height="911" alt="桡骨radius尺骨ulna">  
+![](https://c1.staticflickr.com/3/2806/33990202725_300ed1826c_o.png)  
 
 <h3>手骨</h3>  
 
-<img src="https://c1.staticflickr.com/3/2884/33832673862_6106679d31_o.png" width="657" height="701" alt="手骨 skeleton of the hand">  
+![](https://c1.staticflickr.com/3/2884/33832673862_6106679d31_o.png)  
 
 <h2>下半身</h2>  
 
 <h3>骨盆</h3>  
-<img src="https://c1.staticflickr.com/3/2889/33990201795_4800a70714_o.png" width="1133" height="824" alt="骨盆 pelvis">
+![](https://c1.staticflickr.com/3/2889/33990201795_4800a70714_o.png)
 
 <h3>股骨（大腿骨）</h3>
 
-<img src="https://c1.staticflickr.com/3/2882/33177278683_1ba6a7a874_o.png" width="880" height="589" alt="股骨（大腿骨） femur">
+![](https://c1.staticflickr.com/3/2882/33177278683_1ba6a7a874_o.png)
 
 <h3>腓骨&胫骨</h3>  
 
 
-<img src="https://c1.staticflickr.com/3/2817/33948590056_5e5838a8d4_o.png" width="1227" height="911" alt="腓骨fibula胫骨tibia">  
+![](https://c1.staticflickr.com/3/2817/33948590056_5e5838a8d4_o.png)  
 
 <h3>足骨</h3>
 
-<img src="https://c1.staticflickr.com/3/2886/33832674072_e16f6a2d3d_o.png" width="1157" height="638" alt="足骨 skeleton of the foot">  
+![](https://c1.staticflickr.com/3/2886/33832674072_e16f6a2d3d_o.png)  
 
 <h2>总结</h2>  
 
 如果把这些全部综合起来，知识结构大概是这样的：  
 
-<img src="https://c1.staticflickr.com/3/2920/33832672212_e9a20267e6_o.png" width="2398" height="5417" alt="骨 bone">
+![](https://c1.staticflickr.com/3/2920/33832672212_e9a20267e6_o.png)

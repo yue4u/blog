@@ -48,9 +48,9 @@ emmmm  (´Д` )
 
 有Flashing和Validating两步
 
-<img src="https://farm5.staticflickr.com/4554/38685276372_0e4fc4211e_c.jpg" width="800" height="380" alt="etcher">
+![](https://farm5.staticflickr.com/4554/38685276372_0e4fc4211e_c.jpg)
 
-<img src="https://farm5.staticflickr.com/4542/37829722295_bff89c34a8_c.jpg" width="800" height="380" alt="validating">
+![](https://farm5.staticflickr.com/4542/37829722295_bff89c34a8_c.jpg)
 
 ---
 

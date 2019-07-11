@@ -1,13 +1,11 @@
----  
+---
 title: about html lang attribute
-date: 2019-04-14 19:37:23  
+date: 2019-04-14 19:37:23
 tags:
- - html
+  - html
 ---
 
 有关`lang`属性。
-
-<!--more-->
 
 先是简单的例子。
 
@@ -22,15 +20,14 @@ tags:
 ```
 
 ```js
-let lang = "en";
-let tag = document.querySelector("html");
+let lang = "en"
+let tag = document.querySelector("html")
 
 document.querySelector("button").onclick = () => {
-  lang = lang === "en" ? "ja" : "en";
-  tag.setAttribute("lang", lang);
-};
+  lang = lang === "en" ? "ja" : "en"
+  tag.setAttribute("lang", lang)
+}
 ```
 
 可见每次点击按钮时由于`lang`属性变化，汉字字体发生了变化。
-从此可知`lang`属性不仅和SEO相关，甚至会影响浏览器渲染结果。
-
+从此可知`lang`属性不仅和 SEO 相关，甚至会影响浏览器渲染结果。
