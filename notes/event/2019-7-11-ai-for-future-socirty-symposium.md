@@ -7,7 +7,7 @@ date: 2019-07-11 16:10:59
 
 [@JeffDean](https://twitter.com/JeffDean)
 
-[ai.google/research/people/jeff](ai.google/research/people/jeff)
+[ai.google/research/people/jeff](https://ai.google/research/people/jeff)
 
 ~100 new papers every day in 2018
 
@@ -36,7 +36,7 @@ learn pouring
 
 expertise at low cost
 
-[doi.org](doi.org)
+[doi.org](https://doi.org)
 
 ### Black box?
 
@@ -65,8 +65,8 @@ Neural Architecture Search
 2. train few hours
 3. use loss of gened models as reinforcement learning signal
 
-[arxov.org/abs](arxov.org/abs)
-[cloud.google.com/automl](cloud.google.com/automl)
+[arxov.org/abs](https://arxov.org/abs)
+[cloud.google.com/automl](https://cloud.google.com/automl)
 
 ~2012
 
@@ -94,7 +94,7 @@ Pre-Example Routing && MoE layers
 
 ## use of AI in society
 
-[ai.google/principles]](ai.google/principles)
+[ai.google/principles]](https://ai.google/principles)
 
 ## summary
 
