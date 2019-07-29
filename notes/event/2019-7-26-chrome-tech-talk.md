@@ -9,7 +9,7 @@ date: 2019-07-26 23:44:57
 
 ### blog
 
-[blog.web.dev](https://blog.web.dev)
+[web.dev/blog](https://web.dev/blog)
 
 ### questions
 
