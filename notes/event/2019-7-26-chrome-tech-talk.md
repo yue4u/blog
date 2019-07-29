@@ -202,7 +202,7 @@ amp cares both.
 
 - eccube conference
 
-### recommed for amp site
+### recommendation for learning amp site
 
 - [aliexpress](https://www.aliexpress.com)
 - [ikyu](https://www.ikyu.com/kankou/story0/)
