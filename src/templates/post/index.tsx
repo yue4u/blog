@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/global/seo"
 import styled from "styled-components"
-import { MDXRenderer } from "gatsby-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import GradientFont from "../../components/common/gradientFont"
 import MarkdownContent from "../../components/common/markdownContent"
@@ -49,7 +49,7 @@ export default function Post({ data, pageContext }) {
           />
         </PostTitle>
         <MarkdownContent>
-          <MDXRenderer>{post.code.body}</MDXRenderer>
+          <MDXRenderer>{post.body}</MDXRenderer>
         </MarkdownContent>
       </div>
       <PaginationNav>
@@ -68,9 +68,7 @@ export default function Post({ data, pageContext }) {
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         date

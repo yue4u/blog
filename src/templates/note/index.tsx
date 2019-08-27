@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import NoteList from "./list/index"
 import styled from "styled-components"
-import { MDXRenderer } from "gatsby-mdx"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import SEO from "../../components/global/seo"
 import MarkdownContent from "../../components/common/markdownContent"
 
@@ -35,7 +35,7 @@ export default function Note({ data }) {
           <h1>{post.frontmatter.title}</h1>
 
           <MarkdownContent>
-            <MDXRenderer>{post.code.body}</MDXRenderer>
+            <MDXRenderer>{post.body}</MDXRenderer>
           </MarkdownContent>
         </Content>
       </NoteLayout>
@@ -46,9 +46,7 @@ export default function Note({ data }) {
 export const query = graphql`
   query($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         title
       }
