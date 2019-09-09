@@ -18,7 +18,7 @@ export default styled(CodeBlock)`
   h4,
   h5,
   h6 {
-    margin-top: 2rem;
+    margin-top: 3rem;
     color: #eee;
     position: relative;
     &::before {
@@ -31,14 +31,12 @@ export default styled(CodeBlock)`
   }
 
   h2 {
-    border-bottom: 1px solid #555;
     &::before {
       content: "#";
     }
   }
 
   h3 {
-    border-bottom: 1px solid #555;
     &::before {
       content: "◆";
     }
