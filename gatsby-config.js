@@ -4,8 +4,10 @@ module.exports = {
     description: `random notes`,
     author: `yue`,
     theme_color: "#333333",
+    siteUrl: 'https://blog.rainy.me/'
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {

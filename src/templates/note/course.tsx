@@ -41,7 +41,7 @@ const CourseDetail = styled.div`
   bottom: 0;
   left: 1rem;
 `
-export default function Course({ node }:any) {
+export default function Course({ node }: any) {
   const { name, modifiedTime } = node
   const date = modifiedTime.split("T")[0]
   return (

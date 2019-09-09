@@ -6,7 +6,7 @@ const SidebarBlock = styled.aside`
   background-color: #333;
   width: 80%;
   padding: 1rem;
-  position:fixed;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
