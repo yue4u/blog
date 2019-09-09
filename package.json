@@ -40,15 +40,20 @@
     "typescript": "^3.4.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.7.0",
     "@types/react": "^16.8.10",
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.12",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typescript": "^2.0.11",
+    "graphql": "^14.5.4",
     "prettier": "^1.18.2",
     "styled-components": "^4.2.0",
-    "ts-node": "^8.0.3"
+    "ts-node": "^8.0.3",
+    "@graphql-codegen/typescript": "1.7.0",
+    "@graphql-codegen/typescript-operations": "1.7.0",
+    "@graphql-codegen/introspection": "1.7.0"
   },
   "license": "MIT",
   "scripts": {
@@ -57,6 +62,7 @@
     "lint": "prettier --write src/**/**/*.{ts,tsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "gql-gen": "graphql-codegen --config codegen.yml",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
