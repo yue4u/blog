@@ -101,7 +101,7 @@ export default function IndexPage() {
   )
   return (
     <Layout>
-      <SEO title="Home" keywords={[`note`]} />
+      <SEO title="Home" />
       <H1>Blog of yue</H1>
       <Callout>
         正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。

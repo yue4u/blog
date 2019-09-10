@@ -10,16 +10,26 @@ type Meta = {
 type SEOProps = {
   lang?: string
   meta?: Meta[]
-  keywords?: string[]
   description?: string
   title?: string
 }
 
+const genDescription = (description: string) => {
+  description = description
+    .replace(/---[\s\S]*?---/g, "")
+    .replace(/<[\s\S]*?>/g, "")
+    .replace(/[`#]/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\!\[\]\((.+?)\)/, "$1")
+  description =
+    description.length <= 160 ? description : description.substr(0, 160) + "..."
+  return description.trim()
+}
+
 export default function SEO({
   description = "",
-  lang = "ja",
+  lang = "en",
   meta = [],
-  keywords = [],
   title = "",
 }: SEOProps) {
   const { site } = useStaticQuery(
@@ -36,7 +46,9 @@ export default function SEO({
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const descriptionSource =
+    genDescription(description) || title || site.siteMetadata.description
+  const metaDescription = `blog of yue: ${descriptionSource}`
 
   return (
     <Helmet
@@ -78,16 +90,7 @@ export default function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(meta)}
     />
   )
 }

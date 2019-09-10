@@ -31,7 +31,7 @@ export default function Posts({ data, pageContext }) {
 
   return (
     <Layout>
-      <SEO title="Posts" keywords={[`posts`]} />
+      <SEO title="Posts" />
       <Content>
         <PostsTitle>
           <GradientFont>Posts</GradientFont>

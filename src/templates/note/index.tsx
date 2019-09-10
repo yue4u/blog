@@ -20,20 +20,13 @@ const Content = styled.div`
 export default function Note({ data }) {
   const post = data.mdx
 
-  const headings = data.sideBar.edges.flatMap(({ node }) => {
-    return post.frontmatter.title === node.frontmatter.title
-      ? node.headings.map(h => h.value)
-      : []
-  })
-
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} keywords={headings} />
+      <SEO title={post.frontmatter.title} description={post.rawBody} />
       <NoteLayout>
         <NoteList data={data.sideBar} />
         <Content>
           <h1>{post.frontmatter.title}</h1>
-
           <MarkdownContent>
             <MDXRenderer>{post.body}</MDXRenderer>
           </MarkdownContent>
@@ -47,6 +40,7 @@ export const query = graphql`
   query($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
+      rawBody
       frontmatter {
         title
       }

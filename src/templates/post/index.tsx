@@ -38,10 +38,7 @@ export default function Post({ data, pageContext }) {
   const { prev, next, identifier } = pageContext
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        keywords={post.headings.map(h => h.value)}
-      />
+      <SEO title={post.frontmatter.title} description={post.rawBody} />
       <div>
         <PostTitle>
           <GradientFont
@@ -69,6 +66,7 @@ export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
+      rawBody
       frontmatter {
         title
         date

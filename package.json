@@ -1,7 +1,7 @@
 {
   "name": "blog-of-yue",
   "private": true,
-  "description": "posts and notes collection",
+  "description": "yue's blog: posts and notes collection",
   "version": "0.1.0",
   "author": "yue <blog@rainy.me>",
   "dependencies": {

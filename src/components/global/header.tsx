@@ -18,7 +18,6 @@ const GlobalHeader = styled.header`
 type HeaderProps = {
   siteTitle: string
 }
-const Humbergur = styled.p``
 
 const LeftCorner = styled.span``
 const RightCorner = styled.span`

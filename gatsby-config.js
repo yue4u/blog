@@ -1,7 +1,8 @@
+const packageInfo = require('./package.json')
 module.exports = {
   siteMetadata: {
     title: `浅色圆锥曲线爱好者`,
-    description: `random notes`,
+    description: packageInfo.description,
     author: `yue`,
     theme_color: "#333333",
     siteUrl: 'https://blog.rainy.me/'
