@@ -10,14 +10,23 @@ import {
   MarkdownContent,
   Comments,
 } from "../../components"
+import { formatDate } from "../../helpers"
 import { PaginationLink, PaginationNav } from "./pagination"
 
 const PostTitle = styled.h1`
   font-size: 4rem;
   word-break: break-word;
+  margin-bottom: 1rem;
   @media screen and (max-width: 700px) {
     font-size: 4rem;
   }
+`
+const PostDate = styled.time`
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-shadow: 0 0 1rem #000;
 `
 
 const PostLink = ({ data, linkType }) => {
@@ -46,6 +55,7 @@ export default function Post({ data, pageContext }) {
             dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}
           />
         </PostTitle>
+        <PostDate>{formatDate(post.frontmatter.date)}</PostDate>
         <MarkdownContent>
           <MDXRenderer>{post.body}</MDXRenderer>
         </MarkdownContent>
