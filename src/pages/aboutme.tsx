@@ -1,6 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
-import CodeBlock from "../components/common/codeBlock"
+
+import { Layout, CodeBlock } from "../components"
+
 export default function About() {
   const base = `
 let me = {

@@ -1,6 +1,6 @@
 import React from "react"
-import { DiscussionEmbed, DisqusConfig } from "disqus-react"
 import styled from "styled-components"
+import { DiscussionEmbed, DisqusConfig } from "disqus-react"
 
 const CommentBlock = styled.div`
   margin: 0 auto;

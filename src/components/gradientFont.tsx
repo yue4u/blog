@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { fonts } from "../../theme"
+import { fonts } from "../theme"
+
 export default styled.span`
   font-size: inherit;
   padding: 1rem;

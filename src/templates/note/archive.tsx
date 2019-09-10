@@ -1,13 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
 import styled from "styled-components"
+import { graphql } from "gatsby"
 import { animated } from "react-spring"
 import { Transition } from "react-spring/renderprops"
-import Layout from "../../components/layout"
-import SEO from "../../components/global/seo"
-import Course from "./course"
-import GradientFont from "../../components/common/gradientFont"
 
+import { SEO, Layout, GradientFont } from "../../components"
+
+import Course from "./course"
 const H1 = styled.h1`
   font-size: 5rem;
 `

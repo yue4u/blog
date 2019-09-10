@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { colors } from "../../theme"
+import { colors } from "../theme"
 
 const GlobalHeader = styled.header`
   background: ${colors.black};

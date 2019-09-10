@@ -1,7 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { animation } from "../../theme"
 import { Link } from "gatsby"
+
+import { animation } from "../../theme"
+
 const CourseItem = styled.div`
   transition: ${animation.fastIn};
   position: relative;

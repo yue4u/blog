@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../../theme"
+
+import { colors } from "../theme"
+
 const GlobalFooter = styled.footer`
   font-size: 1rem;
   background-color: ${colors.black};

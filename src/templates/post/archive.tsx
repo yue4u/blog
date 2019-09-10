@@ -1,15 +1,13 @@
 import React from "react"
-import Link from "gatsby-link"
-import { graphql } from "gatsby"
 import styled from "styled-components"
+import { Link, graphql } from "gatsby"
 import { animated } from "react-spring"
 import { Transition } from "react-spring/renderprops"
-import SEO from "../../components/global/seo"
 
-import Layout from "../../components/layout"
+import { SEO, Layout, GradientFont } from "../../components"
 import PostSummary from "./summay"
-import GradientFont from "../../components/common/gradientFont"
 import PostPagination from "./pagination"
+
 const Content = styled.div`
   max-width: 1000px;
   width: 90%;

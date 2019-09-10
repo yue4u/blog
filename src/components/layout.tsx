@@ -1,12 +1,12 @@
 import React from "react"
-
-import { StaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
-import Header from "./global/header"
-import Footer from "./global/footer"
-import { colors } from "../theme"
+import { StaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { Spring } from "react-spring/renderprops"
+
+import Header from "./header"
+import Footer from "./footer"
+import { colors } from "../theme"
 
 const GlobalStyle = createGlobalStyle`
 

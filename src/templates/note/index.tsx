@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import NoteList from "./list/index"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import SEO from "../../components/global/seo"
-import MarkdownContent from "../../components/common/markdownContent"
+
+import { SEO, Layout, MarkdownContent } from "../../components"
+import NoteList from "./list/index"
 
 const NoteLayout = styled.div`
   display: flex;

@@ -1,15 +1,16 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import SEO from "../../components/global/seo"
 import styled from "styled-components"
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import GradientFont from "../../components/common/gradientFont"
-import MarkdownContent from "../../components/common/markdownContent"
-import Link from "gatsby-link"
+import {
+  Layout,
+  SEO,
+  GradientFont,
+  MarkdownContent,
+  Comments,
+} from "../../components"
 import { PaginationLink, PaginationNav } from "./pagination"
-import Comments from "../../components/common/comments"
 
 const PostTitle = styled.h1`
   font-size: 4rem;

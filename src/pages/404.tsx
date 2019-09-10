@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import Link from "gatsby-link"
-import Layout from "../components/layout"
-import SEO from "../components/global/seo"
-import GradientFont from "../components/common/gradientFont"
+
+import { Link } from "gatsby"
+import { Layout, SEO, GradientFont } from "../components"
 
 const Title404 = styled.h1`
   font-size: 6rem;
