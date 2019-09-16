@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar{
     display:none;
   }
+  ::selection {
+  color: #fff;
+  background: skyblue;
+}
 }
 html,
 body {
