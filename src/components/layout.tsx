@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
   src: url('/fonts/GreatVibes-Regular.woff2') format('woff2');
 }
 *{
+  ::-webkit-scrollbar{
+    display:none;
+  }
 }
 html,
 body {
@@ -50,6 +53,9 @@ a {
     justify-content: space-between;
     min-height: 100%;
   }
+}
+main{
+  padding-bottom:3rem;
 }
 `
 
