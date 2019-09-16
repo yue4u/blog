@@ -10,11 +10,7 @@ tags:
 
 项目地址: [Github](https://github.com/minatsuki-yui/Launchpad-icon-deleter)
 
-::: danger
-
-非官方支持
-
-:::
+> 非官方支持
 
 以下是中文文档：
 

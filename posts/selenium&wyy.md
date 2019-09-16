@@ -9,7 +9,7 @@ tags:
 
 selenium 初使用。
 
-:::tips info
+```
 **版本信息**
 
 |       Python       |    3.6.0     |
@@ -18,7 +18,7 @@ selenium 初使用。
 | Chromedriver_mac64 |     2.33     |
 |       Chrome       | 62.0.3202.94 |
 
-:::
+```
 
 &nbsp;
 
