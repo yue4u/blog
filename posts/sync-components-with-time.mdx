@@ -1,0 +1,183 @@
+---
+title: 同步Timeline组件的时间
+date: 2019-09-17 00:52:13
+---
+
+import Sync from "../extra/syncedUpdate"
+
+最近工作中遇到了一个新需求，需要能在列表项目组件内显示创建时间和当前时间的差。
+
+> 原来是 vue 的项目，这里使用 react 重现
+
+## 方法 1
+
+implement 并不困难，但是由于每个组件被渲染的时间不同，组件更新时间会不同步，看上去非常不舒服。
+
+### 例
+
+<Sync.Example1/>
+
+### 代码
+
+```js
+// item
+const [time, setTime] = useState(item.time)
+
+useEffect(() => {
+  const id = setTimeout(() => {
+    setTime(time + 1)
+  }, 1000)
+  return () => clearTimeout(id)
+}, [time])
+```
+
+## 方法 2
+
+那么一个简单的解决方法是将计时器放在在父组件中，然后当父组件被渲染时启动计时器，
+讲计时器的数据传入子组件，这样就算子组件在不同的时间被渲染，更新也能同步
+
+### 例
+
+<Sync.Example2/>
+
+### 代码
+
+```js
+// parent
+const [time, setTime] = useState(0)
+
+useEffect(() => {
+  const id = setTimeout(() => {
+    setTime(time + 1)
+  }, 1000)
+  return () => clearTimeout(id)
+}, [time])
+
+return (
+  <>
+    {items.map(item => (
+      <Item key={item.id} item={item} parentTime={time} />
+    ))}
+  </>
+)
+```
+
+```jsx
+// item
+const Item = ({ item, parentTime }) => {
+  return <span>{parentTime + item.time}</span>
+}
+```
+
+## 方法 3
+
+但是时间本身就是人类共有全局变量，能否让子组件直接参照物理时间脱离对父组件计时器的依赖呢？
+
+答案是可能的，做法如下：
+
+子组件被渲染时和物理时间的下一秒进行对比，在`setTimeout`中补完时间差再进行更新，从而达到同步更新的效果
+
+### 例
+
+<Sync.Example3/>
+
+### 代码
+
+```jsx
+const Item = ({ item }) => {
+  const [time, setTime] = useState(item.time)
+
+  useEffect(() => {
+    const now = new Date()
+    let delta =
+      new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        now.getHours(),
+        now.getMinutes(),
+        now.getSeconds() + 1,
+        0
+      ).getTime() - now.getTime()
+
+    const id = setTimeout(() => {
+      setTime((time + 1) % 60)
+    }, delta)
+    return () => clearTimeout(id)
+  }, [time])
+
+  return <span>{time}</span>
+}
+```
+
+### 更进一步
+
+显然计算时间差也是会消耗运行时间的，那么连运行时间一起算上！
+
+```js
+const start = performance.now()
+const delta = calculateDelta()
+const end = performance.now()
+
+const id = setTimeout(() => {
+  setTime((time + 1) % 60)
+}, delta + start - end)
+```
+
+测试运行时间结果如下(max 的值波动较大)
+
+```
+avg: 0.0010236099998128338
+max: 0.44999999954598024
+min: 0
+```
+
+测试用代码
+
+```js
+const run = num => {
+  const calcTime = () => {
+    const now = new Date()
+    return (
+      new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        now.getHours(),
+        now.getMinutes(),
+        now.getSeconds() + 1,
+        0
+      ).getTime() - now.getTime()
+    )
+  }
+
+  let count = num
+  let avg = 0
+  let _max = 0
+  let _min = 1
+  while (count) {
+    const t1 = performance.now()
+    calcTime()
+    const t2 = performance.now()
+
+    const delta = t2 - t1
+    if (delta > _max) _max = delta
+    if (delta < _min) _min = delta
+
+    avg += delta
+    count--
+  }
+  console.log(`
+avg: ${avg / num}
+max: ${_max}
+min: ${_min}
+`)
+}
+
+run(1000000)
+```
+
+## 一些想法
+
+最后的解决方案达成了同步，但是多出来很多子组件内部的`setTimeout`实例，
+不知道比起方案 2 有多大的性能差别
