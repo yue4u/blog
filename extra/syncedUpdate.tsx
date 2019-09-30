@@ -29,7 +29,7 @@ export const ItemsProvider: FC = ({ children }) => {
   const [items, setItems] = useState<number[]>([])
 
   useEffect(() => {
-    if (items.length >= 10) return
+    if (items.length >= 12) return
     setTimeout(() => {
       setItems([...items, items.length + 1])
     }, Math.random() * 1000)
