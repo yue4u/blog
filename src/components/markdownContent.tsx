@@ -102,7 +102,8 @@ export default styled(CodeBlock)`
     border-radius: 5px;
     margin: 0 2px;
     padding: 1px 5px;
-    background-image: linear-gradient(100deg, #0097a7 47%, #9e9e9e);
+    font-family: "Fira Code";
+    background-image: linear-gradient(100deg, #455a64 47%, #757575);
   }
   @media screen and (max-width: 700px) {
     h2,
