@@ -1,5 +1,5 @@
 ---
-title: useSpringsの型を治す
+title: useSpringsの型を直す
 date: 2019-10-16 22:19:26
 tags:
 ---
