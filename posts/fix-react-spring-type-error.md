@@ -4,11 +4,13 @@ date: 2019-10-16 22:19:26
 tags:
 ---
 
-いろんなわけがあって、`react-spring`の[デモ](https://codesandbox.io/embed/j0y0vpz59)を typescript 化してみた、途中に謎のタイプエラーを遭遇して、それを解決するまでの推理を記録してみる。
+わけあって、`react-spring`の[Card Stack デモ](https://codesandbox.io/embed/j0y0vpz59)を `typescript` 化してみた、途中に謎のタイプエラーを遭遇して、それを解決するまでの推理を記事にした。
 
-デモコーデの中にこういう実装があった。
+`react-spring`のバーション: `^8.0.27`
 
-```ts
+デモの中にこういうコードがあった。
+
+```ts {1}
 set(i => {
   if (index !== i) return
   const isGone = gone.has(index)
@@ -25,7 +27,7 @@ set(i => {
 })
 ```
 
-そもままのタイプを使うと `set(i => {`の行が以下のエラーが出る
+そのままのタイプだと`set(i => {`の行が以下のエラーが出る
 
 ```
 (parameter) i: any
@@ -37,9 +39,9 @@ No overload matches this call.
     Argument of type '(i: any) => { x: number; rot: number; scale: number; delay: undefined; config: { friction: number; tension: number; }; } | undefined' is not assignable to parameter of type 'number'.ts(2769)
 ```
 
-つまり `set(i => {})`の引数の型が間違っていて、関数を渡すはずなのに、何故か`number`しか渡せなくってエラーが出る。
+つまり、`set(i => {})`の引数の型が間違っていて、関数を渡すはずなのに、何故か`number`しか渡せなくてエラーが出る。
 
-となると、`set`関数自体の型が間違た可能性が高く、追跡すると`set`は`useSprings`の返り値によって定義されていた。
+となると、`set`関数自体の型が間違えた可能性が高く、追跡すると`set`は`useSprings`の返り値によって定義された。
 
 ```ts
 const [props, set] = useSprings(cards.length, i => ({
@@ -76,7 +78,7 @@ export interface SetUpdateCallbackFn<DS extends object> {
 }
 ```
 
-`AnimatedValue`の部分とまとて、以下になる。
+`AnimatedValue`の部分とまとめて、以下になる。
 
 ```ts
 type useSpringsOverride<T extends Object> = [
@@ -85,7 +87,7 @@ type useSpringsOverride<T extends Object> = [
 ]
 ```
 
-これを使って type cast する
+これを使って type casting する
 
 ```ts
 const [props, set] = useSprings(cards.length, i => ({
@@ -94,4 +96,8 @@ const [props, set] = useSprings(cards.length, i => ({
 })) as useSpringsOverride<DeckProps>
 ```
 
-これでエラーが消えて、`set(i => { ... }`の部分にマウスをかざして `(parameter) i: number`が正しく表示されるようになった。
+これでエラーが消えて、`set(i => { ... }`の部分にマウスをかざすと `(parameter) i: number`が正しく表示されるようになった。
+
+## おまけ
+
+この記事書いた時点で `v9`ブランチはマスターブランチと 400 Commits 以上の差分があるので、近いうちに大きなアプデートが来ると思う
