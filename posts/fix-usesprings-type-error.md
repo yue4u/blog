@@ -39,9 +39,9 @@ No overload matches this call.
     Argument of type '(i: any) => { x: number; rot: number; scale: number; delay: undefined; config: { friction: number; tension: number; }; } | undefined' is not assignable to parameter of type 'number'.ts(2769)
 ```
 
-つまり、`set(i => {})`の引数の型が間違っていて、関数を渡すはずなのに、何故か`number`しか渡せなくてエラーが出る。
+これは、`set(i => {})`の引数の型が間違っているエラーである。関数を渡すはずなのに、何故か`number`しか渡せなくてエラーが出ている。
 
-となると、`set`関数自体の型が間違えた可能性が高く、追跡すると`set`は`useSprings`の返り値によって定義された。
+エラー結果から、`set`関数自体の型が間違えている可能性が高い。更に追跡すると`set`は`useSprings`の返り値によって定義されている。
 
 ```ts
 const [props, set] = useSprings(cards.length, i => ({
@@ -50,9 +50,9 @@ const [props, set] = useSprings(cards.length, i => ({
 }))
 ```
 
-よって、`useSprings`の返り値の型は多分合っていない。
+よって、`useSprings`の返り値の型は合っていない。
 
-自然に`useSprings`の返り値の型定義を見に行って、以下のコードになっていた。
+返り値の型が合っていないので`useSprings`の返り値の型定義を見に行くと、以下のコードになっていた。
 
 ```ts
 export function useSprings<DS extends object>(
