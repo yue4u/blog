@@ -1,0 +1,111 @@
+---
+title: Rust.tokyo
+date: 2019-10-26 13:08:39
+---
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ご来場のみなさま、スポンサーのみなさま、ボランティアスタッフのみなさま、ありがとうございました。<a href="https://t.co/SIEQeqN6NV">https://t.co/SIEQeqN6NV</a> は無事に終了しました！来年もいい会にしていきましょう！ <a href="https://twitter.com/hashtag/rust_tokyo?src=hash&amp;ref_src=twsrc%5Etfw">#rust_tokyo</a> <a href="https://t.co/ULhCuzqQE7">pic.twitter.com/ULhCuzqQE7</a></p>&mdash; Rust.Tokyo (@rustlang_tokyo) <a href="https://twitter.com/rustlang_tokyo/status/1188338697264959488?ref_src=twsrc%5Etfw">October 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Build a VM in Rust
+
+by [nervos](https://www.nervos.org/)
+
+### part-1
+
+why vm?
+
+- hardware emu
+- runtime platform
+- sandboxing
+
+`Nervis CKB`
+
+- algorithm as contract
+- higher level langs
+- Compatibility with exising blockchain ones
+- wasm
+
+[`riscv`](riscv.org)
+
+compilers like `gcc`, `llvm` support riscv backend
+
+### part-2
+
+rust on [ckb-vm](https://github.com/nervosnetwork/ckb-vm)
+
+-> hacker-friendly (only 8k loc)
+
+- [brson/ferris-fencing](https://github.com/brson/ferris-fencing)
+- [gihtub/nervosnetwork](https://github.com/nervosnetwork)
+
+[goblin](https://github.com/m4b/goblin) lib => everything about elf
+
+`cargo build --target=riscv`
+
+- no_std
+- copy paste panic handler
+- [`-> !`](https://www.reddit.com/r/rust/comments/3j22vx/what_is_the_meaning_of_as_a_return_type/)
+- `#[lang="start"]` [reference](https://github.com/rust-lang/rust/blob/eb5ef813f0d6e3fe8edd3abb046a18f5b1a8cc48/src/libstd/rt.rs#L571)
+
+[ferrisfencing.org](ferrisfencing.org)
+
+## The HItchhiker's Guide to Servo Contributor
+
+[speakerdeck](https://speakerdeck.com/cybai/the-hitchhikers-guide-to-servo-contributor)
+
+[`servo`](https://t.co/ObxIZJAAzs?amp=1)
+
+- webrender
+- stylo
+- r+ CI
+
+### labels
+
+labels => E for effort
+
+### servo starter
+
+-> read whatwg spec
+-> implement webapi
+
+`wpt` [web platform tests](https://github.com/web-platform-tests/wpt)
+
+[homu queue](https://buildbot2.rust-lang.org/homu/queue/rust)
+
+[blog.cybai.dev](blog.cybai.dev)
+
+## Rust libstd
+
+### `Nuttx`
+
+[speakerdeck](https://speakerdeck.com/sgy/cortex-m4f-and-prototyping-a-simple-web-server)
+
+- RTOS
+- std
+
+[PX4 Drone](https://github.com/px4)
+
+## Making an web framework
+
+[speakerdeck](https://speakerdeck.com/qnighy/making-an-opinionated-web-framework)
+
+- nails
+- realworld
+
+tokio vs rustasync
+
+[juniper](https://github.com/graphql-rust/juniper) gql
+
+nestjs / fastapi
+
+rust type => api schema
+
+trait to convert error to response
+
+## Holo chain
+
+[slide](https://www.canva.com/design/DADoLnHCj5I/OAhDok8khi1rJRztFi42_Q/view?utm_content=DADoLnHCj5I&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1)
+
+## contributing to rust
+
+Find things you can do and do it consistently.
+Meta-communicators are valuable.
