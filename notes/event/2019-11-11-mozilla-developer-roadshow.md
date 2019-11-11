@@ -31,7 +31,7 @@ we still have a interface problem
 
 AR as a situated control
 
-picked.cc/vr
+[picked.cc/vr](picked.cc/vr)
 
 platfrom lock-in
 
