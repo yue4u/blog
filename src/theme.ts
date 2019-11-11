@@ -1,5 +1,5 @@
 export const fonts = {
-  title: "great-vibes-merge, serif",
+  title: "'great-vibes-merge', 'noto-serif-sc'",
 }
 
 export const colors = {

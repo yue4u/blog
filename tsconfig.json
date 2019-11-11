@@ -1,9 +1,18 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": { "*": ["types/*"] },
+    "paths": {
+      "*": [
+        "types/*"
+      ]
+    },
     "module": "commonjs",
-    "lib": ["es2017", "es2016", "es2015", "dom"],
+    "lib": [
+      "es2017",
+      "es2016",
+      "es2015",
+      "dom"
+    ],
     "noImplicitAny": true,
     "allowJs": false,
     "removeComments": true,
@@ -17,10 +26,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "typeRoots": ["src"]
+    "typeRoots": [
+      "src"
+    ]
   },
   "rules": {
     "no-console": false,
-    "interface-name": [true, "never"]
+    "interface-name": [
+      true,
+      "never"
+    ]
   }
 }
