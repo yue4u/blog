@@ -1,5 +1,5 @@
 ---
-title: ReactJS Tokyo 19-04-19
+title: ReactJS Tokyo 19-06-26
 date: 2019-06-26 19:44:59
 ---
 
@@ -73,8 +73,8 @@ well-generalized |> not easy
 
 #### Testing
 
-- Jest 
-- Enzyme 
+- Jest
+- Enzyme
 - Cypress
 
 snapshot not enough
@@ -101,7 +101,7 @@ Measure => tool
 => build slow
 => parallelize
 
-20 * 3 |> 2h => .5h
+20 \* 3 |> 2h => .5h
 
 run tests selectively
 
