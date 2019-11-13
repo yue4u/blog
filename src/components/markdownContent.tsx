@@ -63,7 +63,7 @@ export default styled(CodeBlock)`
       content: " ";
       position: absolute;
       width: 100%;
-      height: 4px;
+      height: 2px;
       background-color: #607d8b;
       left: 0;
       bottom: 0;
@@ -73,7 +73,7 @@ export default styled(CodeBlock)`
       color: #fff;
       text-shadow: 0 0 3px #000;
       &::after {
-        height: 100%;
+        background-color: hotpink;
       }
     }
   }
@@ -96,7 +96,6 @@ export default styled(CodeBlock)`
     background-color: #333;
   }
   code {
-    color: #fff;
     text-shadow: 0 0 5px #000;
     word-break: break-word;
     border-radius: 5px;

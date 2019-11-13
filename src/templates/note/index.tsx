@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -18,7 +18,18 @@ const Content = styled.div`
 
 export default function Note({ data }) {
   const post = data.mdx
+  const isIndex = [...post.fields.slug.matchAll(/\//g)].length == 1
+  const links = data.sideBar.edges.map(({ node }) => ({
+    id: node.id,
+    ...node.frontmatter,
+    ...node.fields,
+  }))
 
+  const Item = (link: any) => (
+    <li>
+      <Link to={link.slug}>{link.title}</Link>
+    </li>
+  )
   return (
     <Layout>
       <SEO title={post.frontmatter.title} description={post.rawBody} />
@@ -28,6 +39,13 @@ export default function Note({ data }) {
           <h1>{post.frontmatter.title}</h1>
           <MarkdownContent>
             <MDXRenderer>{post.body}</MDXRenderer>
+            {isIndex && (
+              <ul>
+                {links.map(link => (
+                  <Item {...link} key={link.id} />
+                ))}
+              </ul>
+            )}
           </MarkdownContent>
         </Content>
       </NoteLayout>
@@ -38,6 +56,9 @@ export default function Note({ data }) {
 export const query = graphql`
   query($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       body
       rawBody
       frontmatter {
