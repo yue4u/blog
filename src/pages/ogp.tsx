@@ -11,7 +11,7 @@ const Global = createGlobalStyle`
 
 @font-face {
   font-family: 'noto-serif-sc';
-  src: url('/fonts/NotoSerifSC-Regular.woff2') format('woff2');
+  src: url('/fonts/NotoSerifSC-Regular.subset.woff2') format('woff2');
 }
 
 html, body {
