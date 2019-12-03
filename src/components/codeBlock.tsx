@@ -8,8 +8,10 @@ export default styled.article`
     padding: 1rem;
     font-size: 0.9rem;
     overflow: scroll;
-    border-left: 3px solid cadetblue;
     text-align: left;
+    border: 0;
+    box-shadow: 0 0 10px #111;
+    border-radius: 10px;
     code {
       font-family: "Fira Code";
       background: none;
