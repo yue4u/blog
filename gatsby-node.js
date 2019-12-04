@@ -201,20 +201,27 @@ exports.onPreBuild = ({ graphql }) => {
       const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
       const unicodes = chars
         .map(
-          char =>
-            "U+" +
-            char
-              .charCodeAt(0)
-              .toString(16)
-              .padStart(4, "0")
+          char => {
+            const uChar = "U+" +
+              char
+                .charCodeAt(0)
+                .toString(16)
+                .padStart(4, "0")
+            //    console.log(`${char} => ${uChar}`)
+
+            return uChar
+          }
         )
         .join(",")
 
-
+      const SUBSET = `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `
+      console.log(SUBSET)
       exec(
-        `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `,
-        () => {
-
+        SUBSET,
+        (err) => {
+          if (err) {
+            throw err
+          };
           console.log("generated new font")
           console.log(`
           
