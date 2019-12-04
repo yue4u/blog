@@ -1,19 +1,12 @@
 .env
 .DS_Store
-node_modules/
-posts/.vuepress/dist
-# ignore old hexo
-hexo
 .deploy*/
-# public/
-Thumbs.db
 *.log
-db.json
 .deploy
 .idea
-scripts
-
-imgs
-posts/.vuepress/theme
 .cache
+
+node_modules/
+scripts
+imgs
 public
