@@ -50,9 +50,9 @@ export default styled(CodeBlock)`
     margin: 2rem auto;
     max-width: 100%;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.8;
     &:hover {
-      opacity: 0.9;
+      opacity: 1;
     }
   }
   a {
