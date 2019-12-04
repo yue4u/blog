@@ -198,8 +198,8 @@ exports.onPreBuild = ({ graphql }) => {
       const titles = result.data.allMdx.edges.map(
         ({ node }) => node.frontmatter.title
       )
-
-      const unicodes = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
+      const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
+      const unicodes = chars
         .map(
           char =>
             "U+" +
@@ -210,10 +210,17 @@ exports.onPreBuild = ({ graphql }) => {
         )
         .join(",")
 
+
       exec(
         `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `,
         () => {
+
           console.log("generated new font")
+          console.log(`
+          
+          ${chars}
+          
+          `)
           exec(`ls -l --block-size=KB static/fonts `).stdout.pipe(process.stdout);
           ok();
         }
