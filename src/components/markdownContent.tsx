@@ -47,7 +47,7 @@ export default styled(CodeBlock)`
   img {
     transition: 0.3s all ease-in-out;
     display: block;
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 100%;
     object-fit: contain;
     opacity: 0.6;
