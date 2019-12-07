@@ -1,0 +1,128 @@
+---
+title: 2019-12-07-xr-tech-tokyo
+date: 2019-12-07 17:49:08
+---
+
+## VR脱出アドベンチャーゲーム『Last Labyrinth（ラストラビリンス）』での没入感向上テクニック
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3EpgRaN9TnM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+非言語的コミュニケーション
+
+没入感を阻害する要因
+
+- 身体感覚のずれ(腕の長さなど)
+- 腕のなかさ
+- 姿勢の差
+- 補正
+- コントローラー操作が複雑
+
+VR酔い
+身体感覚が弱い
+
+現実世界に存在しないもの
+キャラクター違和感問題
+
+ゲームデザイン
+
+姿勢など一致する
+入力簡単化
+言葉が通じない
+移動を辞める
+
+アニメーター && テクニカルアーティスト 優位
+
+ホラーの表現
+
+ジャンプスケアを排除
+
+視線誘導
+死亡原因
+想像しやすい死亡原因
+
+マイルドで表現
+流行月、人体損壊ゼロ
+死亡した顔を見せない
+
+寸止めブラックアウト
+
+No UI
+説得力がある世界観
+
+## アナログとデジタルを溶け合わせて作る「体験としてのAR」作り
+
+AR marker
+|> cloud vision api
+|> poly
+
+アプリ => メタファー => AR
+
+sky letter
+
+地図記号 => AR
+
+アナログ 体験の入口
+
+メタファー
+ラビットホール
+コピーライティング
+
+## Pool VR
+プルー関連の撮影
+
+Rockin'Pool
+
+tokyo pool labo
+
+- 仮設検証
+- タピオカ理論
+
+映えの要素を入れる
+
+日経トレンディ
+
+- 全部乗せラーメン理論
+- ホッキュクジラ理論
+
+## LT
+
+### SwiftでARKit3を使うには
+
+AR configuration
+
+Swift invader
+
+### 全てBlenderでつくるCG VRの可能性
+
+prerendering
+
+ec2 s3 batch
+
+@r_etx
+
+### ARKit 3のモーションキャプチャを録画してみた
+
+arkit 3
+リリカ
+
+モーションデータ
+humanroid
+
+
+kinect
+チュウニング
+
+drumath
+
+tgs 審査 インターネット
+
+
+### Hanger Drive: 人間制御によるsegway driftの自動運転化
+
+segway drift
+
+ハンガー反射
+
+### ARで悪の会議を実現する
+
+webRTC...
