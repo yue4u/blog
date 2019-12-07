@@ -1,5 +1,5 @@
 ---
-title: 2019-12-07-xr-tech-tokyo
+title: "xR Tech Tokyo #18 @ ソフトバンク"
 date: 2019-12-07 17:49:08
 ---
 
