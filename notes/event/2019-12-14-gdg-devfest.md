@@ -3,9 +3,11 @@ title: 2019-12-14-gdg-devfest
 date: 2019-12-14 13:11:29
 ---
 
-## BigQuery
+## [BigQuery](https://cloud.google.com/bigquery/)
 
-a> The 12 components of google bigquery
+[The 12 components of google bigquery](https://medium.com/google-cloud/the-12-components-of-google-bigquery-c2b49829a7c7)
+
+contianer-based search
 
 完全のSAAS
 
@@ -13,54 +15,49 @@ a> The 12 components of google bigquery
 - Capacitor
 - Poseidon
 
-お互い影響しない(contianer-based)
+お互い影響しない
 
-?> Avro
-?> Dremel
-?> Brog
-?> SDN (jupiter)
+- [Avro](https://avro.apache.org/)
+- [Dremel](https://ai.google/research/pubs/pub36632)
+- [Brog](https://ai.google/research/pubs/pub43438)
+- [SDN (jupiter)](https://www.sdxcentral.com/articles/news/google-brings-sdn-public-internet/2017/04/)
 
-?> bigquery prcing
-
-AI encryted row/table
+AI encrypted sensitive data row/table for dedicated user
 
 11億行...
 
 50+G << 2.6s
 
-like performance << 5s
+like operator performance << 5s
 
-query along data
+query along talking
 
-a> BQML
+[BQML](https://cloud.google.com/bigquery-ml/docs/)
 
-?> martix factorlization
+[matrix factorization](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems))
 
 also can import TF models
 
-?> GIS
+[GIS](https://www.esri.com/en-us/what-is-gis/overview)
 
-GIS is avaliable
+GIS is [avaliable](https://cloud.google.com/bigquery/docs/gis-visualize)
 
-bigquery geo viz
-
-muti-region
-
+[bigquery geo viz](https://bigquerygeoviz.appspot.com/)
 
 ## GCP 101: Getting started through Cloud Run
 
 [cloud.run](cloud.run)
 
-?> knative + tutorials
+[knative](https://github.com/knative) + tutorials
 
 default
 
 - 80 reqs per instance
 - 1000 containers
 
-[gcr.io](gcr.io)
+[gcr.io](gcr.io) <=> Google Container Registry
 
-cloud run + firebase
+cloud run + firebase routing coexist
 
 "run" servicID region...
 
@@ -97,7 +94,7 @@ ads or shops based on user
 
 ## developing in the dark
 
-?? (edge cases && offline && mutiple devices
+?? (edge cases && offline && multiple devices
 && storage && power && connectivity
 && understanding && perception && localization)
 
@@ -118,9 +115,21 @@ how to get back..
 
 consider gender politics regions ...
 
-! disablities
+! disabilities
 
 build with the global audience in mind
 
 mobile first => global first
 
+## Flutter overview
+
+[skia](https://github.com/google/skia)
+
+Flutterが向いていない場合
+
+- 少数画面機能特化
+  > カメラ、動画、地図...
+- ゲーム
+  > ゲームフレームワークではない
+
+FlutterはReact Nativeのようにplatform componentsを使うじゃなくて直接描画しているのでプラットフォーム間の差異が少ない
