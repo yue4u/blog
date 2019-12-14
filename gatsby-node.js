@@ -226,7 +226,7 @@ exports.onPreBuild = ({ graphql }) => {
           console.log(`
           
           ${chars}
-          
+
           `)
           exec(`ls -l --block-size=KB static/fonts `).stdout.pipe(process.stdout);
           ok();
