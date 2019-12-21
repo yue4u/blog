@@ -93,13 +93,15 @@ export default styled(CodeBlock)`
   }
   blockquote {
     padding: 1rem;
+    margin: 1rem 0;
     background-color: #333;
   }
   code {
     text-shadow: 0 0 5px #000;
     word-break: break-word;
     border-radius: 5px;
-    margin: 0 2px;
+    margin: 5px 2px;
+    display: inline-block;
     padding: 1px 5px;
     font-family: "Fira Code";
     background-image: linear-gradient(100deg, #455a64 47%, #757575);
