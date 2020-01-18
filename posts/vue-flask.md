@@ -38,7 +38,7 @@ tags:
 
 添加时会自动判断语言，中文查 wiki，英文有道，日文的话大辞林。
 
-<a href="https://cuntuku.com/image/KwIZr">![](https://storage4.cuntuku.com/2018/01/04/KwIZr.gif)</a>
+![](https://storage4.cuntuku.com/2018/01/04/KwIZr.gif)
 
 ![](https://storage7.cuntuku.com/2018/01/04/Kwwcd.gif)
 

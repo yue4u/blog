@@ -50,16 +50,16 @@ $$J(\theta) = -\frac{1}{m}[\sum\_{i=1}^my^{(i)}logh\_\theta(x^{(i)})+(1-y^{(i)})
 
 最后我们得到的类似下图中一样的分界线
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/gp/148985391@N02/05E30w" title="屏幕快照 2017-09-22 上午4.06.30">![](https://farm5.staticflickr.com/4357/36559893303_8004cc3457_b.jpg)</a>
+![](https://farm5.staticflickr.com/4357/36559893303_8004cc3457_b.jpg)
 
 。你肯定要问为什么是线性的。显然这个世界并没有那么简单，比如这个学生恋爱的概率说不定和长相的 3 次方相关，和身高的平方相关，和 GPA 的反比有关，那么就会得到一个更加复杂的多的方程，可能是\\(\theta_1x_1^{3}+\theta_2x_2^{9}+\theta_3x_1x_2x_3^{-2}+\theta_4x_4x_5^2+...+\theta_ix_i^{4}\\)之类的,那么就能拟合很多的非线形情况了。
 
 于是就到了介绍 Overfitting，也就是过度拟合的时候。图片来自 coursera 讲义
 如下图所示，左边的对情况拟合不足，中间的正好，而右边的过度拟合。
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/gp/148985391@N02/ehov1L" title="11">![](https://farm5.staticflickr.com/4374/36560020543_45deaf97a7_b.jpg)</a>
+![](https://farm5.staticflickr.com/4374/36560020543_45deaf97a7_b.jpg)
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/gp/148985391@N02/17K47s" title="12">![](https://farm5.staticflickr.com/4393/37200616362_b3f891e078_b.jpg)</a>
+![](https://farm5.staticflickr.com/4393/37200616362_b3f891e078_b.jpg)
 为什么过渡拟合不好呢？答案是对可能的未知的数据的预测能力不足。也就背离了我们机器学习的初衷。通常的的办法有在 CostFunction 后面加上 \\(\lambda\sum\_{j=1}^n\theta_j^{2}\\) 提高学习\\(\theta\\)的成本，或是减少特征的数量，或者是提供更大的数据集。
 
 &nbsp;
