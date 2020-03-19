@@ -37,7 +37,7 @@
     "react-icons": "^3.8.0",
     "react-spring": "^8.0.27",
     "resize-observer-polyfill": "^1.5.1",
-    "typescript": "^3.7.4"
+    "typescript": "^3.8.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.9.1",
