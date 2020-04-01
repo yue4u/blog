@@ -5,7 +5,7 @@ tags:
   - new
 ---
 
-由于一些原因需要使用`webpack`交叉编译一个`ts` + `yarn workspace`的 app。web 端没有什么遇到是什么问题，但是交叉编译服务器端一直报错，查阅了很多资料终于解决。
+由于一些原因需要使用`webpack`交叉编译一个`ts` + `yarn workspace`的 app。web 端没有什么遇到什么问题，但是交叉编译服务器端一直报错，查阅了很多资料终于解决。
 
 - [简单的可以运行的例子](https://github.com/rainy-me/webpack-express-ts-monorepo)
 

@@ -1,0 +1,163 @@
+---
+title: 「测试并优化」useCallback, useMemo 与 React.memo
+date: 2020-04-02 01:09:10
+tags:
+  - new
+---
+
+有人一直问我有关 `React.memo`,`useCallback` 和 `useMemo` 正确使用的问题，正好上周有做相关的工作就在这里总结一下。
+
+## 测试代码(不包含 style)：
+
+```tsx
+import React, { memo, useMemo, useState, useCallback } from "react"
+
+const Child = ({
+  index,
+  decrease,
+}: {
+  index: number
+  decrease: () => void
+}) => {
+  const [state, setState] = useState(0)
+  console.log(`${index} rerender`)
+  return (
+    <div>
+      <p>child:{state}</p>
+      <button onClick={decrease}>parent -</button>
+      <button onClick={() => setState(state + 1)}>child +</button>
+    </div>
+  )
+}
+
+const MemoizedChild = memo(Child)
+
+export default function Parent() {
+  const [count, setCount] = useState(0)
+  const increase = () => setCount(count => count + 1)
+  const decrease = () => setCount(count => count - 1)
+  const decreaseCallback = useCallback(() => decrease(), [])
+
+  const UseMemoChild1 = useMemo(() => <Child index={5} decrease={decrease} />, [
+    decrease,
+  ])
+  const UseMemoChild2 = useMemo(
+    () => <Child index={6} decrease={decreaseCallback} />,
+    [decreaseCallback]
+  )
+
+  return (
+    <>
+      <p>Count {count}</p>
+      <button onClick={increase}>parent +</button>
+      <Child index={1} decrease={decrease} />
+      <Child index={2} decrease={decreaseCallback} />
+      <MemoizedChild index={3} decrease={decrease} />
+      <MemoizedChild index={4} decrease={decreaseCallback} />
+      {UseMemoChild1}
+      {UseMemoChild2}
+    </>
+  )
+}
+```
+
+## 渲染结果：
+
+import Demo from "../extra/useCallbackUseMemoDemo"
+
+<Demo />
+
+这边有六个子组件的例子，分别使用不同的渲染逻辑
+
+- Child-1 传入普通的 `decrease` 函数
+- Child-2 传入使用`useCallback`的`decrease`函数
+- Child-3 使用 `memo`，传入普通的 `decrease` 函数
+- Child-4 使用 `memo`，传入使用`useCallback`的`decrease`函数
+- Child-5 使用 `useMemo`，用普通的 `decrease` 函数作为`dependency array`
+- Child-6 使用 `useMemo`，用使用`useCallback`的`decrease`函数作为`dependency array`
+
+当按下 `child +` 的时候对应的子组件再渲染一次。没有什么好奇怪的。
+
+但是当我们按下`parent -` 或者 `parent +`，只有 Child-1, Child-2, Child-3, Child-5 被再次渲染。这是为什么的呢？
+
+其实看 react 的开发工具就很明显
+
+事前准备:
+
+- 在`Profiler`里选上记录每次渲染的理由
+
+![](https://cloud.rainy.me/blog/c4d01a.png)
+
+- 在通常里同样可以选上高亮渲染中的组件，哪个组件发生了再渲染一目了然。
+
+![](https://cloud.rainy.me/blog/db1c74.png)
+
+通过 profiling 记录点击事件。然后可以的到这样的`Framegraph`
+
+![](https://cloud.rainy.me/blog/35d43d.png)
+
+hover 到第一个 Child 组件上，可以看到产生再渲染的理由是 `decrease`这个`props`发生了改变。由于 js 的特性，当父组件发生在渲染的时候，`decrease`这个函数也会被重新声明，导致和之前的函数 reference 不同，所以产生了 props 的不同，导致再渲染
+
+```tsx
+<Child index={1} decrease={decrease} />
+```
+
+![](https://cloud.rainy.me/blog/29b221.png)
+
+hover 到第二个 Child 组件上，可以看到在渲染的理由是`The parent component rendered`也就是由于父组件发生再渲染，这个子组件也产生了再渲染。因为使用了`useCallback`，所以 props 并没有发生改变。
+
+```tsx
+<Child index={2} decrease={decreaseCallback} />
+```
+
+![](https://cloud.rainy.me/blog/9943f7.png)
+
+hover 到第三个 Child 组件上，可以看见再渲染的理由和第一个一样。这边虽然使用了`memo`但是由于 props 的改变，`memo`并没有产生期待的效果。
+
+```tsx
+<MemoizedChild index={3} decrease={decrease} />
+```
+
+![](https://cloud.rainy.me/blog/0e0ec1.png)
+
+第四个组件，开发工具显示并没有在这个周期内发生再渲染。由于 props 并没有发生改变，用是使用了`memo`，即使父组件发生再渲染，子组件不会产生不不必要的渲染。这个原来的`Pure Component`是类似的。
+
+```tsx
+<MemoizedChild index={4} decrease={decreaseCallback} />
+```
+
+![](https://cloud.rainy.me/blog/5d11e3.png)
+
+第五个子组件，发生再渲染的理由和第一个一样，虽然这里使用了`useMemo`，但是由于`decrease`函数的改变同样发生了更新。如果看页面的 console，可以看到这样的警告：
+
+```tsx
+const UseMemoChild1 = useMemo(() => <Child index={5} decrease={decrease} />, [
+  decrease,
+])
+return <>{UseMemoChild1}</>
+```
+
+```log
+Line 26:9:  The 'decrease' function makes the dependencies ofuseMemo Hook (at line 29) change on every render.
+To fix this, wrap the 'decrease' definition into its own useCallback() Hook  react-hooks/exhaustive-deps
+```
+
+![](https://cloud.rainy.me/blog/1b9309.png)
+
+```tsx
+const UseMemoChild2 = useMemo(
+  () => <Child index={6} decrease={decreaseCallback} />,
+  [decreaseCallback]
+)
+return <>{UseMemoChild2}</>
+```
+
+第六个组件和第四个一样没有发生再渲染。
+
+那么什么时候使用`memo`，什么时候使用`useMemo`呢？ 个人认为要基于子组件的具体使用情况选择。`useMemo`的好处是可以在父组件中很清晰的看到什么时候子组件会发生再渲染。但是只能在父组件内部有效。如果一个组件在许多地方都有使用，并且基本渲染方式只取决于 props 的话`export`一个`memo`化的组件更加合适。
+
+## appendix
+
+最近读了一篇有关 redux 的性能优化文章觉得非常有道理。十分推荐阅读。 >> [Why you should use an object, and not an array, for lists in Redux](https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-why-you-should-use-an-object-not-an-array-for-lists-bee4a1fbc8bd)
+
+在进行 list 的 `CRUD` 操作时，`object` 比 `list` 不仅性能好实际的 `reducer` 也写起来方便的多。可以说是非魔法的优化技巧了。
