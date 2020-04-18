@@ -84,12 +84,12 @@ export default function IndexPage() {
     <Nav>
       <Transition
         items={navList}
-        keys={nav => nav.label}
+        keys={(nav) => nav.label}
         from={{ opacity: 0, transform: "translateY(40px)" }}
         enter={{ opacity: 1, transform: "translateY(0px)" }}
         leave={{ opacity: 0, transform: "translateY(40px)" }}
       >
-        {nav => style => (
+        {(nav) => (style) => (
           <animated.li style={style}>
             <NavLink>
               <Link to={nav.link}>{nav.label}</Link>
@@ -101,7 +101,7 @@ export default function IndexPage() {
   )
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" path="/" />
       <H1>Blog of yue</H1>
       <Callout>
         正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。

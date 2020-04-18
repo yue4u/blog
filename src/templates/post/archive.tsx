@@ -29,7 +29,7 @@ export default function Posts({ data, pageContext }) {
 
   return (
     <Layout>
-      <SEO title="Posts" />
+      <SEO title="Posts" path="/posts" />
       <Content>
         <PostsTitle>
           <GradientFont>Posts</GradientFont>
@@ -44,12 +44,12 @@ export default function Posts({ data, pageContext }) {
         <ul>
           <Transition
             items={nodes}
-            keys={node => node.id}
+            keys={(node) => node.id}
             from={{ opacity: 0, transform: "translateY(40px)" }}
             enter={{ opacity: 1, transform: "translateY(0px)" }}
             leave={{ opacity: 0, transform: "translateY(40px)" }}
           >
-            {node => style => (
+            {(node) => (style) => (
               <animated.li style={style}>
                 <Link to={node.fields.slug}>
                   <PostSummary detail={node.frontmatter} />

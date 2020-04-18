@@ -45,10 +45,14 @@ const PostLink = ({ data, linkType }) => {
 
 export default function Post({ data, pageContext }) {
   const post = data.mdx
-  const { prev, next, identifier } = pageContext
+  const { prev, next, identifier, slug } = pageContext
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.rawBody} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.rawBody}
+        path={`/${slug}`}
+      />
       <div>
         <PostTitle>
           <GradientFont
@@ -65,7 +69,7 @@ export default function Post({ data, pageContext }) {
         <PostLink data={next} linkType={"next"} />
       </PaginationNav>
       <Comments
-        url={`https://blog.rainy.me/${pageContext.slug}`}
+        url={`https://blog.rainy.me/${slug}`}
         identifier={identifier}
         title={post.frontmatter.title}
       />

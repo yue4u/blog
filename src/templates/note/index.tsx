@@ -16,7 +16,7 @@ const Content = styled.div`
   width: 100%;
 `
 
-export default function Note({ data }) {
+export default function Note({ data, pageContext }) {
   const post = data.mdx
   const isIndex = [...post.fields.slug.matchAll(/\//g)].length == 1
   const links = data.sideBar.edges.map(({ node }) => ({
@@ -25,6 +25,8 @@ export default function Note({ data }) {
     ...node.fields,
   }))
 
+  const { slug } = pageContext
+
   const Item = (link: any) => (
     <li>
       <Link to={link.slug}>{link.title}</Link>
@@ -32,7 +34,11 @@ export default function Note({ data }) {
   )
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.rawBody} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.rawBody}
+        path={`/${slug}`}
+      />
       <NoteLayout>
         <NoteList data={data.sideBar} />
         <Content>
@@ -41,7 +47,7 @@ export default function Note({ data }) {
             <MDXRenderer>{post.body}</MDXRenderer>
             {isIndex && (
               <ul>
-                {links.map(link => (
+                {links.map((link) => (
                   <Item {...link} key={link.id} />
                 ))}
               </ul>

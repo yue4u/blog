@@ -33,12 +33,12 @@ export default function Notes({ data }: any) {
     <CourseList>
       <Transition
         items={nodes}
-        keys={node => node.id}
+        keys={(node) => node.id}
         from={{ opacity: 0, transform: "translateY(40px)" }}
         enter={{ opacity: 1, transform: "translateY(0px)" }}
         leave={{ opacity: 0, transform: "translateY(40px)" }}
       >
-        {node => style => (
+        {(node) => (style) => (
           <animated.li style={style}>
             <Course style={style} node={node} />
           </animated.li>
@@ -48,7 +48,7 @@ export default function Notes({ data }: any) {
   )
   return (
     <Layout>
-      <SEO title="Notes" />
+      <SEO title="Notes" path="/notes" />
       <H1>
         <GradientFont>Notes</GradientFont>
       </H1>

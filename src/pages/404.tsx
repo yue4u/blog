@@ -23,7 +23,7 @@ const BackHome = styled.span`
 `
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404" />
+    <SEO title="404" path="/404" />
     <Title404>
       <GradientFont>404</GradientFont>
     </Title404>

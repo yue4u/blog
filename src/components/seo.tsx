@@ -8,6 +8,7 @@ type Meta = {
 }
 
 type SEOProps = {
+  path: string
   lang?: string
   meta?: Meta[]
   description?: string
@@ -31,6 +32,7 @@ export default function SEO({
   lang = "en",
   meta = [],
   title = "",
+  path,
 }: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
@@ -40,6 +42,7 @@ export default function SEO({
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -91,6 +94,7 @@ export default function SEO({
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[{ rel: "canonical", href: `${site.siteMetadata.siteUrl}${path}` }]}
     />
   )
 }
