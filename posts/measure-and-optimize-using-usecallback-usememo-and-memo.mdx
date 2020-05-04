@@ -34,8 +34,8 @@ const MemoizedChild = memo(Child)
 
 export default function Parent() {
   const [count, setCount] = useState(0)
-  const increase = () => setCount(count => count + 1)
-  const decrease = () => setCount(count => count - 1)
+  const increase = () => setCount((count) => count + 1)
+  const decrease = () => setCount((count) => count - 1)
   const decreaseCallback = useCallback(() => decrease(), [])
 
   const UseMemoChild1 = useMemo(() => <Child index={5} decrease={decrease} />, [
@@ -160,4 +160,4 @@ return <>{UseMemoChild2}</>
 
 最近读了一篇有关 redux 的性能优化文章觉得非常有道理。十分推荐阅读。 >> [Why you should use an object, and not an array, for lists in Redux](https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-why-you-should-use-an-object-not-an-array-for-lists-bee4a1fbc8bd)
 
-在进行 list 的 `CRUD` 操作时，`object` 比 `list` 不仅性能好实际的 `reducer` 也写起来方便的多。可以说是非魔法的优化技巧了。
+在进行 list 的 `CRUD` 操作时，`object` 比 `list` 不仅性能好实际的 `reducer` 也写起来方便的多。可以说是非常魔法的优化技巧了。
