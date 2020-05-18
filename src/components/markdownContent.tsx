@@ -106,6 +106,10 @@ export default styled(CodeBlock)`
     font-family: "Fira Code";
     background-image: linear-gradient(100deg, #455a64 47%, #757575);
   }
+  iframe {
+    margin: 0 auto;
+    display: inherit;
+  }
   @media screen and (max-width: 700px) {
     h2,
     h3,
