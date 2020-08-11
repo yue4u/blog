@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import { colors } from "../theme"
 
 const GlobalHeader = styled.header`
@@ -31,6 +32,12 @@ const RightCorner = styled.span`
 export default function Header({ siteTitle }: HeaderProps) {
   return (
     <GlobalHeader>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css"
+        />
+      </Helmet>
       <LeftCorner>
         <Link to="/">{siteTitle}</Link>
       </LeftCorner>

@@ -1,8 +1,6 @@
 import styled from "styled-components"
 
 export default styled.article`
-  @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
-
   pre {
     background-color: #333;
     padding: 1rem;
