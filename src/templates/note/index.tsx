@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
 import { SEO, Layout, MarkdownContent } from "../../components"
 import NoteList from "./list/index"
 
@@ -29,7 +28,7 @@ export default function Note({ data, pageContext }) {
 
   const Item = (link: any) => (
     <li>
-      <Link to={link.slug}>{link.title}</Link>
+      <Link to={`/${link.slug}`}>{link.title}</Link>
     </li>
   )
   return (

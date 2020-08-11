@@ -5,10 +5,10 @@ const courseTitle = require("./src/i18n/courseTitle.json")
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'extra'), 'node_modules']
-    }
-  });
-};
+      modules: [path.resolve(__dirname, "extra"), "node_modules"],
+    },
+  })
+}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -67,7 +67,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
@@ -98,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     const notes = result.data.allDirectory.edges
     const notesPerPage = 20
     const numPages = Math.ceil(notes.length / notesPerPage)
@@ -140,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     const posts = result.data.allMdx.edges
     const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
@@ -180,59 +180,49 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onPreBuild = ({ graphql }) => {
-  console.log('preBuild fonts!')
+  console.log("preBuild fonts!")
   return graphql(`
-  {
-    allMdx {
-      edges {
-        node {
-          frontmatter {
-            title
+    {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              title
+            }
           }
         }
       }
     }
-  }
-`).then(result => {
-    return new Promise(ok => {
+  `).then((result) => {
+    return new Promise((ok) => {
       const titles = result.data.allMdx.edges.map(
         ({ node }) => node.frontmatter.title
       )
       const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
       const unicodes = chars
-        .map(
-          char => {
-            const uChar = "U+" +
-              char
-                .charCodeAt(0)
-                .toString(16)
-                .padStart(4, "0")
-            //    console.log(`${char} => ${uChar}`)
+        .map((char) => {
+          const uChar = "U+" + char.charCodeAt(0).toString(16).padStart(4, "0")
+          //    console.log(`${char} => ${uChar}`)
 
-            return uChar
-          }
-        )
+          return uChar
+        })
         .join(",")
 
       const SUBSET = `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `
       console.log(SUBSET)
-      exec(
-        SUBSET,
-        (err) => {
-          if (err) {
-            throw err
-          };
-          console.log("generated new font")
-          console.log(`
+      exec(SUBSET, (err) => {
+        if (err) {
+          throw err
+        }
+        console.log("generated new font")
+        console.log(`
           
           ${chars}
 
           `)
-          exec(`ls -l --block-size=KB static/fonts `).stdout.pipe(process.stdout);
-          ok();
-        }
-      )
-    }
-    )
+        exec(`ls -l --block-size=KB static/fonts `).stdout.pipe(process.stdout)
+        ok()
+      })
+    })
   })
 }

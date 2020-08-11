@@ -31,13 +31,13 @@ const PostDate = styled.time`
 
 const PostLink = ({ data, linkType }) => {
   if (!data) {
-    return <Link to={"#"} />
+    return <Link to="#" />
   }
   const title = data.frontmatter.title
   const arrow = linkType === "prev" ? `< ${title}` : `${title} >`
 
   return (
-    <Link to={data.fields.slug}>
+    <Link to={`/${data.fields.slug}`}>
       <PaginationLink active>{arrow}</PaginationLink>
     </Link>
   )

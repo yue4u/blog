@@ -175,7 +175,11 @@ export default function NoteList({ data }: any) {
         <Tree name={""} open={true}>
           {data.edges.map(({ node }, i) => (
             <Tree
-              name={<Link to={node.fields.slug}>{node.frontmatter.title}</Link>}
+              name={
+                <Link to={`/${node.fields.slug}`}>
+                  {node.frontmatter.title}
+                </Link>
+              }
               key={`node-${i}`}
             >
               {node.headings.map((heading, i) => (

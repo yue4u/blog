@@ -51,7 +51,7 @@ export default function Posts({ data, pageContext }) {
           >
             {(node) => (style) => (
               <animated.li style={style}>
-                <Link to={node.fields.slug}>
+                <Link to={`/${node.fields.slug}`}>
                   <PostSummary detail={node.frontmatter} />
                 </Link>
               </animated.li>

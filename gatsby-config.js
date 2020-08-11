@@ -1,11 +1,11 @@
-const packageInfo = require('./package.json')
+const packageInfo = require("./package.json")
 module.exports = {
   siteMetadata: {
     title: `浅色圆锥曲线爱好者`,
     description: packageInfo.description,
     author: `yue`,
     theme_color: "#333333",
-    siteUrl: 'https://blog.rainy.me/'
+    siteUrl: "https://blog.rainy.me/",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -16,13 +16,19 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/`,
-        ignore: [`**/\.*`, `*.cache/`],
+        ignore: [
+          `**/\.*`,
+          `**/.git/**/*`,
+          `**/.cache/**/*`,
+          `**/.deploy/**/*`,
+          `**/public/**/*`,
+        ],
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.md', '.mdx'],
+        extensions: [".md", ".mdx"],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
@@ -34,8 +40,8 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
-        ]
-      }
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,

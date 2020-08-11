@@ -26,14 +26,14 @@ type PaginationLinkProps = {
 
 export const PaginationLink = styled.span<PaginationLinkProps>`
   transition: 0.5s all cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: ${props => (props.active ? "#0 0 5px #000;" : "none")};
-  background: ${props => (props.active ? "#333" : "none")};
-  color: ${props => (props.active ? "none" : "#555")};
+  box-shadow: ${(props) => (props.active ? "#0 0 5px #000;" : "none")};
+  background: ${(props) => (props.active ? "#333" : "none")};
+  color: ${(props) => (props.active ? "none" : "#555")};
   border-radius: 5px;
   padding: 0.5rem;
   background-size: 200%, 150%;
   &:hover {
-    background-color: ${props => (props.active ? "#e91e63" : "none")};
+    background-color: ${(props) => (props.active ? "#e91e63" : "none")};
   }
 `
 
