@@ -37,7 +37,8 @@
     "react-icons": "^3.10.0",
     "react-spring": "^8.0.27",
     "resize-observer-polyfill": "^1.5.1",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "snyk": "^1.372.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.7",
@@ -65,7 +66,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "gql-gen": "graphql-codegen --config codegen.yml",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -73,5 +76,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "snyk": true
 }
