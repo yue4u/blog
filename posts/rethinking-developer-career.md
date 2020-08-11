@@ -1,5 +1,5 @@
 ---
-title: 技術者としてのキャリア再考
+title: Life in quarantine
 date: 2020-05-19 04:19:57
 ---
 
