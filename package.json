@@ -6,7 +6,7 @@
   "author": "yue <blog@rainy.me>",
   "dependencies": {
     "@babel/core": "^7.11.1",
-    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.16",
     "@mdx-js/tag": "^0.20.3",
     "@types/sharp": "^0.25.1",
