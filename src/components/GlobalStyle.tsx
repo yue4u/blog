@@ -13,14 +13,21 @@ export default createGlobalStyle`
   unicode-range: U+3000-9FFF;
 }
 *{
-  ::-webkit-scrollbar{
-    display:none;
-  }
+  box-sizing: border-box;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
   ::selection {
-  color: #fff;
-  background: skyblue;
+    color: #fff;
+    background: skyblue;
+  }
 }
+
+::-webkit-scrollbar {
+  display:none;
+  width: 0px;
+  background: transparent;
 }
+
 html,
 body {
    font-family: sans-serif;

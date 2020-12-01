@@ -1,7 +1,34 @@
+import { useEffect } from "react"
 import styled from "styled-components"
+import React from "react"
 import CodeBlock from "./codeBlock"
 
-export default styled(CodeBlock)`
+export default function MarkdownContent({ children }) {
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return
+    }
+    window.addEventListener(
+      "message",
+      function (e) {
+        // message passed can be accessed in "data" attribute of the event object
+        const { bid, height } = e.data
+        if (!bid) {
+          return
+        }
+        const el = document.querySelector<HTMLIFrameElement>(`#${bid}`)
+        if (el) {
+          el.style.height = height + 30 + "px"
+        }
+      },
+      false
+    )
+  }, [])
+
+  return <MarkdownContentBlock>{children}</MarkdownContentBlock>
+}
+
+const MarkdownContentBlock = styled(CodeBlock)`
   & > * {
     max-width: 100%;
   }
@@ -82,7 +109,7 @@ export default styled(CodeBlock)`
     padding-left: 1rem;
   }
   table {
-    margin: 1rem;
+    margin: 3rem auto;
     border-collapse: collapse;
     th,
     tr,
@@ -107,6 +134,7 @@ export default styled(CodeBlock)`
     background-image: linear-gradient(100deg, #455a64 47%, #757575);
   }
   iframe {
+    width: 80%;
     margin: 0 auto;
     display: inherit;
   }
@@ -121,6 +149,10 @@ export default styled(CodeBlock)`
         font-size: 1rem;
         left: -1rem;
       }
+    }
+    iframe {
+      max-width: 100%;
+      width: 100%;
     }
   }
 `
