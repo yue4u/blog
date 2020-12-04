@@ -60,9 +60,9 @@ let me = {
     .replace("@twitter", a("https://twitter.com/nerd_yue", "@nerd_yue"))
     .replace("@github", a("https://github.com/rainy-me", "rainy-me"))
     .replace("@pixiv", a("https://www.pixiv.net/member.php?id=10930752", "me"))
-    .replace("@mail", a("mailto:i@rainy.me", "i@rainy.me"))
+    .replace("@mail", a("mailto:i@yue.coffee", "i@yue.coffee"))
     .replace("@instagram", a("https://instagram.com/nerd_yue/", "@nerd_yue"))
-    .replace("@blog", a("https://blog.rainy.me", "blog.rainy.me"))
+    .replace("@blog", a("https://blog.yue.coffee", "blog.yue.coffee"))
     .replace("@lab", a("https://lab.rainy.me", "lab.rainy.me"))
 
   return (

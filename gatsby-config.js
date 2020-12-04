@@ -5,7 +5,7 @@ module.exports = {
     description: packageInfo.description,
     author: `yue`,
     theme_color: "#333333",
-    siteUrl: "https://blog.rainy.me/",
+    siteUrl: "https://blog.yue.coffee/",
   },
   plugins: [
     `gatsby-plugin-sitemap`,

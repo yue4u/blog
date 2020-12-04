@@ -3,7 +3,7 @@
   "private": true,
   "description": "yue's blog: posts and notes collection",
   "version": "0.1.0",
-  "author": "yue <blog@rainy.me>",
+  "author": "yue <blog@yue.coffee>",
   "dependencies": {
     "@babel/core": "^7.11.1",
     "@mdx-js/mdx": "^1.6.16",

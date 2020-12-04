@@ -69,7 +69,7 @@ export default function Post({ data, pageContext }) {
         <PostLink data={next} linkType={"next"} />
       </PaginationNav>
       <Comments
-        url={`https://blog.rainy.me/${slug}`}
+        url={`https://blog.yue.coffee/${slug}`}
         identifier={identifier}
         title={post.frontmatter.title}
       />
