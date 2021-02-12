@@ -103,3 +103,11 @@ CPU + GPU 整体来说还是功耗偏大的选择了 `750w`的电源．但是这
 
 <iframe id="bit-akAt8n76CKJKC2TKNmxE" src="https://bits.yue.coffee/e/akAt8n76CKJKC2TKNmxE" width="80%" frameborder="0"></iframe>
 <iframe id="bit-gulNhqZj9gG9V9m89iHo" src="https://bits.yue.coffee/e/gulNhqZj9gG9V9m89iHo" width="80%" frameborder="0"></iframe>
+
+### Appendix
+
+如果说还有什么不满的地方的话...
+
+- N 卡不支持 hackintosh
+- 没 usb type-c
+- 没自带蓝牙
