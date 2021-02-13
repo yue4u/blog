@@ -12,7 +12,7 @@ const CourseItem = styled.div`
   padding-bottom: 3rem;
   margin-bottom: 1rem;
   border-radius: 1rem;
-  height: 6rem;
+  height: 80%;
   transition: ${animation.fastIn};
   background-size: 200%, 150%;
   background-image: linear-gradient(

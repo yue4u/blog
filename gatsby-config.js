@@ -31,6 +31,16 @@ module.exports = {
         extensions: [".md", ".mdx"],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options:{
+              linkImagesToOriginal: false,
+              showCaptions: true,
+              quality: 100,
+              withWebp: true,
+              withAvif: true,
+            }
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",

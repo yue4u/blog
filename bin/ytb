@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import sys
+import time
+from datetime import datetime
+import shutil
+import os
+import json
+
+
+def new(id):
+    extra = " ".join(sys.argv[2:])
+    j = os.popen(
+        f"youtube-dl https://www.youtube.com/watch\?v\={id} {extra} --output ./raw/ytb-{id} --print-json --write-thumbnail --skip-download"
+    ).read()
+    d = json.loads(j)
+    t = d["title"]
+    print(f"#### [{t}](https://youtube.com/watch?v={id})\n")
+    print(f"![{t}](../raw/ytb-{id}.jpg)")
+
+
+if __name__ == "__main__":
+    new(sys.argv[1])
