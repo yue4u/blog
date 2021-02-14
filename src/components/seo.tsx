@@ -27,7 +27,7 @@ const genDescription = (description: string) => {
   return description.trim()
 }
 
-export default function SEO({
+export function SEO({
   description = "",
   lang = "en",
   meta = [],

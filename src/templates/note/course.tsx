@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { animation } from "../../theme"
+import { animation } from "@/src/theme"
+import { NoteArchiveQueryQuery } from "@/types"
 
 const CourseItem = styled.div`
   transition: ${animation.fastIn};
@@ -43,14 +44,19 @@ const CourseDetail = styled.div`
   bottom: 0;
   left: 1rem;
 `
-export default function Course({ node }: any) {
+export default function Course({
+  node,
+}: {
+  node: NoteArchiveQueryQuery["allDirectory"]["edges"][number]["node"]
+}) {
   const { name, modifiedTime } = node
   const date = modifiedTime.split("T")[0]
   return (
     <CourseItem>
       <Link to={`/notes/${name}`}>
         <div>
-          <h2>{node.fields.courseTitle}</h2>
+          {/* @ts-ignore */}
+          <h2>{node.fields?.courseTitle}</h2>
         </div>
 
         <CourseDetail>

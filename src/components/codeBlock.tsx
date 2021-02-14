@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default styled.article`
+export const CodeBlock = styled.article`
   pre {
     background-color: #333;
     padding: 1rem;

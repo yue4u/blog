@@ -1,5 +1,6 @@
 import { GatsbyConfig } from "gatsby"
 import packageInfo from "../package.json"
+import path from "path"
 
 export const config: GatsbyConfig = {
   siteMetadata: {
@@ -10,6 +11,12 @@ export const config: GatsbyConfig = {
     siteUrl: "https://blog.yue.coffee/",
   },
   plugins: [
+    // {
+    //   resolve: "gatsby-plugin-graphql-codegen",
+    //   options: {
+    //     fileName: `types/gql.d.ts`,
+    //   },
+    // },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -17,7 +24,7 @@ export const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `./`,
+        path: path.resolve(__dirname, "../"),
         ignore: [
           `**/\.*`,
           `**/.git/**/*`,

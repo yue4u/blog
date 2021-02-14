@@ -4,7 +4,8 @@ import { Link, graphql } from "gatsby"
 import { animated } from "react-spring"
 import { Transition } from "react-spring/renderprops"
 
-import { SEO, Layout, GradientFont } from "../../components"
+import { SEO, Layout, GradientFont } from "@/src/components"
+import { PostArchiveQueryQuery, PostArchivePageContext } from "@/types"
 import PostSummary from "./summay"
 import PostPagination from "./pagination"
 
@@ -24,7 +25,13 @@ const PostsTitle = styled.h1`
 const PostCount = styled.p`
   color: #777;
 `
-export default function Posts({ data, pageContext }) {
+export default function Posts({
+  data,
+  pageContext,
+}: {
+  data: PostArchiveQueryQuery
+  pageContext: PostArchivePageContext
+}) {
   const nodes = data.allMdx.edges.map(({ node }) => node)
 
   return (
@@ -51,7 +58,7 @@ export default function Posts({ data, pageContext }) {
           >
             {(node) => (style) => (
               <animated.li style={style}>
-                <Link to={`/${node.fields.slug}`}>
+                <Link to={`/${node.fields?.slug}`}>
                   <PostSummary detail={node.frontmatter} />
                 </Link>
               </animated.li>

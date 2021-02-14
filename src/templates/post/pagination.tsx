@@ -37,7 +37,13 @@ export const PaginationLink = styled.span<PaginationLinkProps>`
   }
 `
 
-const PaginationButton = ({ current, content }) => {
+const PaginationButton = ({
+  current,
+  content,
+}: {
+  current: number
+  content: number
+}) => {
   const active = content == current
   const link = content === 1 ? `/posts/` : `/posts/${content}`
   return (
@@ -51,9 +57,11 @@ const PaginationButton = ({ current, content }) => {
   )
 }
 
-export default function Pagination({ pageContext }) {
-  const { currentPage, numPages } = pageContext
-
+export default function Pagination({
+  pageContext: { currentPage, numPages },
+}: {
+  pageContext: { currentPage: number; numPages: number }
+}) {
   return (
     <PaginationNav>
       {Array.from({ length: numPages }, (_, i) => (

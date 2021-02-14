@@ -2,13 +2,31 @@ import path from "path"
 import { exec } from "child_process"
 import courseTitle from "../src/i18n/courseTitle.json"
 import { GatsbyNode } from "gatsby"
+import { DirectoryEdge, MdxEdge, Mdx } from "@/types"
+
+export type PostPageContext = {
+  slug: string
+  prev: Mdx
+  next: Mdx
+  identifier: string
+}
+
+export type PostArchivePageContext = {
+  limit: number
+  skip: number
+  numPages: number
+  currentPage: number
+}
 
 export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
   actions,
 }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "extra"), "node_modules"],
+      modules: ["extra", "node_modules"],
+      alias: {
+        "@": path.resolve(__dirname, ".."),
+      },
     },
   })
 }
@@ -21,6 +39,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {
+    // @ts-ignore
     const parent = getNode(node.parent)
       .relativePath.replace("/index", "")
       .replace(/\.mdx?/, "")
@@ -39,23 +58,23 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 
   if (node.relativeDirectory === "notes") {
-    console.log(node.name)
-
     createNodeField({
       node,
       name: `courseTitle`,
-      value: courseTitle[node.name] || node.name,
+      value:
+        courseTitle[(node.name as any) as keyof typeof courseTitle] ||
+        node.name,
     })
   }
 }
 
-export const createPages: GatsbyNode["createPages"] = ({
+export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   actions,
 }) => {
   const { createPage } = actions
 
-  const notePages = graphql(`
+  const { data: notePages } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
     query {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
@@ -77,20 +96,23 @@ export const createPages: GatsbyNode["createPages"] = ({
         }
       }
     }
-  `).then((result) => {
-    result.data.allMdx.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`src/templates/note/index.tsx`),
-        context: {
-          slug: node.fields.slug,
-          regex: node.fields.regex,
-        },
-      })
+  `)
+
+  notePages?.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields?.slug as string,
+      component: path.resolve(`src/templates/note/index.tsx`),
+      context: {
+        slug: node.fields?.slug as string,
+        // @ts-ignore
+        regex: node.fields.regex,
+      },
     })
   })
 
-  const noteArchivePages = graphql(`
+  const { data: noteArchivePages } = await graphql<{
+    allDirectory: { edges: DirectoryEdge[] }
+  }>(`
     {
       allDirectory(
         filter: { relativeDirectory: { eq: "notes" } }
@@ -108,28 +130,28 @@ export const createPages: GatsbyNode["createPages"] = ({
         }
       }
     }
-  `).then((result) => {
-    const notes = result.data.allDirectory.edges
-    const notesPerPage = 20
-    const numPages = Math.ceil(notes.length / notesPerPage)
+  `)
 
-    Array.from({
-      length: numPages,
-    }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/notes` : `/notes/${i + 1}`,
-        component: path.resolve("./src/templates/note/archive.tsx"),
-        context: {
-          limit: notesPerPage,
-          skip: i * notesPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
+  const notes = noteArchivePages?.allDirectory.edges || []
+  const notesPerPage = 20
+  const numPages = Math.ceil(notes.length / notesPerPage)
+
+  Array.from({
+    length: numPages,
+  }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/notes` : `/notes/${i + 1}`,
+      component: path.resolve("./src/templates/note/archive.tsx"),
+      context: {
+        limit: notesPerPage,
+        skip: i * notesPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
     })
   })
 
-  const postPages = graphql(`
+  const { data: postPages } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
     query {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
@@ -150,48 +172,45 @@ export const createPages: GatsbyNode["createPages"] = ({
         }
       }
     }
-  `).then((result) => {
-    const posts = result.data.allMdx.edges
-    const postsPerPage = 6
-    const numPages = Math.ceil(posts.length / postsPerPage)
+  `)
 
-    result.data.allMdx.edges.forEach(({ node }, i) => {
-      const prev = i === 0 ? false : posts[i - 1].node
-      const next = i === posts.length - 1 ? false : posts[i + 1].node
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`src/templates/post/index.tsx`),
-        context: {
-          slug: node.fields.slug,
-          prev,
-          next,
-          identifier: node.id,
-        },
-      })
-    })
-
-    Array.from({
-      length: numPages,
-    }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/posts` : `/posts/${i + 1}`,
-        component: path.resolve("./src/templates/post/archive.tsx"),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
+  const posts = postPages?.allMdx.edges || []
+  const postsPerPage = 6
+  const PostNumPages = Math.ceil(posts.length / postsPerPage)
+  posts.forEach(({ node }, i) => {
+    const prev = i === 0 ? null : posts[i - 1].node
+    const next = i === posts.length - 1 ? null : posts[i + 1].node
+    createPage({
+      path: node.fields?.slug as string,
+      component: path.resolve(`src/templates/post/index.tsx`),
+      context: {
+        slug: node.fields?.slug as string,
+        prev,
+        next,
+        identifier: node.id,
+      },
     })
   })
 
-  return Promise.all([notePages, noteArchivePages, postPages])
+  Array.from({
+    length: PostNumPages,
+  }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/posts` : `/posts/${i + 1}`,
+      component: path.resolve("./src/templates/post/archive.tsx"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages: PostNumPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 }
 
-export const onPreBuild: GatsbyNode["onPreBuild"] = ({ graphql }) => {
+export const onPreBuild: GatsbyNode["onPreBuild"] = async ({ graphql }) => {
   console.log("preBuild fonts!")
-  return graphql(`
+  const { data: nodes } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
     {
       allMdx {
         edges {
@@ -203,36 +222,36 @@ export const onPreBuild: GatsbyNode["onPreBuild"] = ({ graphql }) => {
         }
       }
     }
-  `).then((result) => {
-    return new Promise((ok) => {
-      const titles = result.data.allMdx.edges.map(
-        ({ node }) => node.frontmatter.title
-      )
-      const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
-      const unicodes = chars
-        .map((char) => {
-          const uChar = "U+" + char.charCodeAt(0).toString(16).padStart(4, "0")
-          //    console.log(`${char} => ${uChar}`)
+  `)
 
-          return uChar
-        })
-        .join(",")
+  return new Promise((ok) => {
+    const titles =
+      nodes?.allMdx.edges.map(({ node }) => node?.frontmatter?.title || "") ||
+      []
+    const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
+    const unicodes = chars
+      .map((char) => {
+        const uChar = "U+" + char.charCodeAt(0).toString(16).padStart(4, "0")
+        //    console.log(`${char} => ${uChar}`)
 
-      const SUBSET = `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `
-      console.log(SUBSET)
-      exec(SUBSET, (err) => {
-        if (err) {
-          throw err
-        }
-        console.log("generated new font")
-        console.log(`
+        return uChar
+      })
+      .join(",")
+
+    const SUBSET = `pyftsubset static/fonts/NotoSerifSC-Regular.woff2 --unicodes="${unicodes}" --flavor="woff2" `
+    console.log(SUBSET)
+    exec(SUBSET, (err) => {
+      if (err) {
+        throw err
+      }
+      console.log("generated new font")
+      console.log(`
           
           ${chars}
 
           `)
-        exec(`ls -l --block-size=KB static/fonts `).stdout.pipe(process.stdout)
-        ok()
-      })
+      exec(`ls -l --block-size=KB static/fonts `).stdout?.pipe(process.stdout)
+      ok()
     })
   })
 }

@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { DiscussionEmbed, DisqusConfig } from "disqus-react"
+import { DiscussionEmbed } from "disqus-react"
+
+type DisqusConfig = DiscussionEmbed["props"]["config"]
 
 const CommentBlock = styled.div`
   margin: 0 auto;
@@ -10,7 +12,7 @@ const CommentBlock = styled.div`
     width: 90%;
   }
 `
-export default function Comments({ url, identifier, title }: DisqusConfig) {
+export function Comments({ url, identifier, title }: DisqusConfig) {
   const disqusShortname = "yue-blog"
   const disqusConfig = { url, identifier, title }
   return (

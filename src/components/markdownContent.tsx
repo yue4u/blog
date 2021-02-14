@@ -1,9 +1,9 @@
-import { useEffect } from "react"
+import { PropsWithChildren, useEffect } from "react"
 import styled from "styled-components"
 import React from "react"
-import CodeBlock from "./codeBlock"
+import { CodeBlock } from "./codeBlock"
 
-export default function MarkdownContent({ children }) {
+export function MarkdownContent({ children }: PropsWithChildren<{}>) {
   useEffect(() => {
     if (typeof window === "undefined") {
       return

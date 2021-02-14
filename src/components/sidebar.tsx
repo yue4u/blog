@@ -1,4 +1,4 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
 import styled from "styled-components"
 
 const SidebarBlock = styled.aside`
@@ -11,6 +11,6 @@ const SidebarBlock = styled.aside`
   right: 0;
   z-index: 10;
 `
-export default function Sidebar({ children }: any) {
+export function Sidebar({ children }: PropsWithChildren<{}>) {
   return <SidebarBlock>{children}</SidebarBlock>
 }

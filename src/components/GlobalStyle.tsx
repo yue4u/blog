@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import { colors } from "../theme"
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 
 @font-face {
   font-family: 'great-vibes-merge';

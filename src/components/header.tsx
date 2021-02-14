@@ -29,7 +29,7 @@ const RightCorner = styled.span`
     display: none;
   }
 `
-export default function Header({ siteTitle }: HeaderProps) {
+export function Header({ siteTitle }: HeaderProps) {
   return (
     <GlobalHeader>
       <Helmet>

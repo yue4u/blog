@@ -75,9 +75,9 @@ const Money = styled.span`
 
 export default function BusinessModel() {
   const [ticketIncome, setTicketIncome] = useState("20")
-  const [cinemaPrecentage, setcinemaPrecentage] = useState("50")
-  const [paFee, setpaFee] = useState("3")
-  const [distributorPrecentage, setDistributorPrecentage] = useState("20")
+  const [cinemaPercentage, setCinemaPercentage] = useState("50")
+  const [paFee, setPaFee] = useState("3")
+  const [distributorPercentage, setDistributorPercentage] = useState("20")
 
   const n = (s: string) => {
     const f = parseFloat(s)
@@ -85,14 +85,14 @@ export default function BusinessModel() {
   }
   const round = (num: number) => Math.round(num) / 100
   const ticketIncomeNumber = n(ticketIncome)
-  const cinemaPrecentageNumber = n(cinemaPrecentage)
+  const cinemaPercentageNumber = n(cinemaPercentage)
   const paFeeNumber = n(paFee)
-  const distributorPrecentageNumber = n(distributorPrecentage)
-  const cinemaIncome = round(ticketIncomeNumber * cinemaPrecentageNumber)
+  const distributorPercentageNumber = n(distributorPercentage)
+  const cinemaIncome = round(ticketIncomeNumber * cinemaPercentageNumber)
 
   const distributorIncome = round(
     (ticketIncomeNumber - cinemaIncome - paFeeNumber) *
-      distributorPrecentageNumber
+      distributorPercentageNumber
   )
 
   const productionCommitteeIncome =
@@ -105,7 +105,7 @@ export default function BusinessModel() {
           チケット代収入
           <Input
             value={ticketIncome}
-            onChange={e => setTicketIncome(e.target.value)}
+            onChange={(e) => setTicketIncome(e.target.value)}
           />
         </Money>
       </Row>
@@ -115,8 +115,8 @@ export default function BusinessModel() {
           <Fee>
             映画館分配:
             <Input
-              value={cinemaPrecentage}
-              onChange={e => setcinemaPrecentage(e.target.value)}
+              value={cinemaPercentage}
+              onChange={(e) => setCinemaPercentage(e.target.value)}
             />
             % <br /> 映画館収入 = (チケット代収入 * 映画館分配)
           </Fee>
@@ -128,13 +128,13 @@ export default function BusinessModel() {
         <Income>
           <Fee>
             P&A費:{" "}
-            <Input value={paFee} onChange={e => setpaFee(e.target.value)} />
+            <Input value={paFee} onChange={(e) => setPaFee(e.target.value)} />
             億円
             <br />
             配給手数料:{" "}
             <Input
-              value={distributorPrecentage}
-              onChange={e => setDistributorPrecentage(e.target.value)}
+              value={distributorPercentage}
+              onChange={(e) => setDistributorPercentage(e.target.value)}
             />
             %
           </Fee>

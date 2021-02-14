@@ -66,7 +66,6 @@
     "lint": "prettier --write src/**/**/*.{ts,tsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "gql-gen": "graphql-codegen --config codegen.yml",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

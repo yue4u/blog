@@ -29,7 +29,7 @@ const NotFoundPage = () => (
     </Title404>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     <BackHome>
-      <Link to="/">Back Home ></Link>
+      <Link to="/">Back Home {">"}</Link>
     </BackHome>
   </Layout>
 )

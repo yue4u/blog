@@ -4,7 +4,8 @@ import { graphql } from "gatsby"
 import { animated } from "react-spring"
 import { Transition } from "react-spring/renderprops"
 
-import { SEO, Layout, GradientFont } from "../../components"
+import { SEO, Layout, GradientFont } from "@/src/components"
+import { NoteArchiveQueryQuery } from "@/types"
 
 import Course from "./course"
 const H1 = styled.h1`
@@ -27,8 +28,8 @@ const CourseList = styled.ul`
   }
 `
 
-export default function Notes({ data }: any) {
-  const nodes = data.allDirectory.edges.map(({ node }: any) => node)
+export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
+  const nodes = data.allDirectory.edges.map(({ node }) => node)
   const CourseBlock = () => (
     <CourseList>
       <Transition
@@ -40,7 +41,7 @@ export default function Notes({ data }: any) {
       >
         {(node) => (style) => (
           <animated.li style={style}>
-            <Course style={style} node={node} />
+            <Course node={node} />
           </animated.li>
         )}
       </Transition>

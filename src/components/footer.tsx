@@ -11,6 +11,6 @@ const GlobalFooter = styled.footer`
   padding: 0.5rem;
 `
 
-export default function Footer() {
+export function Footer() {
   return <GlobalFooter>© {new Date().getFullYear()}</GlobalFooter>
 }

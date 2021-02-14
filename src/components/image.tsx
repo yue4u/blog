@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-export default function Image() {
+export function Image() {
   return (
     <StaticQuery
       query={graphql`
@@ -16,7 +16,7 @@ export default function Image() {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       )}
     />

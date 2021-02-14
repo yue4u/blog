@@ -9,9 +9,10 @@ import {
   GradientFont,
   MarkdownContent,
   Comments,
-} from "../../components"
-import { formatDate } from "../../helpers"
+} from "@/src/components"
+import { formatDate } from "@/src/helpers"
 import { PaginationLink, PaginationNav } from "./pagination"
+import type { PostPageContext, Unnamed_3_Query } from "@/types"
 
 const PostTitle = styled.h1`
   font-size: 4rem;
@@ -29,49 +30,61 @@ const PostDate = styled.time`
   text-shadow: 0 0 1rem #000;
 `
 
-const PostLink = ({ data, linkType }) => {
+const PostLink = ({
+  data,
+  linkType,
+}: {
+  data: PostPageContext["next"]
+  linkType: "prev" | "next"
+}) => {
   if (!data) {
     return <Link to="#" />
   }
-  const title = data.frontmatter.title
+  const title = data.frontmatter?.title
   const arrow = linkType === "prev" ? `< ${title}` : `${title} >`
 
   return (
-    <Link to={`/${data.fields.slug}`}>
+    <Link to={`/${data.fields?.slug}`}>
       <PaginationLink active>{arrow}</PaginationLink>
     </Link>
   )
 }
 
-export default function Post({ data, pageContext }) {
-  const post = data.mdx
+export default function Post({
+  data,
+  pageContext,
+}: {
+  data: Unnamed_3_Query
+  pageContext: PostPageContext
+}) {
+  const post = data.mdx!
   const { prev, next, identifier, slug } = pageContext
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.title}
-        description={post.rawBody}
+        title={post.frontmatter?.title}
+        description={post?.rawBody}
         path={`/${slug}`}
       />
       <div>
         <PostTitle>
           <GradientFont
-            dangerouslySetInnerHTML={{ __html: post.frontmatter.title }}
+            dangerouslySetInnerHTML={{ __html: post.frontmatter?.title || "" }}
           />
         </PostTitle>
-        <PostDate>{formatDate(post.frontmatter.date)}</PostDate>
+        <PostDate>{formatDate(post.frontmatter?.date)}</PostDate>
         <MarkdownContent>
           <MDXRenderer>{post.body}</MDXRenderer>
         </MarkdownContent>
       </div>
       <PaginationNav>
-        <PostLink data={prev} linkType={"prev"} />
-        <PostLink data={next} linkType={"next"} />
+        <PostLink data={prev} linkType="prev" />
+        <PostLink data={next} linkType="next" />
       </PaginationNav>
       <Comments
         url={`https://blog.yue.coffee/${slug}`}
         identifier={identifier}
-        title={post.frontmatter.title}
+        title={post.frontmatter?.title}
       />
     </Layout>
   )

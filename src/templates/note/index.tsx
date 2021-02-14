@@ -2,7 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { SEO, Layout, MarkdownContent } from "../../components"
+import { SEO, Layout, MarkdownContent } from "@/src/components"
+import { Unnamed_2_Query } from "@/types"
 import NoteList from "./list/index"
 
 const NoteLayout = styled.div`
@@ -15,9 +16,15 @@ const Content = styled.div`
   width: 100%;
 `
 
-export default function Note({ data, pageContext }) {
-  const post = data.mdx
-  const isIndex = [...post.fields.slug.matchAll(/\//g)].length == 1
+export default function Note({
+  data,
+  pageContext,
+}: {
+  data: Unnamed_2_Query
+  pageContext: { slug: string }
+}) {
+  const post = data.mdx!
+  const isIndex = [...(post?.fields?.slug?.matchAll(/\//g) || [])].length == 1
   const links = data.sideBar.edges.map(({ node }) => ({
     id: node.id,
     ...node.frontmatter,
@@ -34,14 +41,14 @@ export default function Note({ data, pageContext }) {
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.title}
+        title={post.frontmatter?.title}
         description={post.rawBody}
         path={`/${slug}`}
       />
       <NoteLayout>
         <NoteList data={data.sideBar} />
         <Content>
-          <h1>{post.frontmatter.title}</h1>
+          <h1>{post.frontmatter?.title}</h1>
           <MarkdownContent>
             <MDXRenderer>{post.body}</MDXRenderer>
             {isIndex && (

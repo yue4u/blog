@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring"
 import { useMeasure, usePrevious } from "./helpers"
 import * as Icons from "./icons"
 import { Link } from "gatsby"
+import { Unnamed_2_Query } from "@/types"
 
 const Frame = styled.div`
   position: relative;
@@ -82,7 +83,11 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
     },
   }) as TreeSpringProps
   const Icon =
-    Icons[`${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`]
+    Icons[
+      `${
+        children ? (isOpen ? "Minus" : "Plus") : "Close"
+      }SquareO` as keyof typeof Icons
+    ]
   return (
     <Frame>
       <Icon
@@ -148,8 +153,13 @@ const HamburgerWrapper = styled.div`
   }
 `
 
-export default function NoteList({ data }: any) {
+export default function NoteList({
+  data,
+}: {
+  data: Unnamed_2_Query["sideBar"]
+}) {
   const [open, setOpen] = useState(false)
+  //@ts-ignore
   const [props, set] = useSpring(() => ({
     visibility: "hidden",
     opacity: 0,
@@ -176,14 +186,14 @@ export default function NoteList({ data }: any) {
           {data.edges.map(({ node }, i) => (
             <Tree
               name={
-                <Link to={`/${node.fields.slug}`}>
-                  {node.frontmatter.title}
+                <Link to={`/${node.fields?.slug}`}>
+                  {node.frontmatter?.title}
                 </Link>
               }
               key={`node-${i}`}
             >
-              {node.headings.map((heading, i) => (
-                <Tree name={heading.value} key={`heading-${i}`} />
+              {node.headings?.map((heading, i) => (
+                <Tree name={heading?.value!} key={`heading-${i}`} />
               ))}
             </Tree>
           ))}
