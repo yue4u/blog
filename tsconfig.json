@@ -1,23 +1,19 @@
 {
+  "ts-node": {
+    "transpileOnly": true
+  },
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "types/*"
-      ]
+      "@/*": ["./*"]
     },
     "module": "commonjs",
-    "lib": [
-      "es2017",
-      "es2016",
-      "es2015",
-      "dom"
-    ],
+    "lib": ["es2017", "es2016", "es2015", "dom"],
     "noImplicitAny": true,
     "allowJs": false,
     "removeComments": true,
     "target": "es6",
-    "jsx": "react",
+    "jsx": "preserve",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -26,18 +22,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "src"
-    ]
+    "types": ["node"],
+    "typeRoots": ["src"]
   },
   "rules": {
     "no-console": false,
-    "interface-name": [
-      true,
-      "never"
-    ]
+    "interface-name": [true, "never"]
   }
 }
