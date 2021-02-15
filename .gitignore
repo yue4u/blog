@@ -12,3 +12,5 @@ imgs
 public
 raw
 tmp
+static/ogp/*
+static/fonts/*subset*

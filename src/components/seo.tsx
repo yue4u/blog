@@ -13,6 +13,7 @@ type SEOProps = {
   meta?: Meta[]
   description?: string
   title?: string
+  ogp?: string
 }
 
 const genDescription = (description: string) => {
@@ -32,6 +33,7 @@ export function SEO({
   lang = "en",
   meta = [],
   title = "",
+  ogp,
   path,
 }: SEOProps) {
   const { site } = useStaticQuery(
@@ -74,12 +76,16 @@ export function SEO({
           content: metaDescription,
         },
         {
+          property: "og:image",
+          content: ogp ?? "https://blog.yue.coffee/ogp/main.png",
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,

@@ -17,7 +17,7 @@ const GlobalHeader = styled.header`
 `
 
 type HeaderProps = {
-  siteTitle: string
+  siteTitle?: string | null
 }
 
 const LeftCorner = styled.span``

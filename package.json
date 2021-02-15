@@ -44,6 +44,7 @@
     "@graphql-codegen/typescript-operations": "1.17.14",
     "@types/node": "^14.14.27",
     "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.7",
     "add": "^2.0.6",
@@ -59,6 +60,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "x": "ts-node -r tsconfig-paths/register",
     "lint": "prettier --write src/**/**/*.{ts,tsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",

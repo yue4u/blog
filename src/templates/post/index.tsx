@@ -62,6 +62,7 @@ export default function Post({
   return (
     <Layout>
       <SEO
+        ogp={`https://blog.yue.coffee/ogp/${slug}.png`}
         title={post.frontmatter?.title}
         description={post?.rawBody}
         path={`/${slug}`}

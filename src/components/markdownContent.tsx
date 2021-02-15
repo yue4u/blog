@@ -28,7 +28,7 @@ export function MarkdownContent({ children }: PropsWithChildren<{}>) {
   return <MarkdownContentBlock>{children}</MarkdownContentBlock>
 }
 
-const MarkdownContentBlock = styled(CodeBlock)`
+export const MarkdownContentBlock = styled(CodeBlock)`
   & > * {
     max-width: 100%;
   }

@@ -1,6 +1,7 @@
 import path from "path"
 import { exec } from "child_process"
 import courseTitle from "../src/i18n/courseTitle.json"
+import { screenshot } from "./ogp"
 import { GatsbyNode } from "gatsby"
 import { DirectoryEdge, MdxEdge, Mdx } from "@/types"
 
@@ -209,32 +210,34 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }
 
 export const onPreBuild: GatsbyNode["onPreBuild"] = async ({ graphql }) => {
-  console.log("preBuild fonts!")
   const { data: nodes } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
     {
-      allMdx {
+      allMdx(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
         edges {
           node {
             frontmatter {
               title
+              tags
+              date
             }
+            fields {
+              slug
+            }
+            rawBody
           }
         }
       }
     }
   `)
 
-  return new Promise((ok) => {
-    const titles =
-      nodes?.allMdx.edges.map(({ node }) => node?.frontmatter?.title || "") ||
-      []
+  const edges = nodes?.allMdx.edges || []
+
+  await new Promise((ok) => {
+    const titles = edges.map(({ node }) => node?.frontmatter?.title || "") || []
     const chars = [...new Set(titles.join("").replace(/[a-zA-Z0-9\s]/g, ""))]
     const unicodes = chars
       .map((char) => {
-        const uChar = "U+" + char.charCodeAt(0).toString(16).padStart(4, "0")
-        //    console.log(`${char} => ${uChar}`)
-
-        return uChar
+        return "U+" + char.charCodeAt(0).toString(16).padStart(4, "0")
       })
       .join(",")
 
@@ -244,14 +247,22 @@ export const onPreBuild: GatsbyNode["onPreBuild"] = async ({ graphql }) => {
       if (err) {
         throw err
       }
-      console.log("generated new font")
-      console.log(`
-          
-          ${chars}
-
-          `)
+      console.log(`generated new font with chars: ${chars}`)
       exec(`ls -l --block-size=KB static/fonts `).stdout?.pipe(process.stdout)
-      ok()
+      ok({})
     })
   })
+
+  await screenshot(
+    edges.map(({ node }) => {
+      return {
+        title: node!.frontmatter!.title,
+        // @ts-ignore
+        tags: node!.frontmatter!.tags as string[],
+        date: node!.frontmatter!.date,
+        slug: node!.fields!.slug!,
+        content: node!.rawBody,
+      }
+    })
+  )
 }
