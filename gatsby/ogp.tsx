@@ -21,7 +21,7 @@ export async function screenshot(data: PageData[], headless = true) {
   const browser = await puppeteer.launch({ headless })
   for (const pageData of data) {
     const filePath = path.join(__dirname, `../static/ogp/${pageData.slug}.png`)
-    if (await fs.stat(filePath).catch(() => false)) {
+    if (!process.env.NO_CACHE && (await fs.stat(filePath).catch(() => false))) {
       console.log(`skip ${filePath}`)
       continue
     }
@@ -65,16 +65,16 @@ export async function screenshot(data: PageData[], headless = true) {
       `,
     })
     await page.$eval("#title", (e) => {
-      let base = 7.5
+      let base = 8
       while (e.scrollHeight > e.clientHeight) {
-        base -= 0.1
+        base -= 0.2
         // @ts-ignore
         e.style.fontSize = `${base}rem`
       }
     })
     await page.waitForTimeout(500)
     await page.screenshot({ path: filePath })
-    console.log(`done: ${filePath}]`)
+    console.log(`done: ${filePath}`)
     if (headless) {
       await page.close()
     }
@@ -84,14 +84,14 @@ export async function screenshot(data: PageData[], headless = true) {
   }
 }
 
-screenshot(
-  [
-    {
-      slug: "main",
-      title: "Blog of yue",
-      content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
-      main: true,
-    },
-  ],
-  false
-)
+// screenshot(
+//   [
+//     {
+//       slug: "test",
+//       title: "Blog of yue",
+//       tags: ["Blog of yue"],
+//       content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
+//     },
+//   ],
+//   false
+// )

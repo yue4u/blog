@@ -115,7 +115,7 @@ export default function OGP({ title, date, tags, content, main }: PageData) {
 }
 
 const PostTitle = styled(GradientFont)`
-  font-size: 7.5rem;
+  font-size: 8rem;
   line-height: 1.2;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -155,15 +155,15 @@ const Container = styled.div`
 
 const Summary = styled.p`
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-align: left;
   color: #ccc;
   text-shadow: 0 0 5px #000;
-  height: 6rem;
+  height: 5rem;
   line-height: 1.3;
   overflow: hidden;
   margin: 1rem;
