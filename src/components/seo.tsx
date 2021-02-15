@@ -36,7 +36,7 @@ export function SEO({
 }: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
-      query {
+      query SEOQuery {
         site {
           siteMetadata {
             title

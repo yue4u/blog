@@ -58,7 +58,7 @@ export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
   )
 }
 export const query = graphql`
-  query noteArchiveQuery($skip: Int!, $limit: Int!) {
+  query NoteArchiveQuery($skip: Int!, $limit: Int!) {
     allDirectory(
       filter: { relativeDirectory: { eq: "notes" } }
       limit: $limit

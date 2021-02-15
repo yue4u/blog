@@ -96,9 +96,7 @@ export default function PostSummary({ detail }: any) {
           <HashTag>#</HashTag>
           {detail.title}
         </PostTitle>
-
         <Divider />
-
         <PostTime>{getDate(detail.date)}</PostTime>
       </PostContent>
     </PostBlock>

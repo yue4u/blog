@@ -1,7 +1,11 @@
 overwrite: true
-schema: "http://localhost:8000/__graphql"
+schema: http://localhost:8000/___graphql
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby-transformer-sharp/!(node_modules)/**/*.js
+  - ./node_modules/gatsby-transformer-remark/!(node_modules)/**/*.js
 generates:
-  src/gql/type.ts:
+  ./types/gql.d.ts:
     plugins:
-      - "typescript"
-      - "typescript-operations"
+      - typescript
+      - typescript-operations

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect } from "react"
 type TweetProps = {
   url: string
@@ -15,10 +16,10 @@ export default function Tweet({ url }: TweetProps) {
       js.id = id
       js.src = "https://platform.twitter.com/widgets.js"
 
-      const fjs = d.getElementsByTagName(s)[0]
-      fjs.parentNode.insertBefore(js, fjs)
+      const fjs = d.getElementsByTagName(s)[0]!
+      fjs.parentNode?.insertBefore(js, fjs)
       t._e = []
-      t.ready = f => t._e.push(f)
+      t.ready = (f) => t._e.push(f)
 
       window.twttr = t
     }, 2000)

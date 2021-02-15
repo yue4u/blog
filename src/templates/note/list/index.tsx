@@ -5,7 +5,7 @@ import { useSpring, animated } from "react-spring"
 import { useMeasure, usePrevious } from "./helpers"
 import * as Icons from "./icons"
 import { Link } from "gatsby"
-import { Unnamed_2_Query } from "@/types"
+import { NotePageQueryQuery } from "@/types"
 
 const Frame = styled.div`
   position: relative;
@@ -156,7 +156,7 @@ const HamburgerWrapper = styled.div`
 export default function NoteList({
   data,
 }: {
-  data: Unnamed_2_Query["sideBar"]
+  data: NotePageQueryQuery["sideBar"]
 }) {
   const [open, setOpen] = useState(false)
   //@ts-ignore
@@ -182,7 +182,7 @@ export default function NoteList({
         <Line />
       </HamburgerWrapper>
       <SideBarBlock style={props}>
-        <Tree name={""} open={true}>
+        <Tree name="" open>
           {data.edges.map(({ node }, i) => (
             <Tree
               name={

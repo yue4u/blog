@@ -6,7 +6,7 @@ export function Image() {
   return (
     <StaticQuery
       query={graphql`
-        query {
+        query ImageSharpQuery {
           placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
             childImageSharp {
               fluid(maxWidth: 300) {

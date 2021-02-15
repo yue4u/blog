@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { SEO, Layout, MarkdownContent } from "@/src/components"
-import { Unnamed_2_Query } from "@/types"
+import { NotePageQueryQuery } from "@/types"
 import NoteList from "./list/index"
 
 const NoteLayout = styled.div`
@@ -20,7 +20,7 @@ export default function Note({
   data,
   pageContext,
 }: {
-  data: Unnamed_2_Query
+  data: NotePageQueryQuery
   pageContext: { slug: string }
 }) {
   const post = data.mdx!
@@ -66,7 +66,7 @@ export default function Note({
 }
 
 export const query = graphql`
-  query($slug: String!, $regex: String!) {
+  query NotePageQuery($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug

@@ -34,14 +34,14 @@ exports.onRouteUpdate = () => {
   // already been loaded), and then run the twitter load function.
   if (document.querySelector(embedClasses) !== null) {
     if (
-      //@ts-ignore
+      // @ts-ignore
       typeof twttr !== `undefined` &&
-      //@ts-ignore
+      // @ts-ignore
       window.twttr.widgets &&
-      //@ts-ignore
+      // @ts-ignore
       typeof window.twttr.widgets.load === `function`
     ) {
-      //@ts-ignore
+      // @ts-ignore
       window.twttr.widgets.load()
     }
   }

@@ -11,12 +11,6 @@ export const config: GatsbyConfig = {
     siteUrl: "https://blog.yue.coffee/",
   },
   plugins: [
-    // {
-    //   resolve: "gatsby-plugin-graphql-codegen",
-    //   options: {
-    //     fileName: `types/gql.d.ts`,
-    //   },
-    // },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

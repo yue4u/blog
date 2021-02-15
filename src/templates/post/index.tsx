@@ -12,7 +12,7 @@ import {
 } from "@/src/components"
 import { formatDate } from "@/src/helpers"
 import { PaginationLink, PaginationNav } from "./pagination"
-import type { PostPageContext, Unnamed_3_Query } from "@/types"
+import type { PostPageContext, PostPageQueryQuery } from "@/types"
 
 const PostTitle = styled.h1`
   font-size: 4rem;
@@ -54,7 +54,7 @@ export default function Post({
   data,
   pageContext,
 }: {
-  data: Unnamed_3_Query
+  data: PostPageQueryQuery
   pageContext: PostPageContext
 }) {
   const post = data.mdx!
@@ -91,7 +91,7 @@ export default function Post({
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query PostPageQuery($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       rawBody
