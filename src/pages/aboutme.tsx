@@ -9,7 +9,7 @@ let me = {
     location: "Tokyo",
     meta: [
         "hobby-driven",
-        "nocturnality"
+        "nocturnality",
     ],
     hobbies: [
         "web",
@@ -17,25 +17,23 @@ let me = {
         "reading",
         "painting",
         "ballgame",
-        "NLP"
+        "NLP",
     ],
     languages: {
         natural: [
             "Chinese",
             "Japanese",
-            "English"
+            "English",
         ],
         programming: [
-            "python",
-            "javascript",
-            "shell",
-            "ruby"
-        ]
+            "Typescript",
+            "Rust",
+            "Python",
+          ]
     },
     learning: [
-        "ruby",
-        "rust",
-        "Korean"
+        "Korean",
+        "Design",
     ],
     contact: {
         github: "@github",
@@ -44,7 +42,7 @@ let me = {
         instagram: "@instagram",
         mail: "@mail",
         blog: "@blog",
-        lab: "@lab"
+        lab: "@lab",
     }
 }
 `
@@ -59,7 +57,10 @@ let me = {
     .replace(/(\S+?):/g, '<span id="$1">$&</span>')
     .replace("@twitter", a("https://twitter.com/nerd_yue", "@nerd_yue"))
     .replace("@github", a("https://github.com/rainy-me", "rainy-me"))
-    .replace("@pixiv", a("https://www.pixiv.net/member.php?id=10930752", "me"))
+    .replace(
+      "@pixiv",
+      a("https://www.pixiv.net/member.php?id=10930752", "__yue__")
+    )
     .replace("@mail", a("mailto:i@yue.coffee", "i@yue.coffee"))
     .replace("@instagram", a("https://instagram.com/nerd_yue/", "@nerd_yue"))
     .replace("@blog", a("https://blog.yue.coffee", "blog.yue.coffee"))

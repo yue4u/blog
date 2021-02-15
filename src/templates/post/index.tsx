@@ -30,6 +30,32 @@ const PostDate = styled.time`
   text-shadow: 0 0 1rem #000;
 `
 
+const PostLinkWrap = styled.div<{ direction: "prev" | "next" }>`
+  position: relative;
+  &::before {
+    position: absolute;
+    left: -1rem;
+    width: 1rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    ${(props) => props.direction === "prev" && `content: "<"`}
+  }
+  &::after {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 1rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    top: 0;
+    right: -1rem;
+    ${(props) => props.direction !== "prev" && `content: ">"`}
+  }
+`
+
 const PostLink = ({
   data,
   linkType,
@@ -41,11 +67,11 @@ const PostLink = ({
     return <Link to="#" />
   }
   const title = data.frontmatter?.title
-  const arrow = linkType === "prev" ? `< ${title}` : `${title} >`
-
   return (
     <Link to={`/${data.fields?.slug}`}>
-      <PaginationLink active>{arrow}</PaginationLink>
+      <PostLinkWrap direction={linkType}>
+        <PaginationLink active>{title}</PaginationLink>
+      </PostLinkWrap>
     </Link>
   )
 }

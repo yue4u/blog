@@ -14,6 +14,14 @@ export const CodeBlock = styled.article`
       font-family: "Fira Code";
       background: none;
       text-shadow: none;
+      a {
+        text-decoration: underline;
+        text-underline-offset: 1px;
+        &:hover {
+          color: #000;
+          background: skyblue;
+        }
+      }
       .keyword {
         color: hotpink;
       }
@@ -44,7 +52,7 @@ export const CodeBlock = styled.article`
       }
 
       .string {
-        color: yellowgreen;
+        color: #8bc34a;
       }
 
       .comment {
