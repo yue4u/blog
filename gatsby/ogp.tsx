@@ -37,9 +37,6 @@ export async function screenshot(data: PageData[], headless = true) {
     )
     const tags = sheet.getStyleTags()
     const html = tags + body
-    // if (fs.existsSync(filePath)) continue // skip any images that were already there
-    //
-    // do work
     await page.setContent(html)
     await page.addStyleTag({
       content: `
