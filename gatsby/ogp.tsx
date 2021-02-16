@@ -19,13 +19,13 @@ export async function screenshot(data: PageData[], headless = true) {
     )
   ).map((font) => font.toString("base64"))
   const browser = await puppeteer.launch({ headless })
+  const { NO_CACHE, REBUILD_SLUG } = process.env
   for (const pageData of data) {
     const filePath = path.join(__dirname, `../static/ogp/${pageData.slug}.png`)
-    if (
-      !process.env.NO_CACHE &&
-      !pageData.slug.includes(process.env.REBUILD_SLUG ?? "") &&
-      (await fs.stat(filePath).catch(() => false))
-    ) {
+    const rebuildFlag = REBUILD_SLUG && pageData.slug.includes(REBUILD_SLUG)
+    const exist = await fs.stat(filePath).catch(() => false)
+
+    if (!NO_CACHE && !rebuildFlag && exist) {
       console.log(`skip ${filePath}`)
       continue
     }
