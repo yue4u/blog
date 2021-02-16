@@ -56,7 +56,7 @@ export const CodeBlock = styled.article`
       }
 
       .comment {
-        color: #555;
+        color: #888;
       }
 
       .class-name {

@@ -10,6 +10,7 @@ export const GradientFont = styled.span`
   display: inline-block;
   font-weight: normal;
   text-align: center;
+  white-space: pre-wrap;
   background: linear-gradient(180deg, skyblue, #e91e63);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

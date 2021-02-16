@@ -21,7 +21,11 @@ export async function screenshot(data: PageData[], headless = true) {
   const browser = await puppeteer.launch({ headless })
   for (const pageData of data) {
     const filePath = path.join(__dirname, `../static/ogp/${pageData.slug}.png`)
-    if (!process.env.NO_CACHE && (await fs.stat(filePath).catch(() => false))) {
+    if (
+      !process.env.NO_CACHE &&
+      !pageData.slug.includes(process.env.REBUILD_SLUG ?? "") &&
+      (await fs.stat(filePath).catch(() => false))
+    ) {
       console.log(`skip ${filePath}`)
       continue
     }
@@ -82,13 +86,13 @@ export async function screenshot(data: PageData[], headless = true) {
 }
 
 // screenshot(
-//   [
-//     {
-//       slug: "test",
-//       title: "Blog of yue",
-//       tags: ["Blog of yue"],
-//       content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
-//     },
-//   ],
-//   false
+// [
+// {
+// slug: "test",
+// title: "Graphql Rust + Vue3\ngcpにDeployするまで",
+// tags: ["Blog of yue"],
+// content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
+// },
+// ],
+// false
 // )

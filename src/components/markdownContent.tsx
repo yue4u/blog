@@ -69,6 +69,9 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       content: "◆";
     }
   }
+  h4 {
+    margin-top: 2rem;
+  }
   del {
     color: #888;
     margin: 0 5px;
@@ -79,7 +82,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     margin: 2rem auto;
     max-width: 100%;
     object-fit: contain;
-    opacity: 0.8;
+    opacity: 0.9;
     &:hover {
       opacity: 1;
     }
@@ -161,9 +164,9 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       opacity: 0.8;
       z-index: -1;
       width: 100%;
-      height: 100%;
+      height: 90%;
       position: absolute;
-      top: 0;
+      top: 5%;
       left: 0;
       background-image: linear-gradient(100deg, #ec407a 47%, #00bcd4);
     }
@@ -177,6 +180,9 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     width: 80%;
     margin: 0 auto;
     display: inherit;
+  }
+  figcaption {
+    text-align: center;
   }
   @media screen and (max-width: 700px) {
     h2,

@@ -15,9 +15,10 @@ const CommentBlock = styled.div`
 export function Comments({ url, identifier, title }: DisqusConfig) {
   const disqusShortname = "yue-blog"
   const disqusConfig = { url, identifier, title }
-  return (
-    <CommentBlock>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-    </CommentBlock>
-  )
+  // return (
+  //   <CommentBlock>
+  //     <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+  //   </CommentBlock>
+  // )
+  return <></>
 }

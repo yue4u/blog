@@ -65,7 +65,7 @@ const MainTitle = styled(GradientFont)`
   height: 16rem;
   text-align: center;
   word-break: break-word;
-  margin: 3rem auto 1rem;
+  margin: 2rem auto 2rem;
   width: 100%;
   text-align: center;
   text-overflow: ellipsis;
