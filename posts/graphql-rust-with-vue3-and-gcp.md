@@ -8,47 +8,47 @@ tags:
   - GCP
 ---
 
-2020最後の学期でWebの演習授業を取りました。授業概要として、5人くらいでチームを組んで、役割分担しつつ、クライエント(指導教員)から新規サイト作成の要望を聞いて、デザインからデプロイまでやる授業です。
+2020年最後の学期でWeb演習の授業を取りました。授業概要として、5人くらいでチームを組み、役割分担しつつクライエント(指導教員)から新規サイト作成の要望を聞き、デザインからデプロイまでを行う授業です。
 
-普段やらない内容をやってみたいという考えのもと、~~チームメンバーの都合で、~~私はバックエンド・インフラ・イベント画面と管理画面を担当して、[偉大なるyama先生](https://twitter.com/_kwxxw)はトップページのコーディングをやってくれました。
+普段やらないことをやってみたいという考えのもと、~~チームメンバーの都合で、~~私はバックエンド・インフラ・イベント画面・管理画面を担当して、[偉大なるyama先生](https://twitter.com/_kwxxw)はトップページのコーディングをやってくれました。
 
 `Repository` => [https://github.com/rainy-me/tsukiyo](https://github.com/rainy-me/tsukiyo)
 
 
 ## 技術選定のプロセス
 
-技術スタックやインフラの選択も提案のうち(自由)ということなので、最近試したいけど試せないものを積み合わせてやりました。
+技術スタックやインフラの選択も提案のうち**自由**ということなので、最近試したかったけど試せなかったものを積み合わせました。
 
-いろんなものを試すのが目的なので、最終の技術スタックはかなりマニアックの結果になりました。
+いろんなものを試すことが目的なので、最終的な技術スタックはかなりマニアックの結果になりました。
 
 ### フロントエンド
 
-[yama先生](https://twitter.com/_kwxxw)も[`Vue3`](https://v3.ja.vuejs.org)+[`vite`](https://vitejs.dev)の構成でやりたかったので、フロントエンドのframeworkとして最初から決めました。cssのpre processorとして[`scss`](https://sass-lang.com)を入れましたが、途中で[`tailwind`](https://tailwindcss.com)も試したくなったので、実際プロジェクト内で`scss`ほとんど使われていません。フロントエンド開発のベースラインとして [`TypeScript`](https://www.typescriptlang.org)で書きました。
+[yama先生](https://twitter.com/_kwxxw)も[`Vue3`](https://v3.ja.vuejs.org)+[`vite`](https://vitejs.dev)の構成でやりたかったらしいので、フロントエンドのframeworkとしてそれらを採用しました。cssのpre processorとして[`scss`](https://sass-lang.com)を入れましたが、途中で[`tailwind`](https://tailwindcss.com)も試したくなったので、実際プロジェクト内で`scss`はほとんど使われていません。また、フロントエンド開発のベースラインとして [`TypeScript`](https://www.typescriptlang.org)を使用しました。
 
 ### バックエンド
 
-私最初から[`rust`](https://www.rust-lang.org)で書きたいのと、`sql`データベース上で`graphql`レイヤーを作るという縛りでやりたかったので、`ORM`としての[`diesel`](http://diesel.rs)とgraphqlライブラリーの[`juniper`](https://github.com/graphql-rust/juniper)を採用しました。全体のweb frameworkとして[`actix`](https://actix.rs)に載せました。
+私は最初から[`rust`](https://www.rust-lang.org)で書きたいのと、`sql`データベース上で`graphql`レイヤーを作るという縛りでやりたかったので、`ORM`としての[`diesel`](http://diesel.rs)とgraphqlライブラリーの[`juniper`](https://github.com/graphql-rust/juniper)を採用しました。全体のweb frameworkは[`actix`](https://actix.rs)に載せました。
 
 
 ### 開発環境
 
-複数名同時開発という状態なので、[`docker-compose`](https://www.docker.com)で構成しました。
+複数人同時開発なので、[`docker-compose`](https://www.docker.com)で構築しました。
 
 ### インフラ
 
-インフラ選択の初期に`VPS`を借りてやるか、`cloud vendor`を利用するのかについて結構悩んでいました。クライエントから、記事の画像をアップロードして反映したいのと、できればコストを抑えたいという要望がありました。その上、大量アクセス量が来ないという想定なので、`Pay as you go`の`cloud vendor`なら無料枠で済ませるという算段でした。
+インフラ選択の初期に`VPS`を借りてやるか、`cloud vendor`を利用するのかについて結構悩みました。クライアントから記事の画像を貰ってアップロードし反映したいのと、できればコストを抑えたいという要望がありました。その上大量のアクセスが来ないという想定なので、`Pay as you go`の`cloud vendor`なら無料枠で済ませるという算段でした。
 
-さらに、私達のチームは`rust`という相対的にマイナーな言語を選択したので、デプロイするため`Cloud Run`が一番手軽です。そこを踏まえ、インフラを`GCP`を選択しました。
+さらに、私達のチームは`rust`という相対的にマイナーな言語を選択したので、デプロイするには`Cloud Run`が一番手軽です。そこを踏まえ、インフラは`GCP`を選択しました。
 
-- [Cloud Storage](https://cloud.google.com/storage) フロントエンドhoisting用
+- [Cloud Storage](https://cloud.google.com/storage) フロントエンドhosting用
 - [Cloud Run](https://cloud.google.com/run)
 
-その他、`Cloud Run`のため`Container Registry`と合わせて使いしました。管理画面からbackend経由せず直接アプロードできるという利点があるので、`Identity Platform`をauthentication手段として採用しました。
+また、`Cloud Run`のために`Container Registry`も合わせて使用しました。管理画面からbackendを経由せず直接アプロードできるという利点があるので、`Identity Platform`をauthenticationの手段として採用しました。
 
 - [Container Registry](https://cloud.google.com/container-registry)
-- [Identity Platform](https://cloud.google.com/identity-platform) 
+- [Identity Platform](https://cloud.google.com/identity-platform)
 
-`CI/CD`のpipelineは`github actions`を採用しました。最初に`Cloud Build`を使ってみましたが、一番安いランタイムのパフォーマンスが非常に悪く、~~当時のbuild用のDockerfileに問題もあったけれど~~、10分のビルドタイムですらアウトしたので、`github actions`に移動しました。
+`CI/CD`のpipelineは`github actions`を採用しました。最初に`Cloud Build`を使ってみましたが、一番安いランタイムのパフォーマンスが非常に悪く、~~当時のbuild用のDockerfileに問題もあったけれど~~、10分のビルドタイムですらアウトしたので、`github actions`に移行しました。
 
 ![gcp cloud build timeout](../imgs/gcp-cloud-build-timeout.jpg)
 
@@ -56,7 +56,7 @@ tags:
 
 ### フロントエンド
 
-フロントエンドは計11ページで、サイトマップはこんな感じです。
+フロントエンドは計11ページで、サイトマップは以下のような感じです。
 
 |  |  path | ページ  | 実装した機能|
 |---|---|---|---|
@@ -78,9 +78,9 @@ tags:
 
 #### `vue3`、`<script setup/>`と`TypeScript`
 
-今回の制作にあたって、まだ[RFC](https://github.com/vuejs/rfcs/pull/227)である`script setup`を採用しました。`svelte`と似たような感じで、`<script/>`の内容を直接exposeしてくれるため、`boilerplate`が減り、見通しを良くすることができます。
+今回の制作にあたって、まだ[RFC](https://github.com/vuejs/rfcs/pull/227)である`script setup`を採用しました。`svelte`と似たような感じで`<script/>`の内容を直接exposeしてくれるため、`boilerplate`が減り、見通しを良くすることができます。
 
-`tooling`がまだ追いついてないため、`vetur`の設定など最初少し苦労しました。その後、`Volar`([johnsoncodehk/volar](https://github.com/johnsoncodehk/volar))というvscodeのextensionの存在が知り、`script setup`をサポートしている上、`<template/>`の中でも型チェックできるようになって、自動補完も効くので、だいぶ開発体験がだいぶ良くなりました。
+`tooling`がまだ追いついてないため、`vetur`の設定などに最初は少し苦労しました。その後、`Volar`([johnsoncodehk/volar](https://github.com/johnsoncodehk/volar))というvscode-extensionの存在を知りました。これは`script setup`をサポートしている上、`<template/>`の中でも型チェック出来るようになっていて自動補完も効くので、開発効率が爆速になりました。
 
 ![typecheck in template with volar](../imgs/typecheck-in-template-with-volar.png)
 
@@ -151,7 +151,7 @@ const { executeMutation: deleteEvent } = useMutation(`
 </style>
 ```
 
-型生成のため`graphql-codegen`を使いました。[`urql`用のplugin](https://graphql-code-generator.com/docs/plugins/typescript-urql)もあるだけど、ざっくり見た感じは`react`向けです。`@urql/vue`とうまく行くのがわからなかったので、使うのをやめました。`graphql-codegen`自体に対しても、buggyでうまく行かないことが多かったため、いい印象はないです。今回も`change-case`を手動で入れて、`typeNames: change-case#pascalCase`を指定することで回避しました。
+型生成には`graphql-codegen`を使いました。[`urql`用のplugin](https://graphql-code-generator.com/docs/plugins/typescript-urql)もありますが、ざっくり見た感じそれらは`react`向けです。`@urql/vue`とうまくいくかわからなかったのでそれらは使いませんでした。`graphql-codegen`もbuggyでうまく行かないことが多かったため、いい印象はないです。今回は`change-case`を手動で入れて`typeNames: change-case#pascalCase`を指定することで回避しました。
 
 ```yml
 overwrite: true
@@ -170,7 +170,7 @@ generates:
 
 #### `vite`と`esm`
 
-[`vite`](https://vitejs.dev)は`webpack`と違って、`commonjs`と`esm`(nodeとbrowser)のexportの区別に対して厳しいため、`firebase`など一部`esm`サポートしていない、あるいはpackageのexportが怪しいモジュールに対して、特殊の処理が必要です。例えば以下のように`vite.config.ts`の`optimizeDeps`に入れる必要があります。
+[`vite`](https://vitejs.dev)は`webpack`と違って`commonjs`と`esm`(nodeとbrowser)のexportの区別に対して厳しいため、`firebase`などの一部`esm`にサポートしていないようです。そのためpackageのexportが怪しいモジュールに対しては特殊の処理が必要です。例えば以下のように`vite.config.ts`の`optimizeDeps`に入れる必要があります。
 
 ```ts
 export default defineConfig({
@@ -188,11 +188,11 @@ export default defineConfig({
 
 #### state管理
 
-今回state管理が必要なのはeventの作成と更新ページだけなので、`vuex`などのstate管理ライブラリーを使わずに、`composition api`で全部やりました。
+今回state管理が必要なのはeventの作成と更新ページだけなので、`vuex`などのstate管理ライブラリーを使わずに`composition api`で全部やりました。
 
 #### 画像の最適化
 
-だいぶ始めから、Pull Requestのテストとして[`preactjs/compressed-size-action`](preactjs/compressed-size-action)をいれたので、予想していないのでサイズ変更を検知できました。普通ならカメラで撮った画像そのままサイトに載せることがないですが、誤ってcommitした画像に対して、わかりやすくwarningを出しました。もちろんSSGする時に画像の最適化を組み込むのが一番ですが、raw画像そもそもcommitするべきではないので、検知する意味はあったと思います。
+当初からPull Requestのテストとして[`preactjs/compressed-size-action`](preactjs/compressed-size-action)を入れていたので、予期せぬサイズ変更をすぐに検知できました。普通ならカメラで撮った画像そのままサイトに載せることはないですが、誤ってcommitした画像に対してわかりやすくwarningを出すことができました。もちろんSSGにする時は画像の最適化を組み込むのが一番ですが、raw画像はそもそもcommitするべきではないため検知する意味はあったと思います。
 
 ![+22046%](../imgs/unminimized_imgs.jpg)
 
@@ -203,11 +203,11 @@ export default defineConfig({
 
 ### バックエンド
 
-今回`actix`+`diesel`+`juniper`構成でやるのは初めてなので、探りながらやる感じでした。
+今回の`actix`+`diesel`+`juniper`構成でやるのは初めてなので探りながらやる感じでした。
 
 #### `anyhow`
 
-[`anyhow`](https://github.com/dtolnay/anyhow)はrustのerror handlingするためのライブラリーです。`Try` traitと`?`operatorを最大限を利用して、理想として的な処理flowが書けるようになります。例えば、contactをDBから取得する時に、こんな感じになります。
+[`anyhow`](https://github.com/dtolnay/anyhow)はrustのerror handlingするためのライブラリーです。`Try` traitと`?`operatorを最大限利用して、理想的な処理flowが書けました。例えば、contactをDBから取得する時はこんな感じになります。
 
 ```rust
 pub fn get(ctx: &Context, contact_id: i32) -> anyhow::Result<Contact> {
@@ -272,12 +272,12 @@ let max_age = res
   .parse::<i64>()?;
 ```
 
-`actix`自体は`anyhow`サポートしていませんが、使ってみたどころ特に問題はなかったです。
+`actix`自体は`anyhow`でサポートしていませんが、使ってみたところ特に問題はなかったです。
 
 
 #### juniper
 
-今回使ってみた感想として、`juniper`は非常に良くできています。queryとdata acessの処理をbindするだけで、graphqlレイヤーができます。昔一度nodeの`express-graphql`でresolver書いたことがったですが、これより大変だった記憶があります。
+今回使ってみた感想として、`juniper`は非常に良くできています。queryとdata acessの処理をbindするだけで、graphqlレイヤーができます。過去に一度nodeの`express-graphql`でresolver書いたことがありましたが、これより大変だった記憶があります。
 
 ```rust
 pub struct QueryPublic;
@@ -316,11 +316,11 @@ impl MutationPublic {
 pub type SchemaPublic = RootNode<'static, QueryPublic, MutationPublic, EmptySubscription<Context>>;
 ```
 
-`graphiql`もデフォルトでサポートしていてとても便利です。
+`graphiql`もデフォルトでサポートしていて、とても便利です。
 
 ![](../imgs/tsukiyo_admin_graphiql.png)
 
-`actix`レイヤーの`web::Json<T>`がschemaに合わないデータがpostされると自動弾かれるように、juniperも問題のあるrequestを処理してくれるので、`nodejs`の`superstruct`や`ajv`が`out of the box`になったような開発体験です。
+`actix`レイヤーの`web::Json<T>`がschemaに合わないデータがpostされるた時自動弾かれるように、juniperも問題のあるrequestを処理してくれるので、これは`nodejs`の`superstruct`や`ajv`が`out of the box`になったような開発体験です。
 
 ```rust
 pub async fn handler(
@@ -335,7 +335,7 @@ pub async fn handler(
 
 #### バリデーション
 
-さらにpostされたデータの中身をバリデーションのため[Keats/validator](https://github.com/Keats/validator)を使いました。以下のcodeのように`#[validate(xxx)]`をつけることで、`model.validate()?`ようにバリデーションできます。
+さらにpostされたデータの中身をバリデーションするために[Keats/validator](https://github.com/Keats/validator)を使いました。以下のcodeのように`#[validate(xxx)]`をつけることで、`model.validate()?`ようにバリデーションができます。
 
 ```rust
 use serde::Deserialize;
@@ -368,7 +368,7 @@ pub fn not_empty(input: &str) -> Result<(), ValidationError> {
 
 #### `diesel`
 
-今回は初見ですが、触ったことがあるORMのなかでも、[`diesel`](http://diesel.rs)は使いやすい部類に入ると思います。ドキュメントもそれなりにあって、だいたいやりたいことがハマることなくすぐできます。queryするたびに接続しないため、`r2d2`を使ってconnection poolを作ります。
+今回初見ですが、触ったことがあるORMの中で[`diesel`](http://diesel.rs)は使いやすい部類に入ると思います。ドキュメントもそれなりにあって、やりたいことがハマることなく直ぐできます。queryするたびに接続しないため、`r2d2`を使ってconnection poolを作ります。
 
 ```rust
 use diesel::pg::PgConnection;
@@ -394,7 +394,7 @@ pub fn create_pool() -> Pool {
 postgresql:///development?user=<DB-USER>&password=<DB-PASSWORD>&host=/cloudsql/<PROJECT-NAME>:<INSTANCE-REGION>:<INSTANCE-NAME>
 ```
 
-`diesel`は`Queryable`、`Insertable`といったtraitを提供しているので、modelとinputを`derive`します。`juniper`と`validator`と合わせて、こんな感じになります。
+`diesel`は`Queryable`、`Insertable`といったtraitを提供しているので、modelとinputを`derive`します。`juniper`と`validator`と合わせると、こんな感じになります。
 
 ##### Contact model
 
@@ -433,7 +433,7 @@ pub struct ContactInput {
 }
 ```
 
-`diesel`で[直接structからselectできない](https://github.com/diesel-rs/diesel/issues/2037)ため、取得したいfieldを一個つづlistしないといけないですが、型の安全は保証されます。例えば、eventの公開データを取得しpage viewを+1の操作はこんな感じになります。
+`diesel`で[直接structからselectはできない](https://github.com/diesel-rs/diesel/issues/2037)ため、取得したいfieldを一個つづlistしないといけないですが、代わりに型の安全は保証されます。例えば、eventの公開データを取得しpage viewを+1する操作はこんな感じになります。
 
 
 ```rust
@@ -455,9 +455,9 @@ pub fn get_public(ctx: &Context, query_input: EventQueryPublic) -> anyhow::Resul
 
 #### `jsonwebtoken` と openssl
 
-今回`Identity Platform`も使うことになったため、rust側でfirebaseの`JWT`tokenを検証する必要があります。オフィシャルのライブラリーがないため、[verify_id_tokens_using_a_third-party_jwt_library](https://firebase.google.com/docs/auth/admin/verify-id-tokens#verify_id_tokens_using_a_third-party_jwt_library)の手順通り実装しました。[RustとFirebase Authenticationでユーザー認証を導入](https://blog.mahoroi.com/posts/2020/08/rust-firebase-authentication/)という記事を参考したが、実際の処理の部分はほとんどリファクタリングしました。
+今回`Identity Platform`も使うことになったため、rust側でfirebaseの`JWT`tokenを検証する必要がありました。オフィシャルのライブラリーがないために、[verify_id_tokens_using_a_third-party_jwt_library](https://firebase.google.com/docs/auth/admin/verify-id-tokens#verify_id_tokens_using_a_third-party_jwt_library)の手順を見て実装しました。[RustとFirebase Authenticationでユーザー認証を導入](https://blog.mahoroi.com/posts/2020/08/rust-firebase-authentication/)という記事を参考にしましたが、実際の処理の部分はほとんどリファクタリングしました😨。
 
-そこで[`jsonwebtoken`](https://github.com/Keats/jsonwebtoken)のcrateを利用しました。crate現在`x509`の証明書をサポートしていないですが、[issuecomment-753403072](https://github.com/Keats/jsonwebtoken/issues/127#issuecomment-753403072)で書かれた通り、`openssl`そのものを使うことで、`public key`を抽出できます。
+その中で、[`jsonwebtoken`](https://github.com/Keats/jsonwebtoken)のcrateを利用しました。crateは現在`x509`の証明書をサポートしていませんが、[issuecomment-753403072](https://github.com/Keats/jsonwebtoken/issues/127#issuecomment-753403072)で書かれている通り、`openssl`そのものを使うことで、`public key`を抽出できます。
 
 ```rust
 let certificate = openssl::x509::X509::from_pem(v.as_bytes())?;
@@ -466,15 +466,15 @@ let pem_bytes = certificate.public_key()?.rsa()?.public_key_to_pem()?;
 
 詳細の実装は[auth/mod.rs](https://github.com/rainy-me/tsukiyo/blob/master/backend/src/auth/mod.rs)と[auth/certs.rs](https://github.com/rainy-me/tsukiyo/blob/master/backend/src/auth/certs.rs)にあります。
 
-`graphql`endpointのauthentication手段もいくつあります。例えば、`field`、`object`、`mutation`などいくつのレイヤーで権限と決めることができます。
+`graphql`endpointのauthentication手段もいくつかあります。例えば、`field`、`object`、`mutation`などいくつかのレイヤーで権限を決めることができます。
 
-今回一番最初にconnectionをもらう前に、contextでuserをチェックしましたが、
+今回は一番最初のconnectionをもらう前に、contextでuserをチェックしましたが、
 
 ```rust
 let conn = context.check_user()?.get()?;
 ```
 
-`juniper`でqueryしているfieldを見る方法がすぐ見つからなかったため、ログインの有無で`schema`こと分けることにしました。
+`juniper`でqueryしているfieldを見る方法がすぐ見つからなかったため、ログインの有無で`schema`ごとに分けることにしました。
 
 ```rust
 let res = if ctx.user.is_some() {
@@ -486,13 +486,13 @@ let res = if ctx.user.is_some() {
 
 #### Dockerfile for Production Rust
 
-`Cloud run`にデプロイするため、productionビルドのDocker Imageが必要です。まず`diesel`crateと`JWT`の検証のため、`openssl`が必要で、muti-stage buildにすると、`dynamic linking`が問題になります。そこで、完全`static linking`の`musl`imageが選択肢として上がります。さらに、最終imageがかなり小さい(~10MB after compression)上、[using-diesel](https://github.com/emk/rust-musl-builder/tree/master/examples/using-diesel)のexampleもあるので、`musl`に決めました。
+`Cloud run`にデプロイするためにはproductionビルドのDocker Imageが必要です。まず`diesel`crateと`JWT`の検証のため`openssl`が必要なので、muti-stage buildにしようとします。そうすると`dynamic linking`が問題になります。そこで、完全`static linking`の`musl`imageが選択肢として上がります。muslは最終imageがかなり小さい(~10MB after compression)上、[using-diesel](https://github.com/emk/rust-musl-builder/tree/master/examples/using-diesel)のexampleもあるので、`musl`に決めました。
 
-ただし、[why-musl-extremely-slow](https://andygrove.io/2020/05/why-musl-extremely-slow/)という記事に書かれたように、`musl`イメージにはパフォーマンス問題が存在して、今回benchmarkを取っていませんが、できれば避けたほうがいいかもしれません。
+ただし、[why-musl-extremely-slow](https://andygrove.io/2020/05/why-musl-extremely-slow/)という記事に書かれているように、`musl`イメージにはパフォーマンス問題が存在しています。今回はbenchmarkを取っていませんが、できれば避けたほうがいいかもしれません。
 
 ![](../imgs/tsukiyo-docker-image.png)
 
-さらに、rustのビルドスピードを上げるために、少しの工夫をしました。
+さらに、rustのビルドスピードを上げるために少し工夫をしました。
 
 一番最初はこんな感じでした。
 
@@ -502,9 +502,9 @@ ADD --chown=rust:rust . ./
 RUN cargo build --release
 ```
 
-`ADD --chown=rust:rust . ./`はsource code全部copyして、`cargo build --release`すると、依存しているcratesを全部downloadしてcompileしますが、source codeに変更があった場合、dockerのlayer cacheが無効になり、dependenciesを最初からdownloadして再compileすることになるので、遅くなります。
+`ADD --chown=rust:rust . ./`はsource codeを全部copyして、`cargo build --release`すると、依存しているcratesを全部downloadしてcompileしますす。しかし、source codeに変更があった場合dockerのlayer cacheが無効になり、dependenciesを最初からdownloadして再compileすることになるので、遅くなります。
 
-修正してこうになりました。
+そこで、修正してこうなりました。
 
 ```Dockerfile
 FROM ekidd/rust-musl-builder:latest AS builder
@@ -517,13 +517,13 @@ ADD --chown=rust:rust . ./
 RUN cargo build --release
 ```
 
-dockerのlayer cacheをちゃんと利用するため、まず`Cargo.toml`と`Cargo.lock`だけcopyして、dummyのmain関数をつくってコンパイルします。そうすれば、あとsource codeに変更があったとしても、dependenciesのコンパイルcacheが効いた状態になります。
+dockerのlayer cacheをちゃんと利用するため、まず`Cargo.toml`と`Cargo.lock`だけcopyして、dummyのmain関数をつくってコンパイルします。そうすれば、あとでsource codeに変更があったとしてもdependenciesのコンパイルcacheが効いた状態になります。
 
 `github actions`のなかで`--cache-from`を使うことで、`9分`くらい掛かったビルドを`2分半`まで短縮できました。
 
 ```sh
 docker pull ${{ env.IMAGE }}-cache || true
-docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache-from=${{ env.IMAGE }}-cache 
+docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache-from=${{ env.IMAGE }}-cache
 ```
 
 最終的なDockerfileは[ここです](https://github.com/rainy-me/tsukiyo/blob/master/backend/Dockerfile.prod)
@@ -536,17 +536,18 @@ docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache
 
 #### Backendは`Cloud Run`のみの場合、`Cloud SQL`と一緒に使うべきではない
 
-`Cloud Run`と合わせたデータベースとして、[`Cloud SQL`](https://cloud.google.com/sql)の紹介が一番多かったので、データベースは`postgresql`のinstanceにしましたが、ここが一番大きなミスでした。なぜなら`Cloud SQL`は`Pay as you go`ではなく、一つの`VM`常に起動する状態になるので、`Cloud Run`の特性と合わない上、値段が高くなります。一方、`Cloud Firestore`は~~Rustライブラリーがないですが~~起動時間で課金されないので、向いているかもしれません。
+`Cloud Run`と合わせたデータベースとして、[`Cloud SQL`](https://cloud.google.com/sql)の紹介が一番多かったのでデータベースは`postgresql`のinstanceにしましたが、ここが一番大きなミスでした。なぜなら`Cloud SQL`は`Pay as you go`ではなく、一つの`VM`常に起動する状態になるので、`Cloud Run`の特性と合わない上値段が高くなります。一方、`Cloud Firestore`は~~Rustライブラリーがないですが~~起動時間で課金されるわけではないので、向いているかもしれません。
 
 ### プロジェクトマネージメント
 
-最初に紹介した通り、今回の授業は５人で協力するはずだったが、授業外でyama先生以外ほか三名のメンバー(チームリーダー含め)と連絡が取れない状態が続いて、デザインの完成もかなり遅れた上、一部しかありません。残念ながら、デザインの改善について話す機会ですらなかったでした。
+最初に紹介した通り、今回の授業は５人で協力するはずでした。。。しかし、授業外でyama先生以外のほか三名のメンバー(チームリーダー含め)と連絡が取れない状態が続いて、デザインの完成もかなり遅れた上、それは一部しかありませんでした。よって残念ながら、デザインの改善について話す機会はありませんでしたx。
 
-デザインが遅れることに連れて、制作期間もテスト期間とかぶりました。yama先生も忙しくなり、結局私一人が管理画面のデザインとフロントエンド・バックエンド・インフラ全般をやることになってしまいました。最終的にコードを書く時間は二週間くらいしかありませんでした。
+デザインが遅れることで制作期間がテスト期間とかぶりました。yama先生も忙しくなり、結局私一人が管理画面のデザインとフロントエンド・バックエンド・インフラ全てをやることになってしまいました。  
+最終的にコードを書く時間は二週間くらいしかありませんでした。
 
-プロジェクトマネージメント的に一番失敗した点は、進捗管理ができなかったことです。一応プロジェクトマネージメントツールとして、`Backlog`を使いましたが、リーダー担当な人が不在のせいで、うまく利用できませんでした。
+プロジェクトマネージメント的に一番失敗した点は、進捗管理ができなかったことだと思います。一応プロジェクトマネージメントツールとして、`Backlog`を使いましたが、リーダー担当の人が不在だったせいで、うまく利用できませんでした。
 
-細かく項目を洗い出しなくても、最初からトップページのデザインみたいにクリティカルとなるタスクの締め切りと遅れ対策を考えたほうが良かったかもしれません。
+細かく項目を洗い出さなくても、最初からトップページのデザインのようなクリティカルとなるタスクの締め切りと、遅れた時の対策を考えたほうが良かったかもしれません。
 
 ### 積み残し
 
@@ -561,4 +562,4 @@ docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache
 
 ## まとめ
 
-今回のプロジェクトを通して、`tailwind`、`urql`、`juniper`、`diesel`及び`Cloud Run`などについて調査、実装しました。最終的的の成果物はプロダクションレベルとは言いがたいものの、検証の意味では充分できていたと思います。`tailwind`に対してやはり不信感を感じているんだけど、`urql`、`juniper`と`Cloud Run`はこれからも使って行きたいです。
+今回のプロジェクトを通して、`tailwind`、`urql`、`juniper`、`diesel`及び`Cloud Run`などについて調査、実装しました。最終的な成果物はプロダクションレベルとは言いがたいものの、検証の意味では充分だと思います。`tailwind`に対してやはり不信感を感じてはいますが、`urql`、`juniper`と`Cloud Run`はこれからも使って行きたいです。
