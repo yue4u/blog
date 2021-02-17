@@ -19,10 +19,10 @@ export async function screenshot(data: PageData[], headless = true) {
     )
   ).map((font) => font.toString("base64"))
   const browser = await puppeteer.launch({ headless })
-  const { NO_CACHE, REBUILD_SLUG } = process.env
+  const { NO_CACHE, REBUILD } = process.env
   for (const pageData of data) {
     const filePath = path.join(__dirname, `../static/ogp/${pageData.slug}.png`)
-    const rebuildFlag = REBUILD_SLUG && pageData.slug.includes(REBUILD_SLUG)
+    const rebuildFlag = REBUILD && pageData.slug.includes(REBUILD)
     const exist = await fs.stat(filePath).catch(() => false)
 
     if (!NO_CACHE && !rebuildFlag && exist) {
@@ -85,14 +85,14 @@ export async function screenshot(data: PageData[], headless = true) {
   }
 }
 
-// screenshot(
-// [
-// {
-// slug: "test",
-// title: "Graphql Rust + Vue3\ngcpにDeployするまで",
-// tags: ["Blog of yue"],
-// content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
-// },
-// ],
-// false
-// )
+screenshot(
+  [
+    {
+      slug: "test",
+      title: "Graphql Rust + Vue3\ngcpにDeployするまで",
+      tags: ["Blog of yue"],
+      content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
+    },
+  ],
+  false
+)

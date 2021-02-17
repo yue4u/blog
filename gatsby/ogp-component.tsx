@@ -123,7 +123,7 @@ const PostTitle = styled(GradientFont)`
   height: 13rem;
   text-align: center;
   word-break: break-word;
-  margin: 3rem auto 1rem;
+  margin: 3rem auto 3rem;
   width: 100%;
   text-align: center;
   text-overflow: ellipsis;
