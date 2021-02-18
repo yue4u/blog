@@ -85,14 +85,14 @@ export async function screenshot(data: PageData[], headless = true) {
   }
 }
 
-screenshot(
-  [
-    {
-      slug: "test",
-      title: "Graphql Rust + Vue3\ngcpにDeployするまで",
-      tags: ["Blog of yue"],
-      content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
-    },
-  ],
-  false
-)
+// screenshot(
+//   [
+//     {
+//       slug: "test",
+//       title: "Graphql Rust + Vue3\ngcpにDeployするまで",
+//       tags: ["Blog of yue"],
+//       content: `正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。`,
+//     },
+//   ],
+//   false
+// )
