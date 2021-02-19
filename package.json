@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "yue <blog@yue.coffee>",
   "dependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^7.12.17",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mdx-js/tag": "^0.20.3",
