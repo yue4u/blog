@@ -14,6 +14,7 @@ tags:
 
 `Repository` => [https://github.com/rainy-me/tsukiyo](https://github.com/rainy-me/tsukiyo)
 
+![サイトイメージ](../imgs/tsukiyo-ogp.png)
 
 ## 技術選定のプロセス
 
@@ -38,7 +39,7 @@ tags:
 
 インフラ選択の初期に`VPS`を借りてやるか、`cloud vendor`を利用するのかについて結構悩みました。クライアントから記事の画像を貰ってアップロードし反映したいのと、できればコストを抑えたいという要望がありました。その上大量のアクセスが来ないという想定なので、`Pay as you go`の`cloud vendor`なら無料枠で済ませるという算段でした。
 
-さらに、私達のチームは`rust`という相対的にマイナーな言語を選択したので、デプロイするには`Cloud Run`が一番手軽です。そこを踏まえ、インフラは`GCP`を選択しました。
+私達のチームは`rust`という相対的にマイナーな言語を選択したので、デプロイするには`Cloud Run`が一番手軽です。さらに、`CI/CD`の構成や自動revisionは`VPS`より楽です。以上を踏まえ、インフラは`GCP`を選択しました。
 
 - [Cloud Storage](https://cloud.google.com/storage) フロントエンドhosting用
 - [Cloud Run](https://cloud.google.com/run)
@@ -320,7 +321,7 @@ pub type SchemaPublic = RootNode<'static, QueryPublic, MutationPublic, EmptySubs
 
 ![](../imgs/tsukiyo_admin_graphiql.png)
 
-`actix`レイヤーの`web::Json<T>`がschemaに合わないデータがpostされるた時自動弾かれるように、juniperも問題のあるrequestを処理してくれるので、これは`nodejs`の`superstruct`や`ajv`が`out of the box`になったような開発体験です。
+`actix`レイヤーの`web::Json<T>`がschemaに合わないデータがpostされるた時自動で弾くように、juniperも問題のあるrequestを処理してくれるので、これは`nodejs`の`superstruct`や`ajv`が`out of the box`になったような開発体験です。
 
 ```rust
 pub async fn handler(
