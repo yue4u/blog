@@ -554,6 +554,7 @@ docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache
 - スケジュール的に、テストを書く余裕はありませんでした。
 - vue3でjest + cypressでsetupしましたが、うまく動かないので、まだ調査が必要です。[`@testing-library/vue`](https://testing-library.com/docs/vue-testing-library/intro/)は良さそうです。
 - `tailwind`使うことになったので、`sass`をやめて`@apply`使うほうが綺麗に収まると思いました。
+- `tailwind`最初のビルドタイムが長いですが、[`windicss`(vite-plugin-windicss)](https://github.com/windicss/vite-plugin-windicss)を使用すれば20~100x速くなります
 - イベントeditorページのコードも綺麗とは言えないので、リファクタリングが必要です。
 - 今回backendでお主にeventとcontact２つ独立したテーブルしか操作してなかったので`N+1`など`graphql`で良くある問題について検証できませんでした。
 - 提出とほぼ同じタイミングで、`Cloud Run`は[websocketサポートするようになりました](https://cloud.google.com/blog/products/serverless/cloud-run-gets-websockets-http-2-and-grpc-bidirectional-streams)。`juniper`の`subscription`と組み合わせて使用できそうです。
