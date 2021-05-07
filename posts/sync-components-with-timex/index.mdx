@@ -3,7 +3,7 @@ title: 同步Timeline组件的时间
 date: 2019-09-17 00:52:13
 ---
 
-import Sync from "../extra/syncedUpdate"
+import Sync from "@/extra/syncedUpdate"
 
 最近工作中遇到了一个新需求，需要能在列表项目组件内显示创建时间和当前时间的差。
 
@@ -15,7 +15,7 @@ implement 并不困难，但是由于每个组件被渲染的时间不同，组�
 
 ### 例
 
-<Sync.Example1/>
+<Sync.Example1 />
 
 ### 代码
 
@@ -38,7 +38,7 @@ useEffect(() => {
 
 ### 例
 
-<Sync.Example2/>
+<Sync.Example2 />
 
 ### 代码
 
@@ -55,7 +55,7 @@ useEffect(() => {
 
 return (
   <>
-    {items.map(item => (
+    {items.map((item) => (
       <Item key={item.id} item={item} parentTime={time} />
     ))}
   </>
@@ -79,7 +79,7 @@ const Item = ({ item, parentTime }) => {
 
 ### 例
 
-<Sync.Example3/>
+<Sync.Example3 />
 
 ### 代码
 
@@ -135,7 +135,7 @@ min: 0
 测试用代码
 
 ```js
-const run = num => {
+const run = (num) => {
   const calcTime = () => {
     const now = new Date()
     return (

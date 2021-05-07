@@ -63,7 +63,7 @@ export default function Parent() {
 
 ## 渲染结果：
 
-import Demo from "../extra/useCallbackUseMemoDemo"
+import Demo from "@/extra/useCallbackUseMemoDemo"
 
 <Demo />
 
@@ -86,15 +86,15 @@ import Demo from "../extra/useCallbackUseMemoDemo"
 
 - 在`Profiler`里选上记录每次渲染的理由
 
-![](https://cloud.rainy.me/blog/c4d01a.png)
+![](./c4d01a.png)
 
 - 在通常里同样可以选上高亮渲染中的组件，哪个组件发生了再渲染一目了然。
 
-![](https://cloud.rainy.me/blog/db1c74.png)
+![](./db1c74.png)
 
 通过 profiling 记录点击事件。然后可以的到这样的`Framegraph`
 
-![](https://cloud.rainy.me/blog/35d43d.png)
+![](./35d43d.png)
 
 hover 到第一个 Child 组件上，可以看到产生再渲染的理由是 `decrease`这个`props`发生了改变。由于 js 的特性，当父组件发生在渲染的时候，`decrease`这个函数也会被重新声明，导致和之前的函数 reference 不同，所以产生了 props 的不同，导致再渲染
 
@@ -102,7 +102,7 @@ hover 到第一个 Child 组件上，可以看到产生再渲染的理由是 `de
 <Child index={1} decrease={decrease} />
 ```
 
-![](https://cloud.rainy.me/blog/29b221.png)
+![](./29b221.png)
 
 hover 到第二个 Child 组件上，可以看到在渲染的理由是`The parent component rendered`也就是由于父组件发生再渲染，这个子组件也产生了再渲染。因为使用了`useCallback`，所以 props 并没有发生改变。
 
@@ -110,7 +110,7 @@ hover 到第二个 Child 组件上，可以看到在渲染的理由是`The paren
 <Child index={2} decrease={decreaseCallback} />
 ```
 
-![](https://cloud.rainy.me/blog/9943f7.png)
+![](./9943f7.png)
 
 hover 到第三个 Child 组件上，可以看见再渲染的理由和第一个一样。这边虽然使用了`memo`但是由于 props 的改变，`memo`并没有产生期待的效果。
 
@@ -118,7 +118,7 @@ hover 到第三个 Child 组件上，可以看见再渲染的理由和第一个�
 <MemoizedChild index={3} decrease={decrease} />
 ```
 
-![](https://cloud.rainy.me/blog/0e0ec1.png)
+![](./0e0ec1.png)
 
 第四个组件，开发工具显示并没有在这个周期内发生再渲染。由于 props 并没有发生改变，用是使用了`memo`，即使父组件发生再渲染，子组件不会产生不不必要的渲染。这个原来的`Pure Component`是类似的。
 
@@ -126,7 +126,7 @@ hover 到第三个 Child 组件上，可以看见再渲染的理由和第一个�
 <MemoizedChild index={4} decrease={decreaseCallback} />
 ```
 
-![](https://cloud.rainy.me/blog/5d11e3.png)
+![](./5d11e3.png)
 
 第五个子组件，发生再渲染的理由和第一个一样，虽然这里使用了`useMemo`，但是由于`decrease`函数的改变同样发生了更新。如果看页面的 console，可以看到这样的警告：
 
@@ -142,7 +142,7 @@ Line 26:9:  The 'decrease' function makes the dependencies ofuseMemo Hook (at li
 To fix this, wrap the 'decrease' definition into its own useCallback() Hook  react-hooks/exhaustive-deps
 ```
 
-![](https://cloud.rainy.me/blog/1b9309.png)
+![](./1b9309.png)
 
 ```tsx
 const UseMemoChild2 = useMemo(

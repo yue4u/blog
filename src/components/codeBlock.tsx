@@ -2,6 +2,12 @@ import styled from "styled-components"
 
 export const CodeBlock = styled.article`
   pre {
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0px;
+      background: transparent;
+    }
+
     background-color: #333;
     padding: 1rem;
     font-size: 0.9rem;

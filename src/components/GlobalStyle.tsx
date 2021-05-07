@@ -23,9 +23,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 ::-webkit-scrollbar {
-  display:none;
+  /* display:none;
   width: 0px;
-  background: transparent;
+  background: transparent; */
 }
 
 html,

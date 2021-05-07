@@ -8,7 +8,7 @@ tags:
 
 在做学校的一个项目，同组的成员做了这样的设计：
 
-![](https://cloud.rainy.me/blog/custom-properties-movie.png)
+![](./custom-properties-movie.png)
 显然背景的镂空文字可以使用 `pseudo-element` 和 `-webkit-text-stroke`, 但是问题是怎么使背景文字和文字一样。当然改变设计也是一个选择，但是感觉这样还不错于是想尝试一下能否实装。
 
 在 js 中并不能简单的向 css 传递变量，于是在这时候就需要用一些特殊的技巧。
@@ -58,7 +58,7 @@ tags:
 
 ## vue
 
-![](https://cloud.rainy.me/blog/custom-properties-vue.png)
+![](./custom-properties-vue.png)
 
 ```vue
 <s-section-title text="Movie" />
@@ -85,7 +85,7 @@ tags:
 
 ## React
 
-![](https://cloud.rainy.me/blog/custom-properties-react.png)
+![](./custom-properties-react.png)
 
 ```jsx
 <Topic text="Learn React" />
