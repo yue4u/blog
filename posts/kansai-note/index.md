@@ -9,14 +9,12 @@ tags:
 
 [日本語の森](http://www.nihongonomori.com/)の[ビーデオ](https://www.youtube.com/watch?v=66dSZsoUHCk)はおもろいやで！
 
-
 ミサ先生はべっぴんやんな？
 
 「しんどい」は関西弁だと知らんかった。
 
-![](./0.jpg))
+![](./0.jpg)
 
-![](./1.jpg))
+![](./1.jpg)
 
-![](./2.jpg))
-
+![](./2.jpg)

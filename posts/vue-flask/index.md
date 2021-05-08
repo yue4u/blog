@@ -195,9 +195,9 @@ socketio.run(app,host='0.0.0.0',
 <h3><span class="pitfall">⇝&nbsp;</span>11.有关webstorm不停的indexing。。</h3>
 上两个评论作为吐槽。。[链接](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207671405-stop-Indexing-please-)
 
-![](./3.jpg))
+![](./3.jpg)
 
-![](./4.jpg))
+![](./4.jpg)
 个人解决办法是尽可能多的文件和文件夹设置 exclude。比如 node.js 自带的文件。
 假如 pycharm 和 webstorm 一起使用的话会互相影响。。暂时没好的办法。
 

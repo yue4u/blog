@@ -39,7 +39,7 @@ export const config: GatsbyConfig = {
               linkImagesToOriginal: false,
               showCaptions: true,
               quality: 80,
-              withWebp: true,
+              srcSetBreakpoints: [500],
             },
           },
           {
