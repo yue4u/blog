@@ -30,13 +30,13 @@ tags:
 
 下载 zip 然后解压
 
-![](https://farm5.staticflickr.com/4664/39020988724_ae18604950.jpg)
+![](./0.jpg))
 
 ### 2. 打开 bash
 
 ### 3. cd 到 directory
 
-![](https://farm5.staticflickr.com/4629/39020988614_9216d956c4.jpg)
+![](./1.jpg))
 
 ### 4. 输入 sh lp.sh -s | --show
 
@@ -46,10 +46,10 @@ tags:
 
 大致会这样子：
 
-![](https://farm5.staticflickr.com/4759/39730140741_31cbdee5c2.jpg)
+![](./2.jpg))
 ...
 
-![](https://farm5.staticflickr.com/4716/25858378768_2b94bf40a1.jpg)
+![](./3.jpg))
 
 ### 4. 输入 sh lp.sh -d | --delete 99,100,111
 
@@ -57,7 +57,7 @@ tags:
 
 同时删除多个用 `,` 分隔
 
-![](https://farm5.staticflickr.com/4648/39020988524_776acabe32.jpg)
+![](./4.jpg))
 
 ### 5. 按 y 确认
 

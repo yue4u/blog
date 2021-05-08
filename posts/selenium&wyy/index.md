@@ -26,7 +26,7 @@ selenium 初使用。
 
 很久以来自己的<del>朋友</del>群中经常会分享网易云音乐的歌曲……然而对其整理并不是很轻松，自从有了[Faya](https://minatsuki-yui.github.io/2017/06/11/Faya_Project/)之后自动存取链接部分是简单实现了。
 
-![](https://farm5.staticflickr.com/4578/38615327616_086216e074.jpg)
+![](./0.jpg))
 
 关于歌曲页面可以参考[这里](https://minatsuki-yui.github.io/2017/05/13/wyy&aqi/),存储部分代码大概这样：
 
@@ -54,7 +54,7 @@ def save(msg):
         songurl.write(','+wyyurl)
 ```
 
-![](https://farm5.staticflickr.com/4553/26897265569_358ccc2d15.jpg)
+![](./1.jpg))
 
 <del>因为是之后按照时间顺序读取，图省事就直接写进了 txt，其实这样不是很好。非常 ugly</del>
 
@@ -110,11 +110,11 @@ driver.close()
 
 如果正常就可以看到如下 python 打开了一个浏览器，输入了`selenium`然后点击了搜索。
 
-![](https://farm5.staticflickr.com/4534/38672040481_0bb083c91e.jpg)
+![](./2.jpg))
 
 我们的目标当然是`http://music.163.com`
 
-![](https://farm5.staticflickr.com/4554/26896149659_0b81d2fe85.jpg)
+![](./3.jpg))
 
 要收藏第一步当然是要登录。
 
@@ -163,11 +163,11 @@ for each in cookies:
 
 登录完之后和所有爬虫一样就是分析 html 了，随便打开一首歌的页面，对于收藏按钮右键检查元素：
 
-![](https://farm5.staticflickr.com/4576/37954574434_b19f5be844.jpg)
+![](./4.jpg))
 
 右上选中的部分就是这部分的 html 了。
 
-![](https://farm5.staticflickr.com/4556/24799938688_f9f94f7234.jpg)
+![](./5.jpg))
 
 内容为
 
@@ -193,7 +193,7 @@ for each in cookies:
 
 仔细一看这边的内容中`<a data-res-id="32364761" >`表示这部分的 id 是动态生成的，并不可靠，可没有其他可以简单查找到的其他特征，css 也是复合的，只好选择使用 xpath 了。
 
-![](https://farm5.staticflickr.com/4567/38616306396_8e8d0d06db.jpg)
+![](./6.jpg))
 
 如果选择得到结果: `//*[@id="content-operation"]/a[3]`看起来还行。去 selenium 试试看。
 
@@ -210,7 +210,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 
 再次查看 html，可以看到如下内容：
 
-![](https://farm5.staticflickr.com/4517/24800124228_26abcfc615.jpg)
+![](./7.jpg))
 
 整个页面都在这层 iframe 之下，因而我们要做的就是切换到这个部分再进行搜索。
 具体代码：  
@@ -220,7 +220,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 
 之后正常跳出选择框，检查元素，这边貌似有个`xtag`的 class 可以直接用来定位，要注意的是`xtag`后有个空格……理由不是很懂。
 
-![](https://farm5.staticflickr.com/4558/24800228118_8aa18798b6.jpg)
+![](./8.jpg))
 
 然而这时候很自信的写了:
 `pop = driver.find_elements_by_class_name('xtag ')`
@@ -246,7 +246,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 
 如下图所示，窗口的元素是在点击后生成的，在点击`X`之后移除，因而在点击后直接查询，这时它并没有生成完整，稍微等待一下加载再进行查询就没问题了。
 
-![](https://farm5.staticflickr.com/4585/26896412009_b262c5f679.jpg)
+![](./9.jpg))
 因而代码如下：
 
 ```
@@ -257,13 +257,13 @@ pop[1].click()
 
 这里还有一个要注意的点，在使用`driver.find_element_by_XXXX`等方法时，要注意单复数，比如`find_element_by_XXXX`和`find_elements_by_XXXX`是不同的，后者返回的是一个 list，也就不能直接使用`click()`、`send_keys`等方法。
 
-![](https://farm5.staticflickr.com/4579/37955357164_4645f246f2.jpg)
+![](./10.jpg))
 
 终于……我们看到了收藏成功的提示。感动……╮(￣ ▽ ￣)╭
 
 当然如果这首曲子在歌单中已经有了会返回已存在的提示。
 
-![](https://farm5.staticflickr.com/4531/26896997779_d3097301a8.jpg)
+![](./11.jpg))
 
 完整的工作 pipeline 如下:
 

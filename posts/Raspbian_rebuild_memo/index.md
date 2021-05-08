@@ -26,7 +26,7 @@ tags:
 
 emmmm  (´Д` )
 
-![](https://farm5.staticflickr.com/4569/26953360409_0cb5b78ef8_z.jpg)
+![](./0.jpg))
  
 主要原因估计还是损坏了系统的python3和dpkg库。正好对淘宝商家附带的中文系统不是很满意，干脆重新安装一下算了。
 
@@ -48,9 +48,9 @@ emmmm  (´Д` )
 
 有Flashing和Validating两步
 
-![](https://farm5.staticflickr.com/4554/38685276372_0e4fc4211e_c.jpg)
+![](./1.jpg))
 
-![](https://farm5.staticflickr.com/4542/37829722295_bff89c34a8_c.jpg)
+![](./2.jpg))
 
 ---
 
@@ -86,7 +86,7 @@ priority=1 #优先级
 
 访问	`192.168.0.1`查询设备地址
 
-![](https://farm5.staticflickr.com/4551/37829696585_dff7a7fc97.jpg)
+![](./3.jpg))
 
 因为之前设置过内网地址绑定MAC，所以不需要更改
 

@@ -14,9 +14,9 @@ tags:
 
 「しんどい」は関西弁だと知らんかった。
 
-![](https://c1.staticflickr.com/3/2946/33984705061_73844463ed_h.jpg)
+![](./0.jpg))
 
-![](https://c1.staticflickr.com/3/2821/34114463065_89bf25fa56_o.jpg)
+![](./1.jpg))
 
-![](https://c1.staticflickr.com/3/2840/33303024153_1aa268a27a_o.jpg)
+![](./2.jpg))
 

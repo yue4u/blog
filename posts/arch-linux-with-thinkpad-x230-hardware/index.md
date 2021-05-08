@@ -10,7 +10,7 @@ tags:
 
 ## 先上图
 
-![](https:./314239.jpg)
+![](./314239.jpg)
 
 ## Links
 
@@ -59,7 +59,7 @@ google 了一大圈`Best Laptops For Linux`，推荐最多的是`DELL XPS 13`和
 
 要注意的是`x230`的`mSATA`只支持`mSATA2`达不到满速，据[reddit](https://www.reddit.com/r/thinkpad/comments/6nft89/x230_should_the_os_be_on_the_msata_or_the_sata/)称体感没很大区别。这里是抱者以后说不定用在其他机器上的想法买了 860evo。
 
-![](https:./57178d.jpg)
+![](./57178d.jpg)
 
 | model  | `Samsung SSD 500GB 860EVO 2.5inch MZ-76E500B/EC` |
 | ------ | ------------------------------------------------ |

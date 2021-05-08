@@ -17,27 +17,27 @@ tags:
 <h2> 探索部分</h2>
 首先打开一阅读页面，会看到“过往阅读”。
 
-![](https://c1.staticflickr.com/3/2905/33135585214_bdc6f4bbee_c.jpg)
+![](./0.jpg))
 
 之后点开会发现到了目录页面，长这这样：
 
-![](https://c1.staticflickr.com/3/2818/33165966703_16e43cb228_c.jpg)
+![](./1.jpg))
 
 作为一个讨厌微信的人，当然希望至少能够保存到 evernote 或者 safari 书签，然而，在点击使用 Safari 打开之后，此页面就变成了：
 
-![](https://c1.staticflickr.com/3/2856/33594103390_083228866d_c.jpg)
+![](./2.jpg))
 
 这不好，非常不好，把具体的页面打开试试呢？
 
-![](https://c1.staticflickr.com/3/2933/33821387632_ef17503fb8_c.jpg)
+![](./3.jpg))
 
 嗯……不仅能用 safari 打开，好像还能正常转发到电脑上。
 
-![](https://c1.staticflickr.com/3/2923/33821388152_77468fb744_z.jpg)
+![](./4.jpg))
 
 然而之前的目录页面好像还是打不开。
 
-![](https://c1.staticflickr.com/4/3933/33937860326_3a91d4a28b_z.jpg)
+![](./5.jpg))
 
 通过查阅 csdn，发现要直接模拟微信浏览器的 header 好像也不能正常打开这样一个网址，倒是有个简单的[办法](https://segmentfault.com/q/1010000000643865)，其中给出的方法简单好用：
 
@@ -49,24 +49,20 @@ tags:
 鉴于我们之前的详情页面是不需要 oauth 授权的，也并不是很需要模拟微信的手机客户端。  
 于是登陆网页版微信，把之前的链接发送给自己。
 
-![](http://i2.muimg.com/567571/a000ac64b7ca659d.png)
-
 这样在 chrome 中打开此页面是完全 ok 的，但是换个浏览器就会被转至打开错误页面。
 
-![](https://c1.staticflickr.com/3/2941/33165967143_2d320ca420_z.jpg)
+![](./6.jpg))
 
-![](https://c1.staticflickr.com/3/2871/33937860066_9730bd0fef_z.jpg)
+![](./7.jpg))
 
 不过既然都能用电脑打开了，第一件事情当然是看网页源码啊(~￣ △ ￣)~
 
 通过检查源码可以发现想要打开的详情页都是  
 `http://dict.jiangnanciqi.com/wxservice/wxshowarticle/show?id=\s+&type=4`这样一种形式。其中`\s`的数字是当前文章在 dict.jiangnanciqi.com 中的真实 id。点击时通过`dict.jiangnanciqi.com`的 Apache 服务器进行重定向，而在微信未登录的浏览器中试图直接打开这样的网址也会被传送到之前灰底的打开错误页面。正常能够正常打开的网址则是被跳转后的页面。如`https://mp.weixin.qq.com/s/cejdKw4ZRBasyuUXuf8iMQ`这也应该是微信公众号文章的真实地址。
 
-![](https://c1.staticflickr.com/4/3949/33167291273_e63104498c_b.jpg)
+![](./8.jpg))
 
 那么怎么办呢？我都知道网址规律了总不能抱着错误放弃吧，都决定写爬虫了更不能手动打开存下真实网址啊，不然和咸鱼有什么区别。
-
-![](http://i1.piimg.com/567571/809d6ee50fb68e13.gif)
 
 <h2> JSEDDIONID部分</h2>
 
@@ -74,7 +70,7 @@ tags:
 
 回到正确思路，检查浏览器发送的 header。会得到这样的内容：
 
-![](https://c1.staticflickr.com/3/2860/33980345265_d0f6b144be_b.jpg)
+![](./9.jpg))
 
 其中比较令人瞩目的是使用了 cookies 的 JSEDDIONID，而通过 chrome 检查 cookies 发现传入的结束到会话的也就只有这个。那么就好办了，通过 request 库传入 header 和 cookies 再访问目录页所提供的原始 url。
 
@@ -86,19 +82,15 @@ tags:
 通过实验可以看出在会话未结束时打开原始地址，请求 header 中的 JSEDDIONID 是不变的。  
 因而也不需要多进行考虑，拿这这一张门票逛遍迪士尼吧。
 
-![](https://c1.staticflickr.com/3/2807/33822996312_97e70521e9.jpg)
+![](./10.jpg))
 
 先通过正则从目录页过滤出文章的真实 id：
 
 要注意在使用正则过滤时，如果不小心匹配内容选多了，其中`show?id=`中间的`？`需要被转意。
 
-![](http://i2.muimg.com/567571/ab0082073edc129f.png)
-
 接着就是编写主程序。在服务器进行重定向的时候，request 库会自动处理，而通过`.url`就能得到最终的真实地址。
 
 > 由于不使用手机也能打开详情页，所以直接使用了 macos 的 UA。可自行调整
-
-![](http://i4.buimg.com/567571/7886b9291b846ada.png)
 
 原码：
 
@@ -144,17 +136,15 @@ with open('realurl.json','a') as outfile:
 	outfile.write('')
 ```
 
-运行： ![](https://c1.staticflickr.com/4/3928/33165966953_e825becab0.jpg)
+运行： ![](./11.jpg))
 
-导出的 json 这个样子： ![](https://c1.staticflickr.com/3/2878/33167008773_2804a50bb4.jpg)
+导出的 json 这个样子： ![](./12.jpg))
 
 转成 markdown：
 
-![](https://c1.staticflickr.com/3/2926/33822514222_b576ca6c9d_b.jpg)
+![](./13.jpg))
 
-终于可以安心的远离微信了![](http://i2.muimg.com/567571/1a4c59516eb35388.gif)
+终于可以安心的远离微信了
 
 <h2>后记：</h2>  
 其实一切的起因只是因为自己太懒，订阅的口语100天总不能及时去看，慢慢的也就堆了起来。希望接下来慢慢能把坑填完，需要url的同学自己去关注[Frank他们](http://mp.weixin.qq.com/profile?src=3&timestamp=1491938786&ver=1&signature=wBa9Rfrbni34HUO0cJ8APlVMa6ydDihZiqnc8xdoXj39*Aq5c7APx46OJ9aopj2Neru4gHIQZ*pmOxTseePoGg==)。之后的新文章可以通过<del>及时的学习</del>获得，或者再统一用相同方式使用新的文章真实id。以及期望能够抓取的音频似乎是个点击才会出现的mpvoice标签，暂时还不会怎么抓取，有待后续研究。
-
-⬇️ 下面为江南词器厂公众号 ![](https://c1.staticflickr.com/3/2840/33823439452_7f90547abe_q.jpg)

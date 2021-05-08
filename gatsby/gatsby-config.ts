@@ -38,7 +38,7 @@ export const config: GatsbyConfig = {
             options: {
               linkImagesToOriginal: false,
               showCaptions: true,
-              quality: 100,
+              quality: 80,
               withWebp: true,
             },
           },

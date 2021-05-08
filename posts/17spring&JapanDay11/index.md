@@ -10,6 +10,6 @@ tags:
 
 Narita 的早晨。
 
-![](https://c1.staticflickr.com/5/4228/33955700184_115e01467d_b.jpg)
+![](./0.jpg))
 
 多的并不想说什么。

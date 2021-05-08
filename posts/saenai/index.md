@@ -157,4 +157,4 @@ tags:
 
 最后以红坂的话来评价这部作品吧。
 
-![](https://farm5.staticflickr.com/4461/37643103030_d634f4822b_z.jpg)
+![](./0.jpg))

@@ -34,13 +34,7 @@ tags:
 
 图 2 [https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64495434](https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64495434)
 
-![](https://storage1.cuntuku.com/2018/01/04/Kw736.gif)
-
 添加时会自动判断语言，中文查 wiki，英文有道，日文的话大辞林。
-
-![](https://storage4.cuntuku.com/2018/01/04/KwIZr.gif)
-
-![](https://storage7.cuntuku.com/2018/01/04/Kwwcd.gif)
 
 <h2><span class="vue">#&nbsp;</span>传送门 </h2>
 
@@ -201,9 +195,9 @@ socketio.run(app,host='0.0.0.0',
 <h3><span class="pitfall">⇝&nbsp;</span>11.有关webstorm不停的indexing。。</h3>
 上两个评论作为吐槽。。[链接](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207671405-stop-Indexing-please-)
 
-![](https://farm5.staticflickr.com/4680/38784054184_d27a122aa1.jpg)
+![](./3.jpg))
 
-![](https://farm5.staticflickr.com/4689/24625849217_66a963e9c2_z.jpg)
+![](./4.jpg))
 个人解决办法是尽可能多的文件和文件夹设置 exclude。比如 node.js 自带的文件。
 假如 pycharm 和 webstorm 一起使用的话会互相影响。。暂时没好的办法。
 

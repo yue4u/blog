@@ -114,7 +114,7 @@ sysmsg = driver.find_element_by_xpath('//div[@class="sysmsg"]/span').text
 如`driver.get_screenshot_as_file('/Users/Cordial/Desktop/1.png')`
 
 (下图未关闭图片加载，正确记录了歌单被正常显示)
-![](https://farm5.staticflickr.com/4550/38022202204_ac68d83b3e_c.jpg)
+![](./0.jpg))
 
 
 那么整体如下:
