@@ -148,7 +148,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     }
   }
   code {
-    text-shadow: 1px 1px 4px #000;
+    text-shadow: 0 0 5px #000;
     color: #fff;
     word-break: break-word;
     margin: 4px 4px;
@@ -161,14 +161,14 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       transition: 0.2s all ease-in-out;
       content: "";
       border-radius: 5px;
-      opacity: 0.8;
+      opacity: 0.6;
       z-index: -1;
       width: 100%;
       height: 90%;
       position: absolute;
       top: 5%;
       left: 0;
-      background-image: linear-gradient(100deg, #ec407a 47%, #00bcd4);
+      background-image: linear-gradient(100deg, #ec407a, #aaa 50%, #00bcd4);
     }
     &:hover {
       &::after {
