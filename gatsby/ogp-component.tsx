@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { GradientFont } from "../src/components/gradientFont"
 // import { MarkdownContentBlock } from "@/src/components/markdownContent"

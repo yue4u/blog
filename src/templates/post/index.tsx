@@ -14,55 +14,13 @@ import { formatDate } from "@/src/helpers"
 import { PaginationLink, PaginationNav } from "./pagination"
 import type { PostPageContext, PostPageQueryQuery } from "@/types"
 
-const PostTitle = styled.h1`
-  font-size: 4rem;
-  word-break: break-word;
-  margin-bottom: 1rem;
-  @media screen and (max-width: 700px) {
-    font-size: 4rem;
-  }
-`
-const PostDate = styled.time`
-  font-size: 1.5rem;
-  color: #666;
-  margin-bottom: 2rem;
-  display: inline-block;
-  text-shadow: 0 0 1rem #000;
-`
-
-const PostLinkWrap = styled.div<{ direction: "prev" | "next" }>`
-  position: relative;
-  &::before {
-    position: absolute;
-    left: -1rem;
-    width: 1rem;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    ${(props) => props.direction === "prev" && `content: "<"`}
-  }
-  &::after {
-    position: absolute;
-    display: grid;
-    place-items: center;
-    width: 1rem;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    top: 0;
-    right: -1rem;
-    ${(props) => props.direction !== "prev" && `content: ">"`}
-  }
-`
-
-const PostLink = ({
+function PostLink({
   data,
   linkType,
 }: {
   data: PostPageContext["next"]
   linkType: "prev" | "next"
-}) => {
+}) {
   if (!data) {
     return <Link to="#" />
   }
@@ -99,6 +57,11 @@ export default function Post({
             dangerouslySetInnerHTML={{ __html: post.frontmatter?.title || "" }}
           />
         </PostTitle>
+        <Tags>
+          {data.mdx?.frontmatter?.tags?.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </Tags>
         <PostDate>{formatDate(post.frontmatter?.date)}</PostDate>
         <MarkdownContent>
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -108,14 +71,89 @@ export default function Post({
         <PostLink data={prev} linkType="prev" />
         <PostLink data={next} linkType="next" />
       </PaginationNav>
-      <Comments
-        url={`https://blog.yue.coffee/${slug}`}
-        identifier={identifier}
-        title={post.frontmatter?.title}
-      />
+      <Comments />
     </Layout>
   )
 }
+
+const PostTitle = styled.h1`
+  font-size: 4rem;
+  word-break: break-word;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 700px) {
+    font-size: 4rem;
+  }
+`
+const PostDate = styled.time`
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-shadow: 0 0 1rem #000;
+`
+
+const PostLinkWrap = styled.div<{ direction: "prev" | "next" }>`
+  position: relative;
+  &::before {
+    position: absolute;
+    left: -1rem;
+    width: 1rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    ${(props) => props.direction === "prev" && `content: "<"`}
+  }
+  &::after {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 1rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    top: 0;
+    right: -1rem;
+    ${(props) => props.direction !== "prev" && `content: ">"`}
+  }
+`
+
+const Tags = styled.span`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`
+
+const Tag = styled.span`
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #000;
+  color: #fff;
+  word-break: break-word;
+  margin: 4px 4px;
+  display: inline-block;
+  padding: 0 5px;
+  font-family: "Fira Code";
+  position: relative;
+  z-index: 0;
+  &::after {
+    transition: 0.2s all ease-in-out;
+    content: "";
+    border-radius: 5px;
+    opacity: 0.6;
+    z-index: -1;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    background-image: linear-gradient(100deg, #ec407a, #aaa 50%, #00bcd4);
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+`
 
 export const query = graphql`
   query PostPageQuery($slug: String!) {
