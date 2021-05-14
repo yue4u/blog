@@ -42,7 +42,7 @@ export default function Post({
   pageContext: PostPageContext
 }) {
   const post = data.mdx!
-  const { prev, next, identifier, slug } = pageContext
+  const { prev, next, slug } = pageContext
   return (
     <Layout>
       <SEO

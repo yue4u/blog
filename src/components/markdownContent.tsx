@@ -139,6 +139,9 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     box-shadow: 0 0 5px #000;
+    p {
+      margin: 0;
+    }
   }
   pre {
     code {
