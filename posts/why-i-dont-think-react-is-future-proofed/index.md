@@ -149,7 +149,7 @@ const count = ref(0)
 - [`ink`](https://github.com/vadimdemedes/ink)
   - 基于react的cli框架
 
-要想在和这些库能达到同一水平不是很简单.
+要想和这些库达到同一水平不是很简单.
 
 ### Preact
 
@@ -163,6 +163,6 @@ const count = ref(0)
 
 ## Wrap it up
 
-现在`react`的问题来源非常的复杂. Hooks/JSX等的设计问题, 既有的负面财产(flow/webpack), 开发体制(OSS or business)等等. 相比之下我认为现状`vue`和`svelte`处于优势([svelte kit](https://kit.svelte.dev/)基于vite!), 作为前端开发着也相当写起来 `fun` & `productive`. 
+现在`react`的问题来源非常的复杂. Hooks/JSX等的设计问题, 既有的负面财产(flow/webpack), 开发体制(OSS or business)等等. 相比之下我认为现状`vue`和`svelte`处于优势([svelte kit](https://kit.svelte.dev/)基于vite!), 作为前端开发着也相当写起来`fun`&`productive`. 
 
 React的这些问题在我看来在短期内难以被得到解决, 可能将来一段时间`vite`+`vue3`仍然会是我的前端go-to framework.
