@@ -153,11 +153,11 @@ const count = ref(0)
 
 ### Remix
 
-有关[`Remix`](https://remix.run/)是另一个口碑很好?的react框架, 许多用过多人宣称解决了现在react的很多问题, 然而最低需要$250/yr的付费许可, 因此本文不与讨论.
+[`Remix`](https://remix.run/)是另一个口碑很好?的react框架, 许多用过多人宣称解决了现在react的很多问题, 然而最低需要[$250/yr](https://remix.run/buy)的付费许可, 因此本文不与讨论.
 
 ### Preact
 
-我其实一直对preact非常的看好, 可惜因为这个那个没有长期使用的经验. 然而react以及next.js的作者对preact持有不同的意见.有关的议论可见下面的推和原来的thread.
+我其实一直对`preact`非常的看好, 可惜因为这个那个没有长期使用的经验. 然而react以及next.js的作者对`preact`持有不同的意见.有关的议论可见下面的推和原来的thread.
 
 <Tweet url="https://twitter.com/rauchg/status/1343379468077842433" />
 
