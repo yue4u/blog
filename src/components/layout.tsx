@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { Spring } from "react-spring/renderprops"
+import { useSpring, animated } from "react-spring"
 import { SiteTitleQueryQuery } from "@/types/gql"
 import { Header } from "./header"
 import { Footer } from "./footer"
@@ -18,16 +18,15 @@ export function Layout({ children }: PropsWithChildren<{}>) {
     }
   `)
 
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 } })
+
   return (
     <>
       <Helmet htmlAttributes={{ lang: "ja" }}></Helmet>
       <div>
         <GlobalStyle />
         <Header siteTitle={data.site?.siteMetadata?.title} />
-
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {(style) => <main style={style}>{children}</main>}
-        </Spring>
+        <animated.main style={props}>{children}</animated.main>
       </div>
       <Footer />
     </>

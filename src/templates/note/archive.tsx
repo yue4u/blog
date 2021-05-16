@@ -1,8 +1,7 @@
-import React from "react"
+import React, { ComponentProps } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import { animated } from "react-spring"
-import { Transition } from "react-spring/renderprops"
+import { useTransition, animated } from "react-spring"
 
 import { SEO, Layout, GradientFont } from "@/src/components"
 import { NoteArchiveQueryQuery } from "@/types"
@@ -28,32 +27,33 @@ const CourseList = styled.ul`
   }
 `
 
-export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
+function CourseBlock({ data }: ComponentProps<typeof Notes>) {
   const nodes = data.allDirectory.edges.map(({ node }) => node)
-  const CourseBlock = () => (
+  const transitions = useTransition(nodes, {
+    keys: (node) => node.id,
+    from: { opacity: 0, transform: "translateY(40px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: { opacity: 0, transform: "translateY(40px)" },
+  })
+  return (
     <CourseList>
-      <Transition
-        items={nodes}
-        keys={(node) => node.id}
-        from={{ opacity: 0, transform: "translateY(40px)" }}
-        enter={{ opacity: 1, transform: "translateY(0px)" }}
-        leave={{ opacity: 0, transform: "translateY(40px)" }}
-      >
-        {(node) => (style) => (
-          <animated.li style={style}>
-            <Course node={node} />
-          </animated.li>
-        )}
-      </Transition>
+      {transitions((style, node) => (
+        <animated.li style={style}>
+          <Course node={node} />
+        </animated.li>
+      ))}
     </CourseList>
   )
+}
+
+export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
   return (
     <Layout>
       <SEO title="Notes" path="/notes" />
       <H1>
         <GradientFont>Notes</GradientFont>
       </H1>
-      <CourseBlock />
+      <CourseBlock data={data} />
     </Layout>
   )
 }

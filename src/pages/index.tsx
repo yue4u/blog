@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { Layout, SEO } from "../components"
 import { animation, fonts } from "../theme"
-import { animated } from "react-spring"
-import { Transition } from "react-spring/renderprops"
+import { useTransition, animated } from "react-spring"
 
 const H1 = styled.h1`
   font-size: 6rem;
@@ -75,29 +74,6 @@ const Callout = styled.blockquote`
 `
 
 export default function IndexPage() {
-  const navList = [
-    { label: "Posts", link: "/posts" },
-    { label: "Notes", link: "/notes" },
-  ]
-  const NavBlock = () => (
-    <Nav>
-      <Transition
-        items={navList}
-        keys={(nav) => nav.label}
-        from={{ opacity: 0, transform: "translateY(40px)" }}
-        enter={{ opacity: 1, transform: "translateY(0px)" }}
-        leave={{ opacity: 0, transform: "translateY(40px)" }}
-      >
-        {(nav) => (style) => (
-          <animated.li style={style}>
-            <NavLink>
-              <Link to={nav.link}>{nav.label}</Link>
-            </NavLink>
-          </animated.li>
-        )}
-      </Transition>
-    </Nav>
-  )
   return (
     <Layout>
       <SEO title="Home" path="/" />
@@ -107,5 +83,31 @@ export default function IndexPage() {
       </Callout>
       <NavBlock />
     </Layout>
+  )
+}
+
+const navList = [
+  { label: "Posts", link: "/posts" },
+  { label: "Notes", link: "/notes" },
+] as const
+
+function NavBlock() {
+  const transitions = useTransition(navList, {
+    keys: (nav) => nav.label,
+    from: { opacity: 0, transform: "translateY(40px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: { opacity: 0, transform: "translateY(40px)" },
+  })
+
+  return (
+    <Nav>
+      {transitions((style, nav) => (
+        <animated.li style={style}>
+          <NavLink>
+            <Link to={nav.link}>{nav.label}</Link>
+          </NavLink>
+        </animated.li>
+      ))}
+    </Nav>
   )
 }

@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link, graphql } from "gatsby"
-import { animated } from "react-spring"
-import { Transition } from "react-spring/renderprops"
+import { useTransition, animated } from "react-spring"
 
 import { SEO, Layout, GradientFont } from "@/src/components"
 import { PostArchiveQueryQuery, PostArchivePageContext } from "@/types"
@@ -33,6 +32,12 @@ export default function Posts({
   pageContext: PostArchivePageContext
 }) {
   const nodes = data.allMdx.edges.map(({ node }) => node)
+  const transitions = useTransition(nodes, {
+    keys: (node) => node.id,
+    from: { opacity: 0, transform: "translateY(40px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: { opacity: 0, transform: "translateY(40px)" },
+  })
 
   return (
     <Layout>
@@ -49,21 +54,13 @@ export default function Posts({
         </PostCount>
 
         <ul>
-          <Transition
-            items={nodes}
-            keys={(node) => node.id}
-            from={{ opacity: 0, transform: "translateY(40px)" }}
-            enter={{ opacity: 1, transform: "translateY(0px)" }}
-            leave={{ opacity: 0, transform: "translateY(40px)" }}
-          >
-            {(node) => (style) => (
-              <animated.li style={style}>
-                <Link to={`/${node.fields?.slug}`}>
-                  <PostSummary detail={node.frontmatter} />
-                </Link>
-              </animated.li>
-            )}
-          </Transition>
+          {transitions((style, node) => (
+            <animated.li style={style}>
+              <Link to={`/${node.fields?.slug}`}>
+                <PostSummary detail={node.frontmatter} />
+              </Link>
+            </animated.li>
+          ))}
         </ul>
 
         <PostPagination pageContext={pageContext} />
