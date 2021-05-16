@@ -96,7 +96,7 @@ const count = ref(0)
 
 `useEffect`类似手动的 `watch(...)`, 但是有着更多使用上的痛点, 首当其冲就是异步处理, 需要多一层warp, (还不包括错误处理, 请求的状态管理(cancel)等). 其次需要手动写所有的dependents, (并不是reactive by themselves)
 
-此外, hooks造成了运行环境的分割, hooks的逻辑无法在react外使用, 外部的第三方库也为了支持react也需要追加处理. 最简单的例子就是rxjs, 
+此外, hooks造成了运行环境的分割, hooks的逻辑无法在react外使用, 外部的第三方库也为了支持react也需要追加处理. 最简单的例子就是`rxjs`, 
 
 <Tweet url="https://twitter.com/BenLesh/status/1334950823965634567" />
 
