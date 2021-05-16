@@ -132,7 +132,7 @@ const count = ref(0)
 
 同样`next.js`对自定义webpack设定的艰难程度非常有名. 许多功能 `serverless functions` 和 `Automatic Static Optimization`等不被`Custom Server`所支持, 在`vercel`之外想要自己部署SSG也并不是那么简单. 
 
-在各方面可以感受到`next.js`和`gatsby`的核心团队的开发方向并不是那么纯粹(甚至可能比不上facebook的react), 顾及自己的公司利益也是无可厚非. 但是作为一般开发者真的有向一家公司无偿提交issue/debug/发pr的愿望吗?
+在各方面可以感受到`next.js`和`gatsby`的核心团队的开发方向并不是那么纯粹(甚至可能比不上facebook的react), 顾及自己的公司利益也是无可厚非. 但是作为一般开发者真的有向一家公司无偿提交issue/debug/发pr的愿望吗? 然而相对`vue`等OSS来说, 有着更好的资金来源是无法否定的优势条件.
 
 ## 其他
 
@@ -150,6 +150,10 @@ const count = ref(0)
   - 基于react的cli框架
 
 要想和这些库达到同一水平不是很简单.
+
+### Remix
+
+有关[`Remix`](https://remix.run/)是另一个口碑很好?的react框架, 许多用过多人宣称解决了现在react的很多问题, 然而最低需要$250/yr的付费许可, 因此本文不与讨论.
 
 ### Preact
 
