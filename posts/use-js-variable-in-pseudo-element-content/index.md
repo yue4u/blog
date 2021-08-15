@@ -64,7 +64,7 @@ tags:
 <s-section-title text="Movie" />
 ```
 
-```html
+```vue
 <template>
   <h1 class="section-title" :style="{ '--content': `'${text}'` }">
     {{ text }}

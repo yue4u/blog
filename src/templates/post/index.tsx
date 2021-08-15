@@ -58,7 +58,7 @@ export default function Post({
           />
         </PostTitle>
         <Tags>
-          {data.mdx?.frontmatter?.tags?.map((tag) => (
+          {post?.frontmatter?.tags?.map((tag) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </Tags>

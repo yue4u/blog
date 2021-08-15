@@ -81,7 +81,7 @@ let count = 0;
 
 vue
 
-```html
+```vue
 <script lang="ts" setup>
 import { ref } from 'vue'
 const count = ref(0)

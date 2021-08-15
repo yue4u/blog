@@ -86,7 +86,7 @@ tags:
 
 Backend の graphql API と通信するため、[`@urql/vue`](https://formidable.com/open-source/urql/)を入れました。使ってみた印象は良く、もし次があればまた使いたいと思いました。`<script setup/>`と合わせて、非常に clean なコンポーネントが書けます。
 
-```html
+```vue
 <template>
   <div v-if="!data?.events?.length">There is no events</div>
   <div v-else>There is {{ data.events.length }} events</div>
