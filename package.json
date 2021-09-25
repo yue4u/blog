@@ -47,6 +47,7 @@
     "@types/styled-components": "^5.1.9",
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.12.0",
+    "gatsby-plugin-pnpm": "^1.2.8",
     "gatsby-plugin-styled-components": "^4.5.0",
     "gatsby-plugin-typescript": "^3.5.0",
     "prettier": "^2.3.0",
@@ -64,7 +65,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "test:tsc": "tsc -p . --noEmit",
-    "gql-gen": "graphql-codegen --config codegen.yml"
+    "gql-gen": "graphql-codegen --config codegen.yml",
+    "preinstall": "npx only-allow pnpm"
   },
   "repository": {
     "type": "git",

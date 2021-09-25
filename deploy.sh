@@ -2,7 +2,7 @@
 
 set -e
 
-yarn build
+pnpm build
 
 gsutil -m rsync -d -r public gs://blog.yue.coffee
 

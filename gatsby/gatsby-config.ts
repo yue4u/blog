@@ -11,6 +11,7 @@ export const config: GatsbyConfig = {
     siteUrl: "https://blog.yue.coffee/",
   },
   plugins: [
+    `gatsby-plugin-pnpm`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
