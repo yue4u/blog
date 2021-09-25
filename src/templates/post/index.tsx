@@ -139,7 +139,7 @@ const Tag = styled.span`
     transition: 0.2s all ease-in-out;
     content: "";
     border-radius: 5px;
-    opacity: 0.6;
+    opacity: 0.3;
     z-index: -1;
     width: 100%;
     height: 90%;

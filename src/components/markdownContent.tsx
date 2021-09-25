@@ -37,7 +37,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
   padding-bottom: 1rem;
   text-align: left;
   max-width: 1000px;
-  word-break: break-all;
+  word-break: break-word;
   width: 90%;
   color: #ccc;
   font-family: "Fira Code";
@@ -164,7 +164,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       transition: 0.2s all ease-in-out;
       content: "";
       border-radius: 5px;
-      opacity: 0.6;
+      opacity: 0.3;
       z-index: -1;
       width: 100%;
       height: 90%;
