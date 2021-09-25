@@ -66,7 +66,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "test:tsc": "tsc -p . --noEmit",
     "gql-gen": "graphql-codegen --config codegen.yml",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx -y only-allow pnpm"
   },
   "repository": {
     "type": "git",
