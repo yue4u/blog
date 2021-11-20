@@ -1,6 +1,5 @@
 import path from "path"
 import { exec } from "child_process"
-import courseTitle from "../src/i18n/courseTitle.json"
 import { screenshot } from "./ogp"
 import { GatsbyNode } from "gatsby"
 import { DirectoryEdge, MdxEdge, Mdx } from "@/types"
@@ -35,10 +34,8 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   getNode,
-  actions,
+  actions: { createNodeField },
 }) => {
-  const { createNodeField } = actions
-
   if (node.internal.type === `Mdx`) {
     // @ts-ignore
     const parent = getNode(node.parent)
@@ -55,16 +52,6 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
       node,
       name: `regex`,
       value: `/${parent.split("/")[1]}/`,
-    })
-  }
-
-  if (node.relativeDirectory === "notes") {
-    createNodeField({
-      node,
-      name: `courseTitle`,
-      value:
-        courseTitle[(node.name as any) as keyof typeof courseTitle] ||
-        node.name,
     })
   }
 }
@@ -124,9 +111,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
             id
             name
             modifiedTime
-            fields {
-              courseTitle
-            }
           }
         }
       }

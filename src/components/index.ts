@@ -5,7 +5,6 @@ export { Layout } from "./layout"
 
 export { CodeBlock } from "./codeBlock"
 export { Comments } from "./comments"
-export { Image } from "./image"
 export { MarkdownContent } from "./markdownContent"
 export { SEO } from "./seo"
 export { GradientFont } from "./gradientFont"

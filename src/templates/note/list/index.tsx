@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react"
 import styled from "styled-components"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated, SpringValue } from "react-spring"
 
 import { useMeasure, usePrevious } from "./helpers"
 import * as Icons from "./icons"
@@ -42,12 +42,6 @@ type TreeProps = {
   open?: boolean
 }
 
-type TreeSpringProps = {
-  height: number
-  opacity: number
-  transform: string
-}
-
 const TreeName = styled.span`
   color: #ccc;
   vertical-align: middle;
@@ -81,7 +75,7 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
       opacity: isOpen ? 1 : 0,
       transform: `translate3d(${isOpen ? 0 : 20}px,0,0)`,
     },
-  }) as TreeSpringProps
+  })
   const Icon =
     Icons[
       `${
@@ -159,7 +153,6 @@ export default function NoteList({
   data: NotePageQueryQuery["sideBar"]
 }) {
   const [open, setOpen] = useState(false)
-  //@ts-ignore
   const [props, set] = useSpring(() => ({
     visibility: "hidden",
     opacity: 0,
@@ -181,6 +174,7 @@ export default function NoteList({
         <Line />
         <Line />
       </HamburgerWrapper>
+      {/* @ts-ignore */}
       <SideBarBlock style={props}>
         <Tree name="" open>
           {data.edges.map(({ node }, i) => (

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-
+import courseTitle from "@/src/i18n/courseTitle.json"
 import { animation } from "@/src/theme"
 import { NoteArchiveQueryQuery } from "@/types"
 
@@ -56,7 +56,7 @@ export default function Course({
       <Link to={`/notes/${name}`}>
         <div>
           {/* @ts-ignore */}
-          <h2>{node.fields?.courseTitle}</h2>
+          <h2>{courseTitle[node.name] || node.name}</h2>
         </div>
 
         <CourseDetail>

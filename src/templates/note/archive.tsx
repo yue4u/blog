@@ -69,9 +69,6 @@ export const query = graphql`
           id
           name
           modifiedTime
-          fields {
-            courseTitle
-          }
         }
       }
     }
