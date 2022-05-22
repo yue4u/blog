@@ -16,4 +16,3 @@ static/ogp/*
 static/fonts/*subset*
 posts/**/*.png
 posts/**/*.jpg
-static/fonts/*.subset*

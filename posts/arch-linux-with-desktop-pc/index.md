@@ -91,7 +91,7 @@ CPU + GPU 整体来说还是功耗偏大的选择了 `750w`的电源．但是这
 - [Arch Linux & Thinkpad x230 - OS](/arch-linux-with-thinkpad-x230-os)
 - [Arch Linux Thinkpad x230 - Hardware](/arch-linux-with-thinkpad-x230-hardware)
 
-本来准备借这个机会尝试`dwm`和`fish`的，一开始对`dwm`不是很适应，因为毕竟需要自己修改源码．但是很快就发现真的修改源码最方便了...即使对 c 不熟悉也能做不少 customize，准备维护[自己的 fork](https://github.com/rainy-me/dwm/)
+本来准备借这个机会尝试`dwm`和`fish`的，一开始对`dwm`不是很适应，因为毕竟需要自己修改源码．但是很快就发现真的修改源码最方便了...即使对 c 不熟悉也能做不少 customize，准备维护[自己的 fork](https://github.com/yue4u/dwm/)
 至于`fish`，貌似需要重写现在很多的 bash 设定，暂时选择放弃还是用回了`zsh`
 
 ## 性能

@@ -13,8 +13,8 @@ tags:
 ## Links
 
 - [硬件篇](/articles/arch-linux-with-thinkpad-x230-hardware)
-- [dotfiles](https://github.com/rainy-me/dotfiles)
-- [pacman packages list](https://gist.github.com/rainy-me/cf0075f21555d08e3fc25ceb1502510a)
+- [dotfiles](https://github.com/yue4u/dotfiles)
+- [pacman packages list](https://gist.github.com/yue4u/cf0075f21555d08e3fc25ceb1502510a)
 
 ## 截图
 
@@ -70,7 +70,7 @@ Mac 上一直用`powerline font`稍微有的看腻了，换到了[`oh-my-zsh`](h
 
 ## vim
 
-借此机会顺带写了一直想写很久的[vim colorscheme](https://github.com/rainy-me/curiosity)，尝试了[vim-polyglot](https://github.com/sheerun/vim-polyglot)但是感觉文法支持还是一般,不知道用上`language-server`会不会好一点。
+借此机会顺带写了一直想写很久的[vim colorscheme](https://github.com/yue4u/curiosity)，尝试了[vim-polyglot](https://github.com/sheerun/vim-polyglot)但是感觉文法支持还是一般,不知道用上`language-server`会不会好一点。
 
 > mac 截图
 

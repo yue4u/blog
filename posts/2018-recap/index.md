@@ -56,7 +56,7 @@ tags:
 #### TODO
 
 - 关注`Rust-python`以及`Rust-webassembly`的动向
-- 把`chapel` [github](https://github.com/rainy-me/chapel)的坑填完
+- 把`chapel` [github](https://github.com/lab-yue/chapel)的坑填完
 
 ### Kotlin
 
@@ -64,7 +64,7 @@ tags:
 
 #### TODO
 
-- 把`Archangel` [github](https://github.com/rainy-me/archangel)的坑填完
+- 把`Archangel` [github](https://github.com/yue4u/archangel)的坑填完
 
 ### Other
 

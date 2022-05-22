@@ -12,7 +12,7 @@ tags:
 
 普段やらないことをやってみたいという考えのもと、~~チームメンバーの都合で、~~私はバックエンド・インフラ・イベント画面・管理画面を担当して、[偉大なる yama 先生](https://twitter.com/_kwxxw)はトップページのコーディングをやってくれました。
 
-`Repository` => [https://github.com/rainy-me/tsukiyo](https://github.com/rainy-me/tsukiyo)
+`Repository` => [https://github.com/yue4u/tsukiyo](https://github.com/yue4u/tsukiyo)
 
 ![サイトイメージ](./tsukiyo-ogp.png)
 
@@ -458,7 +458,7 @@ let certificate = openssl::x509::X509::from_pem(v.as_bytes())?;
 let pem_bytes = certificate.public_key()?.rsa()?.public_key_to_pem()?;
 ```
 
-詳細の実装は[auth/mod.rs](https://github.com/rainy-me/tsukiyo/blob/master/backend/src/auth/mod.rs)と[auth/certs.rs](https://github.com/rainy-me/tsukiyo/blob/master/backend/src/auth/certs.rs)にあります。
+詳細の実装は[auth/mod.rs](https://github.com/yue4u/tsukiyo/blob/master/backend/src/auth/mod.rs)と[auth/certs.rs](https://github.com/yue4u/tsukiyo/blob/master/backend/src/auth/certs.rs)にあります。
 
 `graphql`endpoint の authentication 手段もいくつかあります。例えば、`field`、`object`、`mutation`などいくつかのレイヤーで権限を決めることができます。
 
@@ -520,7 +520,7 @@ docker pull ${{ env.IMAGE }}-cache || true
 docker build . -t ${{ env.IMAGE }}:${{  github.sha }} -f Dockerfile.prod --cache-from=${{ env.IMAGE }}-cache
 ```
 
-最終的な Dockerfile は[ここです](https://github.com/rainy-me/tsukiyo/blob/master/backend/Dockerfile.prod)
+最終的な Dockerfile は[ここです](https://github.com/yue4u/tsukiyo/blob/master/backend/Dockerfile.prod)
 
 ### インフラ
 

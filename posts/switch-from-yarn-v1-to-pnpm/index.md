@@ -13,12 +13,12 @@ Today I migrated 6 repos from `yarn` v1 to `pnpm` in about 4 hours and I decided
 
 The repos are:
 
-- [https://github.com/rainy-me/blog](https://github.com/rainy-me/blog) *this blog*
-- [https://github.com/rainy-me/dhu](https://github.com/rainy-me/dhu) a library/cli/website monorepo
-- [https://github.com/rainy-me/lab](https://github.com/rainy-me/lab) a monorepo website deployed on `netlify`
-- [https://github.com/rainy-me/holoframe](https://github.com/rainy-me/holoframe) another website deployed on `netlify`
-- [https://github.com/rainy-me/leetcode](https://github.com/rainy-me/leetcode) a repo only using jest for testing
-- [https://github.com/rainy-me/rss](https://github.com/rainy-me/rss) a simple library
+- [https://github.com/yue4u/blog](https://github.com/yue4u/blog) *this blog*
+- [https://github.com/yue4u/dhu](https://github.com/yue4u/dhu) a library/cli/website monorepo
+- [https://github.com/yue4u/lab](https://github.com/yue4u/lab) a monorepo website deployed on `netlify`
+- [https://github.com/yue4u/holoframe](https://github.com/yue4u/holoframe) another website deployed on `netlify`
+- [https://github.com/yue4u/leetcode](https://github.com/yue4u/leetcode) a repo only using jest for testing
+- [https://github.com/yue4u/rss](https://github.com/yue4u/rss) a simple library
 
 ## The script
 
@@ -71,7 +71,7 @@ Things this script does:
 
 - [https://github.com/pnpm/pnpm/issues/991](https://github.com/pnpm/pnpm/issues/991)
 
-Fix: use the `gatsby-plugin-pnpm` package. [change commit](https://github.com/rainy-me/blog/commit/a35b2d89365cc0c3ee449f8c150be02838b63817)
+Fix: use the `gatsby-plugin-pnpm` package. [change commit](https://github.com/yue4u/blog/commit/a35b2d89365cc0c3ee449f8c150be02838b63817)
 
 Since this blog is deployed directly to GCP bucket by myself without CI, the migration is done as soon as the local build succeeded. 
 
