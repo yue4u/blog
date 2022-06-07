@@ -9,7 +9,7 @@ tags:
 
 因为很多性能问题做不到或者说做起来很痛苦的事情变多了，所以考虑配置了一台新 PC, 在曲大师的参考下最终配置大概如下．显示器和 SSD 已经有可以用的所以没有新购入．
 
-<iframe id="bit-MA1BqkqXJWJwV7m0vFGK" src="https://bits.yue.coffee/e/MA1BqkqXJWJwV7m0vFGK" width="80%" frameborder="0"></iframe>
+![](./packages.jpg)
 
 | Parts    |                                                                          |
 | -------- | :----------------------------------------------------------------------: |
@@ -30,9 +30,9 @@ tags:
 首先是选定 CPU，因为考虑到用于做 modeling 和编译相关 CPU heavy 的情况很多，尽可能选择了市面上相对比较好的 `Corei9-10900K`．其他考虑过的 CPU 有`Corei9-10900KF`以及 `AMD Ryzen` 的 `3950x` 和 `5950x`.
 因为 `3950x` 相对性能不及 `Corei9-10900K`, `5950x`　现在并没有货，所以选择了性价比相对高的`Corei9-10900K`．最初也有考虑`Corei9-10900KF`，但是如果不正确配置显卡会什么表示都没有，价格差距也没有那么大，就选择了相对稳妥的不带`F`的版本．
 
-<iframe id="bit-aLoHgCCnmb547n4y99ES" src="https://bits.yue.coffee/e/aLoHgCCnmb547n4y99ES" width="80%" frameborder="0"></iframe>
+![](./cpu.jpg)
 
-<iframe id="bit-z7YuUhyMtfZ8dWMMwjiB" src="https://bits.yue.coffee/e/z7YuUhyMtfZ8dWMMwjiB" width="80%" frameborder="0"></iframe>
+![](./cpu-on-board.jpg)
 
 ### GPU
 
@@ -46,7 +46,7 @@ tags:
 
 考虑到 CPU 的需求选择了水冷，实际上这部分装起来挺麻烦的拆装了好几次．每个风扇都有电源和 RGBA 的两个接口，都需要分别正确接到集线器和控制板上．
 
-<iframe id="bit-McGZ6y6YfTspb7KnGKle" src="https://bits.yue.coffee/e/McGZ6y6YfTspb7KnGKle" width="80%" frameborder="0" allowfullscreen></iframe>
+![](./pump-fan.jpg)
 
 ### 散热硅胶
 
@@ -66,19 +66,21 @@ CPU + GPU 整体来说还是功耗偏大的选择了 `750w`的电源．但是这
 
 ## 组装
 
-<iframe id="bit-aPJRpkweOBH8ufYh8nxv" src="https://bits.yue.coffee/e/aPJRpkweOBH8ufYh8nxv" width="80%" frameborder="0"></iframe>
+![](./done.jpg)
 
 其实感觉下来正确的安装顺序应该是应该按照 机箱风扇 => 主板到机箱 => 水冷到主板 => 前置板以及主板相关的配线　=> GPU =>　 SSD/电源相关　的顺序装．主要是因为如果把水冷固定到了上挡板．剩下什么都不方便装....
 
-<iframe id="bit-6JnayPDdhkrZpFF2WWl1" src="https://bits.yue.coffee/e/6JnayPDdhkrZpFF2WWl1" width="80%" frameborder="0"></iframe>
+![](./pump-fan-on-board.jpg)
 
 第一次没有显卡的状态点亮．
 
-<iframe id="bit-f04TQKjZp2Bs8i7xCc6i" src="https://bits.yue.coffee/e/f04TQKjZp2Bs8i7xCc6i" width="80%" frameborder="0" allowfullscreen></iframe>
+![](./bios.jpg)
 
 尽可能的把排线集中到了背面，并且固定．排线真的好难以及许多线的长度不是很合适．如果还有机会装机器可以考虑准备不同颜色已经长度的配线．
 
-<iframe id="bit-ZsiDSHmRKExVYVenyoNz" src="https://bits.yue.coffee/e/ZsiDSHmRKExVYVenyoNz" width="80%" frameborder="0"></iframe>
+![](./cables-1.jpg)
+
+![](./cables-2.jpg)
 
 ## 其他
 
@@ -101,13 +103,10 @@ CPU + GPU 整体来说还是功耗偏大的选择了 `750w`的电源．但是这
 - [CPU Score](https://browser.geekbench.com/v5/cpu/5049295)
 - [OpenCL Score](https://browser.geekbench.com/v5/compute/1955666)
 
-<iframe id="bit-akAt8n76CKJKC2TKNmxE" src="https://bits.yue.coffee/e/akAt8n76CKJKC2TKNmxE" width="80%" frameborder="0"></iframe>
-<iframe id="bit-gulNhqZj9gG9V9m89iHo" src="https://bits.yue.coffee/e/gulNhqZj9gG9V9m89iHo" width="80%" frameborder="0"></iframe>
 
 ### Appendix
 
 如果说还有什么不满的地方的话...
 
 - N 卡不支持 hackintosh
-- 没 usb type-c
-- 没自带蓝牙
+- 没正面的usb type-c
