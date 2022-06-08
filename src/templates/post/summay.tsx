@@ -33,7 +33,7 @@ const PostContent = styled.div`
   transition: 0.3s all ease-in-out;
   border-radius: 10px;
   background-color: #1d1d1d;
-  padding: 5px 40px 10px 40px;
+  padding: 5px 0 10px 0;
   position: relative;
   cursor: pointer;
 `

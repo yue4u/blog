@@ -40,6 +40,13 @@ body {
    height: 100%;
    background-color: #1d1d1d;
 }
+
+@media screen and (max-width: 700px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
 ul {
    margin: 0;
    padding: 0;

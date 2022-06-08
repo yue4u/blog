@@ -122,6 +122,7 @@ const Tags = styled.span`
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 `
 
 const Tag = styled.span`
