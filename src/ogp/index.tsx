@@ -7,6 +7,8 @@ import OGP, { PageData } from "./ogp-component"
 import { renderToStaticMarkup } from "react-dom/server"
 import { ServerStyleSheet, StyleSheetManager } from "styled-components"
 
+const root = path.join(__dirname, '../..')
+
 export async function screenshot(data: PageData[], headless = true) {
   const [greatVibesMerge, notoSerifSc] = (
     await Promise.all(
@@ -14,14 +16,14 @@ export async function screenshot(data: PageData[], headless = true) {
         "GreatVibes-Regular.woff2",
         "NotoSerifSC-Regular.subset.woff2",
       ].map((file) =>
-        fs.readFile(path.join(__dirname, "../static/fonts", file))
+        fs.readFile(path.join(root, "static/fonts", file))
       )
     )
   ).map((font) => font.toString("base64"))
   const browser = await puppeteer.launch({ headless })
   const { NO_CACHE, REBUILD } = process.env
   for (const pageData of data) {
-    const filePath = path.join(__dirname, `../static/ogp/${pageData.slug}.png`)
+    const filePath = path.join(root, `static/ogp/${pageData.slug}.png`)
     const rebuildFlag = REBUILD && pageData.slug.includes(REBUILD)
     const exist = await fs.stat(filePath).catch(() => false)
 

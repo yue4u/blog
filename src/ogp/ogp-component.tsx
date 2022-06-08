@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { GradientFont } from "../src/components/gradientFont"
+import { GradientFont } from "../components/gradientFont"
 // import { MarkdownContentBlock } from "@/src/components/markdownContent"
 
 export type PageData = {

@@ -1,8 +1,7 @@
-import { GatsbyConfig } from "gatsby"
-import packageInfo from "../package.json"
-import path from "path"
+import { type GatsbyConfig } from "gatsby"
+import packageInfo from "./package.json"
 
-export const config: GatsbyConfig = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `浅色圆锥曲线爱好者`,
     description: packageInfo.description,
@@ -19,7 +18,7 @@ export const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: path.resolve(__dirname, "../"),
+        path: __dirname,
         ignore: [
           `**/\.*`,
           `**/.git/**/*`,
@@ -53,7 +52,7 @@ export const config: GatsbyConfig = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-typescript`,
+    // `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -70,3 +69,5 @@ export const config: GatsbyConfig = {
     `gatsby-plugin-offline`,
   ],
 }
+
+export default config;

@@ -1,8 +1,8 @@
 import path from "path"
 import { exec } from "child_process"
-import { screenshot } from "./ogp"
-import { GatsbyNode } from "gatsby"
-import { DirectoryEdge, MdxEdge, Mdx } from "@/types"
+import { screenshot } from "./src/ogp"
+import { type GatsbyNode } from "gatsby"
+import { type DirectoryEdge, type MdxEdge, type Mdx } from "@/types"
 
 export type PostPageContext = {
   slug: string
@@ -25,7 +25,7 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
     resolve: {
       modules: ["extra", "node_modules"],
       alias: {
-        "@": path.resolve(__dirname, ".."),
+        "@": __dirname,
       },
     },
   })

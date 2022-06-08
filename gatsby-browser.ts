@@ -1,10 +1,6 @@
-// @ts-check
+import { type GatsbyBrowser } from 'gatsby'
 
-/**
- *
- * @type import('gatsby').GatsbyBrowser['shouldUpdateScroll']
- */
-exports.shouldUpdateScroll = ({
+export const shouldUpdateScroll: GatsbyBrowser['shouldUpdateScroll'] = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
@@ -25,11 +21,7 @@ const embedClasses = [
   `.twitter-share-button`,
 ].join(`,`)
 
-/**
- *
- * @type import('gatsby').GatsbyBrowser['onRouteUpdate']
- */
-exports.onRouteUpdate = () => {
+export const onRouteUpdate: GatsbyBrowser['onRouteUpdate'] = () => {
   // If there's an embedded element, lazy-load the twitter script (if it hasn't
   // already been loaded), and then run the twitter load function.
   if (document.querySelector(embedClasses) !== null) {
