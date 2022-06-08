@@ -12,8 +12,8 @@ specifiers:
   '@mdx-js/react': ^1.6.22
   '@mdx-js/tag': ^0.20.3
   '@types/node': ^16.11.39
-  '@types/react': ^17.0.45
-  '@types/react-dom': ^17.0.17
+  '@types/react': ^18.0.12
+  '@types/react-dom': ^18.0.5
   '@types/react-helmet': ^6.1.5
   '@types/sharp': ^0.29.5
   '@types/styled-components': ^5.1.25
@@ -38,8 +38,8 @@ specifiers:
   graphql: ^16.5.0
   prettier: ^2.6.2
   puppeteer: ^11.0.0
-  react: ^17.0.2
-  react-dom: ^17.0.2
+  react: ^18.1.0
+  react-dom: ^18.1.0
   react-helmet: ^6.1.0
   react-icons: ^4.4.0
   react-spring: ^9.4.5
@@ -57,26 +57,26 @@ devDependencies:
   '@graphql-codegen/typescript': 2.5.0_graphql@16.5.0
   '@graphql-codegen/typescript-operations': 2.4.1_graphql@16.5.0
   '@mdx-js/mdx': 1.6.22
-  '@mdx-js/react': 1.6.22_react@17.0.2
-  '@mdx-js/tag': 0.20.3_react@17.0.2
+  '@mdx-js/react': 1.6.22_react@18.1.0
+  '@mdx-js/tag': 0.20.3_react@18.1.0
   '@types/node': 16.11.39
-  '@types/react': 17.0.45
-  '@types/react-dom': 17.0.17
+  '@types/react': 18.0.12
+  '@types/react-dom': 18.0.5
   '@types/react-helmet': 6.1.5
   '@types/sharp': 0.29.5
   '@types/styled-components': 5.1.25
   babel-plugin-styled-components: 1.13.3_styled-components@5.3.5
-  gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+  gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
   gatsby-paginate: 1.1.1
-  gatsby-plugin-image: 2.16.1_e7c22fe000dc0e06ee6103379590a31d
+  gatsby-plugin-image: 2.16.1_0836f09feaf1786a9e11081e7abd5dff
   gatsby-plugin-manifest: 4.16.0_gatsby@4.16.0+graphql@16.5.0
-  gatsby-plugin-mdx: 3.16.0_14616d47f2c747aa53004ce33223da88
-  gatsby-plugin-offline: 5.16.0_7076079a351ee4a286f2c4696fcf6912
+  gatsby-plugin-mdx: 3.16.0_d3d959626d88c9fbaf83c19b7ca9f6ef
+  gatsby-plugin-offline: 5.16.0_b2a7f6c24526a3382d9e2ab7df7abc70
   gatsby-plugin-pnpm: 1.2.10_gatsby@4.16.0
   gatsby-plugin-react-helmet: 5.16.0_gatsby@4.16.0+react-helmet@6.1.0
   gatsby-plugin-sharp: 4.16.1_gatsby@4.16.0+graphql@16.5.0
-  gatsby-plugin-sitemap: 5.16.0_7076079a351ee4a286f2c4696fcf6912
-  gatsby-plugin-styled-components: 5.16.0_43d1eb93010b86f2afea8b51c6d488e9
+  gatsby-plugin-sitemap: 5.16.0_b2a7f6c24526a3382d9e2ab7df7abc70
+  gatsby-plugin-styled-components: 5.16.0_8057a196c8080ce28966068c968f2d0c
   gatsby-plugin-typescript: 4.16.0_gatsby@4.16.0
   gatsby-remark-images: 6.16.0_8089b3bb6e599584bb919a7b5957b1f0
   gatsby-remark-shiki-twoslash: 3.0.34
@@ -86,13 +86,13 @@ devDependencies:
   graphql: 16.5.0
   prettier: 2.6.2
   puppeteer: 11.0.0
-  react: 17.0.2
-  react-dom: 17.0.2_react@17.0.2
-  react-helmet: 6.1.0_react@17.0.2
-  react-icons: 4.4.0_react@17.0.2
-  react-spring: 9.4.5_react-dom@17.0.2+react@17.0.2
+  react: 18.1.0
+  react-dom: 18.1.0_react@18.1.0
+  react-helmet: 6.1.0_react@18.1.0
+  react-icons: 4.4.0_react@18.1.0
+  react-spring: 9.4.5_react-dom@18.1.0+react@18.1.0
   resize-observer-polyfill: 1.5.1
-  styled-components: 5.3.5_react-dom@17.0.2+react@17.0.2
+  styled-components: 5.3.5_react-dom@18.1.0+react@18.1.0
   ts-node: 10.8.1_7a567b09538bae76a3d7fd111a1babc0
   typescript: 4.7.3
 
@@ -1597,7 +1597,7 @@ packages:
       jimp: 0.16.1
     dev: true
 
-  /@gatsbyjs/reach-router/1.3.7_react-dom@17.0.2+react@17.0.2:
+  /@gatsbyjs/reach-router/1.3.7_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-KQ5FvMb4BZUlSo+yQgd4t4WB8vkVPWfKjTpSl+Bx/FZhU6OL4lpwgfX7fXAY/18DogqyJCFiNAjV5eo3rQ5Alw==}
     peerDependencies:
       react: 15.x || 16.x || 17.x || 18.x
@@ -1605,8 +1605,8 @@ packages:
     dependencies:
       invariant: 2.2.4
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
       react-lifecycles-compat: 3.0.4
     dev: true
 
@@ -2929,20 +2929,20 @@ packages:
       - supports-color
     dev: true
 
-  /@mdx-js/react/1.6.22_react@17.0.2:
+  /@mdx-js/react/1.6.22_react@18.1.0:
     resolution: {integrity: sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==}
     peerDependencies:
       react: ^16.13.1 || ^17.0.0
     dependencies:
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /@mdx-js/tag/0.20.3_react@17.0.2:
+  /@mdx-js/tag/0.20.3_react@18.1.0:
     resolution: {integrity: sha512-Co3gUFmNDv9z2LjuvLTpTj2NaOSHFxuoZjohcG0YK/KfECO+Ns9idzThMYjfEDe1vAf4c824rqlBYseedJdFNw==}
     peerDependencies:
       react: ^0.14.x || ^15.x || ^16.x
     dependencies:
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
   /@mdx-js/util/1.6.22:
@@ -3467,102 +3467,102 @@ packages:
       webpack: 5.73.0
     dev: true
 
-  /@react-spring/animated/9.4.5_react@17.0.2:
+  /@react-spring/animated/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-KWqrtvJSMx6Fj9nMJkhTwM9r6LIriExDRV6YHZV9HKQsaolUFppgkOXpC+rsL1JEtEvKv6EkLLmSqHTnuYjiIA==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
     dependencies:
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /@react-spring/core/9.4.5_react@17.0.2:
+  /@react-spring/core/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-83u3FzfQmGMJFwZLAJSwF24/ZJctwUkWtyPD7KYtNagrFeQKUH1I05ZuhmCmqW+2w1KDW1SFWQ43RawqfXKiiQ==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
       '@react-spring/rafz': 9.4.5
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /@react-spring/konva/9.4.5_react@17.0.2:
+  /@react-spring/konva/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-b3wTs7YT5102+Gs488r2JCNBoyZQd+SWg35AdxmiI6FARBFvBjIA0z7VJx8ILAlmTVBows5UwiDWvk2vmWmLLw==}
     peerDependencies:
       konva: '>=2.6'
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
       react-konva: ^16.8.0  || ^17.0.0
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /@react-spring/native/9.4.5_react@17.0.2:
+  /@react-spring/native/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-11GcqFZfIhOOVQI25FcDLdeJLOSVOgIh2AF6WMXpCNWguhIv6N33zLL8d4cYfhYhsLOVXprU/8uefNorj7/h3g==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
       react-native: '>=0.58'
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
   /@react-spring/rafz/9.4.5:
     resolution: {integrity: sha512-swGsutMwvnoyTRxvqhfJBtGM8Ipx6ks0RkIpNX9F/U7XmyPvBMGd3GgX/mqxZUpdlsuI1zr/jiYw+GXZxAlLcQ==}
     dev: true
 
-  /@react-spring/shared/9.4.5_react@17.0.2:
+  /@react-spring/shared/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-JhMh3nFKsqyag0KM5IIM8BQANGscTdd0mMv3BXsUiMZrcjQTskyfnv5qxEeGWbJGGar52qr5kHuBHtCjQOzniA==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
     dependencies:
       '@react-spring/rafz': 9.4.5
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /@react-spring/three/9.4.5_react@17.0.2:
+  /@react-spring/three/9.4.5_react@18.1.0:
     resolution: {integrity: sha512-mArxfIhg9kyFL/8Y09TarS/ZKLd/qAWS4T3Ro/B46ILPfPnoPywDdw9/rknZihy/tslnviCgMrB4pZ29X1Dfxw==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
       react: ^16.11.0  || >=17.0.0 || >=18.0.0
       three: '>=0.126'
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
   /@react-spring/types/9.4.5:
     resolution: {integrity: sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==}
     dev: true
 
-  /@react-spring/web/9.4.5_react-dom@17.0.2+react@17.0.2:
+  /@react-spring/web/9.4.5_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-NGAkOtKmOzDEctL7MzRlQGv24sRce++0xAY7KlcxmeVkR7LRSGkoXHaIfm9ObzxPMcPHQYQhf3+X9jepIFNHQA==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
       react-dom: ^16.8.0  || >=17.0.0 || >=18.0.0
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: true
 
-  /@react-spring/zdog/9.4.5_react-dom@17.0.2+react@17.0.2:
+  /@react-spring/zdog/9.4.5_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-STrePM34ZK1T3oK8mo71pvKxvIzELJTpVi0U0qDh0s15e9rmN6XYkd406LqFtuchhmLoy24lD4ds7LAqhIEraw==}
     peerDependencies:
       react: ^16.8.0  || >=17.0.0 || >=18.0.0
@@ -3570,12 +3570,12 @@ packages:
       react-zdog: '>=1.0'
       zdog: '>=1.0'
     dependencies:
-      '@react-spring/animated': 9.4.5_react@17.0.2
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/shared': 9.4.5_react@17.0.2
+      '@react-spring/animated': 9.4.5_react@18.1.0
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/shared': 9.4.5_react@18.1.0
       '@react-spring/types': 9.4.5
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: true
 
   /@samverschueren/stream-to-observable/0.3.1_rxjs@6.6.7:
@@ -3886,24 +3886,16 @@ packages:
       '@types/react': 18.0.12
     dev: true
 
-  /@types/react-dom/17.0.17:
-    resolution: {integrity: sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==}
+  /@types/react-dom/18.0.5:
+    resolution: {integrity: sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA==}
     dependencies:
-      '@types/react': 17.0.45
+      '@types/react': 18.0.12
     dev: true
 
   /@types/react-helmet/6.1.5:
     resolution: {integrity: sha512-/ICuy7OHZxR0YCAZLNg9r7I9aijWUWvxaPR6uTuyxe8tAj5RL4Sw1+R6NhXUtOsarkGYPmaHdBDvuXh2DIN/uA==}
     dependencies:
       '@types/react': 18.0.12
-    dev: true
-
-  /@types/react/17.0.45:
-    resolution: {integrity: sha512-YfhQ22Lah2e3CHPsb93tRwIGNiSwkuz1/blk4e6QrWS0jQzCSNbGLtOEYhPg02W0yGTTmpajp7dCTbBAMN3qsg==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.0
     dev: true
 
   /@types/react/18.0.12:
@@ -4734,7 +4726,7 @@ packages:
     dependencies:
       '@babel/core': 7.18.2
       '@babel/runtime': 7.18.3
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
     dev: true
 
@@ -4747,7 +4739,7 @@ packages:
       '@babel/helper-module-imports': 7.16.7
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
-      styled-components: 5.3.5_react-dom@17.0.2+react@17.0.2
+      styled-components: 5.3.5_react-dom@18.1.0+react@18.1.0
     dev: true
 
   /babel-plugin-styled-components/2.0.7_styled-components@5.3.5:
@@ -4760,7 +4752,7 @@ packages:
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.5_react-dom@17.0.2+react@17.0.2
+      styled-components: 5.3.5_react-dom@18.1.0+react@18.1.0
     dev: true
 
   /babel-plugin-syntax-jsx/6.18.0:
@@ -7668,7 +7660,7 @@ packages:
       core-js-compat: 3.9.0
     dev: true
 
-  /gatsby-link/4.16.0_3f823a2e884c4867af0a47d3087d2b6a:
+  /gatsby-link/4.16.0_ef39bea4c4cfca9f159103ed6d025ad6:
     resolution: {integrity: sha512-CuWV3BFZsIYKChsaRoGbTWn2VhPKRJ8d9rM8QbCpYdNNBdvZFADUeHpQaIX9g9hB9ZoSMFKp5MbMVcWGi50f8w==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -7677,12 +7669,12 @@ packages:
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.18.3
-      '@gatsbyjs/reach-router': 1.3.7_react-dom@17.0.2+react@17.0.2
+      '@gatsbyjs/reach-router': 1.3.7_react-dom@18.1.0+react@18.1.0
       '@types/reach__router': 1.3.10
       gatsby-page-utils: 2.16.0
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: true
 
   /gatsby-page-utils/2.16.0:
@@ -7731,7 +7723,7 @@ packages:
       '@parcel/transformer-react-refresh-wrap': 2.6.0_@parcel+core@2.6.0
     dev: true
 
-  /gatsby-plugin-image/2.16.1_e7c22fe000dc0e06ee6103379590a31d:
+  /gatsby-plugin-image/2.16.1_0836f09feaf1786a9e11081e7abd5dff:
     resolution: {integrity: sha512-PnCcJG7sE85xQhCFIMRUJr42T0eLRBJsERfhgHHaiCjUfNbpV02eQ30Wt8i3s3T6Ci/xPJYdnnqM9nTqiCJbTQ==}
     peerDependencies:
       '@babel/core': ^7.12.3
@@ -7752,15 +7744,15 @@ packages:
       chokidar: 3.5.3
       common-tags: 1.8.2
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-plugin-sharp: 4.16.1_gatsby@4.16.0+graphql@16.5.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@16.5.0
       gatsby-source-filesystem: 4.16.0_gatsby@4.16.0
       objectFitPolyfill: 2.3.5
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     transitivePeerDependencies:
       - graphql
       - supports-color
@@ -7773,7 +7765,7 @@ packages:
       gatsby: ^4.0.0-next
     dependencies:
       '@babel/runtime': 7.18.3
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@16.5.0
       semver: 7.3.7
@@ -7782,7 +7774,7 @@ packages:
       - graphql
     dev: true
 
-  /gatsby-plugin-mdx/3.16.0_14616d47f2c747aa53004ce33223da88:
+  /gatsby-plugin-mdx/3.16.0_d3d959626d88c9fbaf83c19b7ca9f6ef:
     resolution: {integrity: sha512-6LhSG5L9vUGmE2kE2ml/qx/vm4IQf7hOhKq+1KukL3T5jePThqQzDc6wucnY3usSbgvrJ46Jd104HAIDRLzPQQ==}
     peerDependencies:
       '@mdx-js/mdx': ^1.0.0
@@ -7800,7 +7792,7 @@ packages:
       '@babel/runtime': 7.18.3
       '@babel/types': 7.18.4
       '@mdx-js/mdx': 1.6.22
-      '@mdx-js/react': 1.6.22_react@17.0.2
+      '@mdx-js/react': 1.6.22_react@18.1.0
       camelcase-css: 2.0.1
       change-case: 3.1.0
       core-js: 3.22.8
@@ -7809,7 +7801,7 @@ packages:
       escape-string-regexp: 1.0.5
       eval: 0.1.8
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gray-matter: 4.0.3
       json5: 2.2.1
@@ -7821,8 +7813,8 @@ packages:
       mkdirp: 1.0.4
       p-queue: 6.6.2
       pretty-bytes: 5.6.0
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
       remark: 10.0.1
       remark-retext: 3.1.3
       retext-english: 3.0.4
@@ -7838,7 +7830,7 @@ packages:
       - supports-color
     dev: true
 
-  /gatsby-plugin-offline/5.16.0_7076079a351ee4a286f2c4696fcf6912:
+  /gatsby-plugin-offline/5.16.0_b2a7f6c24526a3382d9e2ab7df7abc70:
     resolution: {integrity: sha512-9LvfHnIcL9Yl9yJ0HRxyZJ6hDtKILdL381oPRd6HxUOfk6/2zJuuX8StZ5B+bL8cVtm0Vqwpexhwo1qFLwsK7Q==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -7848,13 +7840,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.3
       cheerio: 1.0.0-rc.11
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       glob: 7.2.3
       idb-keyval: 3.2.0
       lodash: 4.17.21
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
       workbox-build: 4.3.1
     dev: true
 
@@ -7869,7 +7861,7 @@ packages:
       '@sindresorhus/slugify': 1.1.2
       chokidar: 3.5.3
       fs-exists-cached: 1.0.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-page-utils: 2.16.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@15.8.0
@@ -7887,7 +7879,7 @@ packages:
     peerDependencies:
       gatsby: ~2.x.x || ~3.x.x || ~4.x.x
     dependencies:
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
     dev: true
@@ -7900,8 +7892,8 @@ packages:
       react-helmet: ^5.1.3 || ^6.0.0
     dependencies:
       '@babel/runtime': 7.18.3
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
-      react-helmet: 6.1.0_react@17.0.2
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
+      react-helmet: 6.1.0_react@18.1.0
     dev: true
 
   /gatsby-plugin-sharp/4.16.1_gatsby@4.16.0+graphql@16.5.0:
@@ -7917,7 +7909,7 @@ packages:
       debug: 4.3.4
       filenamify: 4.3.0
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@16.5.0
       gatsby-telemetry: 3.16.0
@@ -7935,7 +7927,7 @@ packages:
       - supports-color
     dev: true
 
-  /gatsby-plugin-sitemap/5.16.0_7076079a351ee4a286f2c4696fcf6912:
+  /gatsby-plugin-sitemap/5.16.0_b2a7f6c24526a3382d9e2ab7df7abc70:
     resolution: {integrity: sha512-3NCkctKMBtP+ySbtYt5Oablw/j5hdkv39aepP6FpoBG+stY1jVXVD0jlyKHZRGvlP2wpFdB7xVfJC7IChdYUFQ==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -7945,14 +7937,14 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.3
       common-tags: 1.8.2
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       minimatch: 3.1.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
       sitemap: 7.1.1
     dev: true
 
-  /gatsby-plugin-styled-components/5.16.0_43d1eb93010b86f2afea8b51c6d488e9:
+  /gatsby-plugin-styled-components/5.16.0_8057a196c8080ce28966068c968f2d0c:
     resolution: {integrity: sha512-V0gfYGtygO5BUFCbLALrvwlYEUnut9C8Eh+ePT8pI2FcefMnuT35qLQssGmsAMrDs0j5FmqOxQBnp9Zf7RMTMQ==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -7964,10 +7956,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.3
       babel-plugin-styled-components: 1.13.3_styled-components@5.3.5
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      styled-components: 5.3.5_react-dom@17.0.2+react@17.0.2
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+      styled-components: 5.3.5_react-dom@18.1.0+react@18.1.0
     dev: true
 
   /gatsby-plugin-typescript/4.16.0_gatsby@4.16.0:
@@ -7983,7 +7975,7 @@ packages:
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.2
       '@babel/runtime': 7.18.3
       babel-plugin-remove-graphql-queries: 4.16.0_@babel+core@7.18.2+gatsby@4.16.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7997,7 +7989,7 @@ packages:
       '@babel/runtime': 7.18.3
       '@gatsbyjs/potrace': 2.2.0
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-sharp: 0.10.0
       graphql-compose: 9.0.8_graphql@15.8.0
@@ -8019,7 +8011,7 @@ packages:
       '@babel/runtime': 7.18.3
       '@gatsbyjs/potrace': 2.2.0
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-sharp: 0.10.0
       graphql-compose: 9.0.8_graphql@16.5.0
@@ -8032,7 +8024,7 @@ packages:
       - graphql
     dev: true
 
-  /gatsby-react-router-scroll/5.16.0_3f823a2e884c4867af0a47d3087d2b6a:
+  /gatsby-react-router-scroll/5.16.0_ef39bea4c4cfca9f159103ed6d025ad6:
     resolution: {integrity: sha512-85L2eZH3ck9eNhIMH09lThiiH85oaVE/0Vw9oCfsRkyfm7C0oW9HAUUgAAAgWHZBQ1Xw9wPUpIiP0XjKlk1U0w==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -8041,10 +8033,10 @@ packages:
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.18.3
-      '@gatsbyjs/reach-router': 1.3.7_react-dom@17.0.2+react@17.0.2
+      '@gatsbyjs/reach-router': 1.3.7_react-dom@18.1.0+react@18.1.0
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: true
 
   /gatsby-remark-images/6.16.0_8089b3bb6e599584bb919a7b5957b1f0:
@@ -8058,7 +8050,7 @@ packages:
       '@gatsbyjs/potrace': 2.2.0
       chalk: 4.1.2
       cheerio: 1.0.0-rc.11
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gatsby-plugin-sharp: 4.16.1_gatsby@4.16.0+graphql@16.5.0
       is-relative-url: 3.0.0
@@ -8079,15 +8071,15 @@ packages:
       - supports-color
     dev: true
 
-  /gatsby-script/1.1.0_react-dom@17.0.2+react@17.0.2:
+  /gatsby-script/1.1.0_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-RsZQyaYBCqo1A9QNBOqheTLyn2+f/TlHFWmnVKpm5tEy5KppDNuW5yCH3u01tq4zwCGEoQyDSH4u9Xgk8E0rUg==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: true
 
   /gatsby-sharp/0.10.0:
@@ -8108,7 +8100,7 @@ packages:
       chokidar: 3.5.3
       file-type: 16.5.3
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       got: 9.6.0
       md5-file: 5.0.0
@@ -8148,7 +8140,7 @@ packages:
       gatsby: ^4.0.0-next
     dependencies:
       '@babel/runtime': 7.18.3
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-core-utils: 3.16.0
       gray-matter: 4.0.3
       hast-util-raw: 6.1.0
@@ -8186,7 +8178,7 @@ packages:
       bluebird: 3.7.2
       common-tags: 1.8.2
       fs-extra: 10.1.0
-      gatsby: 4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a
+      gatsby: 4.16.0_a8654dc76f86b0446443c89cb67dd273
       gatsby-plugin-sharp: 4.16.1_gatsby@4.16.0+graphql@16.5.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@16.5.0
       probe-image-size: 7.2.3
@@ -8206,7 +8198,7 @@ packages:
       - supports-color
     dev: true
 
-  /gatsby/4.16.0_6f6bb9cb1ce0174e3c0b1575e7bfea0a:
+  /gatsby/4.16.0_a8654dc76f86b0446443c89cb67dd273:
     resolution: {integrity: sha512-C8rmUsx8LnhtDKMOyfoXH1A27tuU+5OP/p1X0vIoOfW2pcRty5pjWRlFl/OM1BHcrdrfEXTsen30eU+S4iQG8Q==}
     engines: {node: '>=14.15.0'}
     hasBin: true
@@ -8224,7 +8216,7 @@ packages:
       '@babel/traverse': 7.18.2
       '@babel/types': 7.18.4
       '@builder.io/partytown': 0.5.4
-      '@gatsbyjs/reach-router': 1.3.7_react-dom@17.0.2+react@17.0.2
+      '@gatsbyjs/reach-router': 1.3.7_react-dom@18.1.0+react@18.1.0
       '@gatsbyjs/webpack-hot-middleware': 2.25.3
       '@graphql-codegen/add': 3.1.1_graphql@15.8.0
       '@graphql-codegen/core': 2.5.1_graphql@15.8.0
@@ -8297,14 +8289,14 @@ packages:
       gatsby-core-utils: 3.16.0
       gatsby-graphiql-explorer: 2.16.0
       gatsby-legacy-polyfills: 2.16.0
-      gatsby-link: 4.16.0_3f823a2e884c4867af0a47d3087d2b6a
+      gatsby-link: 4.16.0_ef39bea4c4cfca9f159103ed6d025ad6
       gatsby-page-utils: 2.16.0
       gatsby-parcel-config: 0.7.0_@parcel+core@2.6.0
       gatsby-plugin-page-creator: 4.16.0_gatsby@4.16.0+graphql@15.8.0
       gatsby-plugin-typescript: 4.16.0_gatsby@4.16.0
       gatsby-plugin-utils: 3.10.0_gatsby@4.16.0+graphql@15.8.0
-      gatsby-react-router-scroll: 5.16.0_3f823a2e884c4867af0a47d3087d2b6a
-      gatsby-script: 1.1.0_react-dom@17.0.2+react@17.0.2
+      gatsby-react-router-scroll: 5.16.0_ef39bea4c4cfca9f159103ed6d025ad6
+      gatsby-script: 1.1.0_react-dom@18.1.0+react@18.1.0
       gatsby-telemetry: 3.16.0
       gatsby-worker: 1.16.0
       glob: 7.2.3
@@ -8347,9 +8339,9 @@ packages:
       prop-types: 15.8.1
       query-string: 6.14.1
       raw-loader: 4.0.2_webpack@5.73.0
-      react: 17.0.2
+      react: 18.1.0
       react-dev-utils: 12.0.1_6eb7886dc4ebec4f4fbeac8c63693d3e
-      react-dom: 17.0.2_react@17.0.2
+      react-dom: 18.1.0_react@18.1.0
       react-refresh: 0.9.0
       redux: 4.1.2
       redux-thunk: 2.4.1_redux@4.1.2
@@ -12465,15 +12457,14 @@ packages:
       - webpack
     dev: true
 
-  /react-dom/17.0.2_react@17.0.2:
-    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
+  /react-dom/18.1.0_react@18.1.0:
+    resolution: {integrity: sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w==}
     peerDependencies:
-      react: 17.0.2
+      react: ^18.1.0
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react: 17.0.2
-      scheduler: 0.20.2
+      react: 18.1.0
+      scheduler: 0.22.0
     dev: true
 
   /react-error-overlay/6.0.11:
@@ -12488,24 +12479,24 @@ packages:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
     dev: true
 
-  /react-helmet/6.1.0_react@17.0.2:
+  /react-helmet/6.1.0_react@18.1.0:
     resolution: {integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==}
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: 17.0.2
+      react: 18.1.0
       react-fast-compare: 3.2.0
-      react-side-effect: 2.1.1_react@17.0.2
+      react-side-effect: 2.1.1_react@18.1.0
     dev: true
 
-  /react-icons/4.4.0_react@17.0.2:
+  /react-icons/4.4.0_react@18.1.0:
     resolution: {integrity: sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==}
     peerDependencies:
       react: '*'
     dependencies:
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
   /react-is/16.13.1:
@@ -12521,23 +12512,23 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-side-effect/2.1.1_react@17.0.2:
+  /react-side-effect/2.1.1_react@18.1.0:
     resolution: {integrity: sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0
     dependencies:
-      react: 17.0.2
+      react: 18.1.0
     dev: true
 
-  /react-spring/9.4.5_react-dom@17.0.2+react@17.0.2:
+  /react-spring/9.4.5_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-FRIXQGR+jG+Fx4UcqhF0b5jMEU3Q5QcZ8rEVWKqZgrrn92C1HcqtuZy7dH+rZ6uNGjnlV7HBf8iprJaJ+350LA==}
     dependencies:
-      '@react-spring/core': 9.4.5_react@17.0.2
-      '@react-spring/konva': 9.4.5_react@17.0.2
-      '@react-spring/native': 9.4.5_react@17.0.2
-      '@react-spring/three': 9.4.5_react@17.0.2
-      '@react-spring/web': 9.4.5_react-dom@17.0.2+react@17.0.2
-      '@react-spring/zdog': 9.4.5_react-dom@17.0.2+react@17.0.2
+      '@react-spring/core': 9.4.5_react@18.1.0
+      '@react-spring/konva': 9.4.5_react@18.1.0
+      '@react-spring/native': 9.4.5_react@18.1.0
+      '@react-spring/three': 9.4.5_react@18.1.0
+      '@react-spring/web': 9.4.5_react-dom@18.1.0+react@18.1.0
+      '@react-spring/zdog': 9.4.5_react-dom@18.1.0+react@18.1.0
     transitivePeerDependencies:
       - '@react-three/fiber'
       - konva
@@ -12550,12 +12541,11 @@ packages:
       - zdog
     dev: true
 
-  /react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+  /react/18.1.0:
+    resolution: {integrity: sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: true
 
   /read/1.0.7:
@@ -13149,11 +13139,10 @@ packages:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: true
 
-  /scheduler/0.20.2:
-    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
+  /scheduler/0.22.0:
+    resolution: {integrity: sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: true
 
   /schema-utils/2.7.0:
@@ -13848,7 +13837,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: true
 
-  /styled-components/5.3.5_react-dom@17.0.2+react@17.0.2:
+  /styled-components/5.3.5_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-ndETJ9RKaaL6q41B69WudeqLzOpY1A/ET/glXkNZ2T7dPjPqpPCXXQjDFYZWwNnE5co0wX+gTCqx9mfxTmSIPg==}
     engines: {node: '>=10'}
     requiresBuild: true
@@ -13865,8 +13854,8 @@ packages:
       babel-plugin-styled-components: 2.0.7_styled-components@5.3.5
       css-to-react-native: 3.0.0
       hoist-non-react-statics: 3.3.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
       shallowequal: 1.1.0
       supports-color: 5.5.0
     dev: true
