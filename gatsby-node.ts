@@ -2,21 +2,6 @@ import path from "path"
 import { exec } from "child_process"
 import { screenshot } from "./src/ogp"
 import { type GatsbyNode } from "gatsby"
-import { type DirectoryEdge, type MdxEdge, type Mdx } from "@/types"
-
-export type PostPageContext = {
-  slug: string
-  prev: Mdx
-  next: Mdx
-  identifier: string
-}
-
-export type PostArchivePageContext = {
-  limit: number
-  skip: number
-  numPages: number
-  currentPage: number
-}
 
 export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
   actions,
@@ -62,8 +47,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions
 
-  const { data: notePages } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
-    query {
+  const { data: notePages } = await graphql<Queries.AllNotePagesQuery>(`
+    query AllNotePages {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { fileAbsolutePath: { regex: "/notes/" } }
@@ -98,10 +83,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
     })
   })
 
-  const { data: noteArchivePages } = await graphql<{
-    allDirectory: { edges: DirectoryEdge[] }
-  }>(`
-    {
+  const { data: noteArchivePages } = await graphql<Queries.AllNoteArchivePagesQuery>(`
+    query AllNoteArchivePages {
       allDirectory(
         filter: { relativeDirectory: { eq: "notes" } }
         sort: { fields: changeTime, order: DESC }
@@ -136,8 +119,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
     })
   })
 
-  const { data: postPages } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
-    query {
+  const { data: postPages } = await graphql<Queries.AllPostPagesQuery>(`
+    query AllPostPages {
       allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { fileAbsolutePath: { regex: "/posts/" } }
@@ -194,8 +177,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }
 
 export const onPreBuild: GatsbyNode["onPreBuild"] = async ({ graphql }) => {
-  const { data: nodes } = await graphql<{ allMdx: { edges: MdxEdge[] } }>(`
-    {
+  const { data: nodes } = await graphql<Queries.AllPostTextQuery>(`
+    query AllPostText {
       allMdx(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
         edges {
           node {
@@ -243,7 +226,7 @@ export const onPreBuild: GatsbyNode["onPreBuild"] = async ({ graphql }) => {
         title: node!.frontmatter!.title,
         // @ts-ignore
         tags: node!.frontmatter!.tags as string[],
-        date: node!.frontmatter!.date,
+        date: node!.frontmatter!.date!,
         slug: node!.fields!.slug!,
         content: node!.rawBody,
       }

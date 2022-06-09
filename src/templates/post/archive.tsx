@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, PageProps } from "gatsby"
 import { useTransition, animated } from "react-spring"
 
 import { SEO, Layout, GradientFont } from "@/src/components"
-import { PostArchiveQueryQuery, PostArchivePageContext } from "@/types"
 import PostSummary from "./summay"
 import PostPagination from "./pagination"
 
@@ -27,10 +26,12 @@ const PostCount = styled.p`
 export default function Posts({
   data,
   pageContext,
-}: {
-  data: PostArchiveQueryQuery
-  pageContext: PostArchivePageContext
-}) {
+}: PageProps<Queries.PostArchiveQuery, {
+  limit: number
+  skip: number
+  numPages: number
+  currentPage: number
+}>) {
   const nodes = data.allMdx.edges.map(({ node }) => node)
   const transitions = useTransition(nodes, {
     keys: (node) => node.id,
@@ -70,7 +71,7 @@ export default function Posts({
 }
 
 export const query = graphql`
-  query postArchiveQuery($skip: Int!, $limit: Int!) {
+  query PostArchive($skip: Int!, $limit: Int!) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/posts/" } }

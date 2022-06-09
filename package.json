@@ -8,10 +8,6 @@
     "@babel/core": "^7.18.2",
     "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.3",
     "@babel/plugin-syntax-optional-chaining": "^7.8.3",
-    "@graphql-codegen/cli": "^2.6.2",
-    "@graphql-codegen/introspection": "^2.1.1",
-    "@graphql-codegen/typescript": "^2.5.0",
-    "@graphql-codegen/typescript-operations": "^2.4.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mdx-js/tag": "^0.20.3",
@@ -59,7 +55,6 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "test:tsc": "tsc -p . --noEmit",
-    "gql-gen": "graphql-codegen --config codegen.yml",
     "preinstall": "npx -y only-allow pnpm"
   },
   "repository": {

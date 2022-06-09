@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
 import {
   Layout,
   SEO,
@@ -12,7 +11,13 @@ import {
 } from "@/src/components"
 import { formatDate } from "@/src/helpers"
 import { PaginationLink, PaginationNav } from "./pagination"
-import type { PostPageContext, PostPageQueryQuery } from "@/types"
+
+type PostPageContext = {
+  slug: string
+  prev: Queries.Mdx
+  next: Queries.Mdx
+  identifier: string
+}
 
 function PostLink({
   data,
@@ -37,10 +42,7 @@ function PostLink({
 export default function Post({
   data,
   pageContext,
-}: {
-  data: PostPageQueryQuery
-  pageContext: PostPageContext
-}) {
+}: PageProps<Queries.PostPageQuery, PostPageContext>) {
   const post = data.mdx!
   const { prev, next, slug } = pageContext
   return (
@@ -62,7 +64,7 @@ export default function Post({
             <Tag key={tag}>{tag}</Tag>
           ))}
         </Tags>
-        <PostDate>{formatDate(post.frontmatter?.date)}</PostDate>
+        <PostDate>{formatDate(post.frontmatter!.date!)}</PostDate>
         <MarkdownContent>
           <MDXRenderer>{post.body}</MDXRenderer>
         </MarkdownContent>
@@ -157,7 +159,7 @@ const Tag = styled.span`
 `
 
 export const query = graphql`
-  query PostPageQuery($slug: String!) {
+  query PostPage($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       rawBody

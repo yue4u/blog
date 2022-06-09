@@ -16,3 +16,4 @@ static/ogp/*
 static/fonts/*subset*
 posts/**/*.png
 posts/**/*.jpg
+src/gatsby-types.d.ts

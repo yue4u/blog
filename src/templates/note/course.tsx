@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import courseTitle from "@/src/i18n/courseTitle.json"
 import { animation } from "@/src/theme"
-import { NoteArchiveQueryQuery } from "@/types"
 
 const CourseItem = styled.div`
   transition: ${animation.fastIn};
@@ -47,7 +46,7 @@ const CourseDetail = styled.div`
 export default function Course({
   node,
 }: {
-  node: NoteArchiveQueryQuery["allDirectory"]["edges"][number]["node"]
+  node: Queries.NoteArchiveQuery["allDirectory"]["edges"][number]["node"]
 }) {
   const { name, modifiedTime } = node
   const date = modifiedTime.split("T")[0]

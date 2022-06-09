@@ -1,12 +1,10 @@
-import React, { ComponentProps } from "react"
+import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
+import { graphql, type PageProps } from "gatsby"
 import { useTransition, animated } from "react-spring"
-
 import { SEO, Layout, GradientFont } from "@/src/components"
-import { NoteArchiveQueryQuery } from "@/types"
-
 import Course from "./course"
+
 const H1 = styled.h1`
   font-size: 5rem;
 `
@@ -27,7 +25,7 @@ const CourseList = styled.ul`
   }
 `
 
-function CourseBlock({ data }: ComponentProps<typeof Notes>) {
+function CourseBlock({ data }: Pick<PageProps<Queries.NoteArchiveQuery>, 'data'>) {
   const nodes = data.allDirectory.edges.map(({ node }) => node)
   const transitions = useTransition(nodes, {
     keys: (node) => node.id,
@@ -46,7 +44,7 @@ function CourseBlock({ data }: ComponentProps<typeof Notes>) {
   )
 }
 
-export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
+export default function Notes({ data }: PageProps<Queries.NoteArchiveQuery>) {
   return (
     <Layout>
       <SEO title="Notes" path="/notes" />
@@ -58,7 +56,7 @@ export default function Notes({ data }: { data: NoteArchiveQueryQuery }) {
   )
 }
 export const query = graphql`
-  query NoteArchiveQuery($skip: Int!, $limit: Int!) {
+  query NoteArchive($skip: Int!, $limit: Int!) {
     allDirectory(
       filter: { relativeDirectory: { eq: "notes" } }
       limit: $limit

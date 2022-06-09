@@ -2,8 +2,9 @@ import React, {
   useState,
   useEffect,
   createContext,
-  FC,
+  type FC,
   useContext,
+  type PropsWithChildren,
 } from "react"
 import styled from "styled-components"
 
@@ -25,7 +26,7 @@ const StyledItem = styled.li`
 `
 export const ItemsContext = createContext<number[]>([])
 
-export const ItemsProvider: FC = ({ children }) => {
+export const ItemsProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
   const [items, setItems] = useState<number[]>([])
 
   useEffect(() => {

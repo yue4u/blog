@@ -36,9 +36,9 @@ export function SEO({
   ogp,
   path,
 }: SEOProps) {
-  const { site } = useStaticQuery(
+  const { site } = useStaticQuery<Queries.SEOQuery>(
     graphql`
-      query SEOQuery {
+      query SEO {
         site {
           siteMetadata {
             title
@@ -52,7 +52,7 @@ export function SEO({
   )
 
   const descriptionSource =
-    genDescription(description) || title || site.siteMetadata.description
+    genDescription(description) || title || site?.siteMetadata?.description
   const metaDescription = `blog of yue: ${descriptionSource}`
 
   return (
@@ -61,7 +61,7 @@ export function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site?.siteMetadata?.title}`}
       meta={[
         {
           name: `description`,
@@ -89,7 +89,7 @@ export function SEO({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site?.siteMetadata?.author!,
         },
         {
           name: `twitter:title`,
@@ -100,7 +100,7 @@ export function SEO({
           content: metaDescription,
         },
       ].concat(meta)}
-      link={[{ rel: "canonical", href: `${site.siteMetadata.siteUrl}${path}` }]}
+      link={[{ rel: "canonical", href: `${site?.siteMetadata?.siteUrl}${path}` }]}
     />
   )
 }

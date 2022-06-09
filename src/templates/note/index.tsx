@@ -1,9 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { SEO, Layout, MarkdownContent } from "@/src/components"
-import { NotePageQueryQuery } from "@/types"
 import NoteList from "./list/index"
 
 const NoteLayout = styled.div`
@@ -19,10 +18,7 @@ const Content = styled.div`
 export default function Note({
   data,
   pageContext,
-}: {
-  data: NotePageQueryQuery
-  pageContext: { slug: string }
-}) {
+}: PageProps<Queries.NotePageQuery, { slug: string }>) {
   const post = data.mdx!
   const isIndex = [...(post?.fields?.slug?.matchAll(/\//g) || [])].length == 1
   const links = data.sideBar.edges.map(({ node }) => ({
@@ -66,7 +62,7 @@ export default function Note({
 }
 
 export const query = graphql`
-  query NotePageQuery($slug: String!, $regex: String!) {
+  query NotePage($slug: String!, $regex: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug

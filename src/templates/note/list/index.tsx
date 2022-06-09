@@ -1,11 +1,10 @@
 import React, { memo, useState } from "react"
 import styled from "styled-components"
-import { useSpring, animated, SpringValue } from "react-spring"
+import { useSpring, animated } from "react-spring"
 
 import { useMeasure, usePrevious } from "./helpers"
 import * as Icons from "./icons"
 import { Link } from "gatsby"
-import { NotePageQueryQuery } from "@/types"
 
 const Frame = styled.div`
   position: relative;
@@ -78,9 +77,8 @@ const Tree = memo(({ children, name, style, open = false }: TreeProps) => {
   })
   const Icon =
     Icons[
-      `${
-        children ? (isOpen ? "Minus" : "Plus") : "Close"
-      }SquareO` as keyof typeof Icons
+    `${children ? (isOpen ? "Minus" : "Plus") : "Close"
+    }SquareO` as keyof typeof Icons
     ]
   return (
     <Frame>
@@ -149,9 +147,7 @@ const HamburgerWrapper = styled.div`
 
 export default function NoteList({
   data,
-}: {
-  data: NotePageQueryQuery["sideBar"]
-}) {
+}: { data: Queries.NotePageQuery['sideBar'] }) {
   const [open, setOpen] = useState(false)
   const [props, set] = useSpring(() => ({
     visibility: "hidden",

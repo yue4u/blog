@@ -2,14 +2,13 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { useSpring, animated } from "react-spring"
-import { SiteTitleQueryQuery } from "@/types/gql"
 import { Header } from "./header"
 import { Footer } from "./footer"
 import { GlobalStyle } from "./GlobalStyle"
 
 export function Layout({ children }: PropsWithChildren<{}>) {
-  const data = useStaticQuery<SiteTitleQueryQuery>(graphql`
-    query SiteTitleQuery {
+  const data = useStaticQuery<Queries.SiteTitleQuery>(graphql`
+    query SiteTitle {
       site {
         siteMetadata {
           title

@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
     theme_color: "#333333",
     siteUrl: "https://blog.yue.coffee/",
   },
+  graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-sitemap`,
@@ -25,6 +26,7 @@ const config: GatsbyConfig = {
           `**/.cache/**/*`,
           `**/.deploy/**/*`,
           `**/public/**/*`,
+          `**/gatsby-types.d.ts`,
         ],
       },
     },
