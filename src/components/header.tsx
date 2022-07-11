@@ -44,7 +44,7 @@ export function Header({ siteTitle }: HeaderProps) {
       <RightCorner>
         <Link to="/posts">Posts</Link>
         <Link to="/notes">Notes</Link>
-        <Link to="/aboutme">About</Link>
+        <Link to="https://yue.cat" target="_blank" >About</Link>
       </RightCorner>
     </GlobalHeader>
   )
