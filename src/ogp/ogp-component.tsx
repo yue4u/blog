@@ -75,9 +75,10 @@ const MainTitle = styled(GradientFont)`
 export default function OGP({ title, date, tags, content, main }: PageData) {
   const summary = content.includes("---")
     ? (content.split("---")[2] ?? "some blog content")
-        .replaceAll(/#/g, "")
-        .replaceAll(/<[\s\S]+?\/.+>/gm, " ... ")
-        .replaceAll(/```[\s\S]+?```/gm, " ... ")
+      .replaceAll(/#/g, "")
+      .replaceAll(/<[\s\S]+?\/.+>/gm, " ... ")
+      .replaceAll(/```[\s\S]+?```/gm, " ... ")
+      .replaceAll(/\[(.+?)\]\(.+?\)/gm, '$1')
     : content
 
   if (main) {
