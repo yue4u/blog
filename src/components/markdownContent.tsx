@@ -46,7 +46,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
   h4,
   h5,
   h6 {
-    margin-top: 3rem;
+    margin-top: 2rem;
     color: #eee;
     position: relative;
     &::before {
@@ -59,18 +59,20 @@ export const MarkdownContentBlock = styled(CodeBlock)`
   }
 
   h2 {
+    margin-top: 3rem;
     &::before {
       content: "#";
     }
   }
 
   h3 {
+    font-size: 1.2rem;
     &::before {
       content: "◆";
     }
   }
   h4 {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   del {
     color: #888;
@@ -86,6 +88,11 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     &:hover {
       opacity: 1;
     }
+  }
+  video{
+    width: 60%;
+    margin: 2rem auto;
+    display: block;
   }
   a {
     position: relative;
@@ -185,6 +192,8 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     display: inherit;
   }
   figcaption {
+    margin: 1rem;
+    color: #888;
     text-align: center;
   }
   @media screen and (max-width: 700px) {
@@ -202,6 +211,9 @@ export const MarkdownContentBlock = styled(CodeBlock)`
     iframe {
       max-width: 100%;
       width: 100%;
+    }
+    video{
+      width: 80%;
     }
   }
 `
