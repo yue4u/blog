@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Script } from "gatsby"
 import { Helmet } from "react-helmet"
 import { useSpring, animated } from "react-spring"
 import { Header } from "./header"
@@ -28,6 +28,7 @@ export function Layout({ children }: PropsWithChildren<{}>) {
         <animated.main style={props}>{children}</animated.main>
       </div>
       <Footer />
+      <Script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "47a0f5bfd51b4b2b947eae2b6a705d3f"}' />
     </>
   )
 }
