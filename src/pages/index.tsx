@@ -79,7 +79,7 @@ export default function IndexPage() {
       <SEO title="Home" path="/" />
       <H1>Blog of yue</H1>
       <Callout>
-        正しさ よりも 明るい場所を 見つけながら 走ればいいんだね。
+        今始まるよ 自分の歩幅でパレード 小さな靴音届くといいな
       </Callout>
       <NavBlock />
     </Layout>
