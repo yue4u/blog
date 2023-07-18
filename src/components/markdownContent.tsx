@@ -89,7 +89,7 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       opacity: 1;
     }
   }
-  video{
+  video {
     width: 60%;
     margin: 2rem auto;
     display: block;
@@ -212,8 +212,12 @@ export const MarkdownContentBlock = styled(CodeBlock)`
       max-width: 100%;
       width: 100%;
     }
-    video{
+    video {
       width: 80%;
     }
+  }
+  hr {
+    border: 1px solid #424242;
+    margin: 2rem 1rem;
   }
 `
