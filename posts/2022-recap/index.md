@@ -89,5 +89,4 @@ tags:
 - 向`rust` lang/community做出更多贡献
 - 参加一个韩语培训, 准备`TOPIK`
 - 流畅的写`zig`语言(同时争取`c`/`cpp`的readability)
-- 基于`diffusion model`训练一些有趣的AI模型
 - 考虑做一些商业化的个人项目
