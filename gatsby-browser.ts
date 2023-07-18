@@ -1,6 +1,7 @@
-import { type GatsbyBrowser } from 'gatsby'
+import { type GatsbyBrowser } from "gatsby"
+import "katex/dist/katex.css"
 
-export const shouldUpdateScroll: GatsbyBrowser['shouldUpdateScroll'] = ({
+export const shouldUpdateScroll: GatsbyBrowser["shouldUpdateScroll"] = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
@@ -21,7 +22,7 @@ const embedClasses = [
   `.twitter-share-button`,
 ].join(`,`)
 
-export const onRouteUpdate: GatsbyBrowser['onRouteUpdate'] = () => {
+export const onRouteUpdate: GatsbyBrowser["onRouteUpdate"] = () => {
   // If there's an embedded element, lazy-load the twitter script (if it hasn't
   // already been loaded), and then run the twitter load function.
   if (document.querySelector(embedClasses) !== null) {

@@ -1,10 +1,10 @@
-import { type GatsbyConfig } from "gatsby"
-import packageInfo from "./package.json"
-
-const config: GatsbyConfig = {
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+const config = {
   siteMetadata: {
     title: `浅色圆锥曲线爱好者`,
-    description: packageInfo.description,
+    description: `yue's blog: posts and notes collection`,
     author: `yue`,
     theme_color: "#333333",
     siteUrl: "https://blog.yue.coffee/",
@@ -51,6 +51,9 @@ const config: GatsbyConfig = {
             },
           },
         ],
+        remarkPlugins: [require("remark-math"), [
+          require("remark-html-katex"),
+        ],],
       },
     },
     `gatsby-transformer-sharp`,
@@ -71,4 +74,4 @@ const config: GatsbyConfig = {
   ],
 }
 
-export default config;
+module.exports = config

@@ -42,7 +42,7 @@ tags:
 
 <h3> 常见写法：5段式</h3>
 
-$ \begin{cases}background\ info\ ←70 \\\body ←240\begin{cases}First...★ \\\Second...★\ \ \\\ Third...\end{cases}\\\conclusion\ ←70\end{cases}$
+$$\begin{cases}background\ info\ ←70 \\body ←240\begin{cases}First...★ \\Second...★\ \ \\ Third...\end{cases}\\conclusion\ ←70\end{cases}$$
 
 <h3> 准备构思：</h3>
 
@@ -71,10 +71,10 @@ $ \begin{cases}background\ info\ ←70 \\\body ←240\begin{cases}First...★ \\
 
 常用词例如
 
-$Admittedly,(....)$  
-$However,(....)$  
-$eclipsed\ by (...)$  
-$overwhelmed\ by(....)$
+$$Admittedly,(....)$$  
+$$However,(....)$$  
+$$eclipsed\ by (...)$$  
+$$overwhelmed\ by(....)$$
 
 &nbsp; 2.2.如果自己考虑的第三点可能有争议，或者过于新颖，放在第三段中最后提出，而非放在内容一开始。
 
@@ -91,7 +91,7 @@ $overwhelmed\ by(....)$
 
 2.为了体现客观，body 部分避免使用`people`、`I`、`our`、`us`、`you`这样第一第二人称,也少使用`some`这样的虚词，可用以下方式具体化：
 
-$people\begin{cases}citizens\\\ (occupation)\\\passengers\\\consumers\\\individuals\\\Chinese\\\netizens\\\The\ +\ adj.\end{cases}$
+$$people\begin{cases}citizens\\\ (occupation) \\passengers \\consumers \\individuals \\Chinese \\netizens \\The\ +\ adj.\end{cases}$$
 
 3.如果想使用题目中的 statement，尽量放在最后一段使用避免时间问题
 

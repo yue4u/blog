@@ -12,7 +12,7 @@ Task 1&2
 
 ---
 
-\begin{cases}Task1 Free-choice question \Task2 Compand-choice question\end{cases}
+$$\begin{cases}Task1 Free-choice question \\Task2 Compand-choice question\end{cases}$$
 
 Task1
 
@@ -52,29 +52,29 @@ Task2
 
 1.&nbsp;想讲态度、清晰明确。
 
-> begin{cases} As far as I'm concerned \In my mind \end{cases},I begin{cases} agree \disagree\end{cases}with this statement for following reasons.
+$$\begin{cases} As far as I'm concerned \\\ In my mind \end{cases},I \begin{cases} agree \\disagree\end{cases}with this statement for following reasons.$$
 
 或者
 
-> begin{cases} As far as I'm concerned \In my mind \end{cases},I prefer the\begin{cases} first \second\end{cases} begin{cases} option \choice \opinion \kind\end{cases}for following reasons..
+$$\begin{cases} As far as I'm concerned \\\ In my mind \end{cases},I prefer the\begin{cases} first \\second\end{cases} \begin{cases} option \\choice \\opinion \\kind\end{cases}for following reasons..$$
 
-2.&nbsp;陈述理由，支持自己的态度，注意不要困住自己，也不要在意逻辑缺陷，可以有一定偏向性，但不要过分偏向。理由可以是 \begin{cases}本态度、想法的优势 \另一个的劣势\end{cases}
+2.&nbsp;陈述理由，支持自己的态度，注意不要困住自己，也不要在意逻辑缺陷，可以有一定偏向性，但不要过分偏向。理由可以是 $$\begin{cases}本态度、想法的优势 \\另一个的劣势\end{cases}$$
 
 →&nbsp; 要注意若是赞成反对，反方的观点可以针对句子中的每一个单词。
 
 > The first reason is ..(reason1)..
 
-> （此处可以加入 the \begin{cases} besides \meanwhile \moreover \on the other hand \end{cases}, 但是要注意不可用错关系，并且时间足够）
+$$（此处可以加入 the \begin{cases} besides \\meanwhile \\moreover \\on the other hand \end{cases}, 但是要注意不可用错关系，并且时间足够）$$
 
 > The second reason is ..(reason2)..
 
 3.&nbsp;总结
 
-> That's the reason why I \begin{cases} agree \disagree \end{cases} with this statement.
+$$That's the reason why I \begin{cases} agree \\disagree \end{cases} with this statement.$$
 
 或
 
-> That's the reason why I prefer the\begin{cases} first \second\end{cases} begin{cases} option \choice \opinion \kind\end{cases}.
+$$That's the reason why I prefer the\begin{cases} first \\second\end{cases} \begin{cases} option \\choice \\opinion \\kind\end{cases}.$$
 
 Prepare 15"
 
@@ -88,7 +88,7 @@ Task 3
 
 Read
 
-内容可能是 \begin{cases} notice \anouncement suggestion letter\end{cases}
+内容可能是 $$\begin{cases} notice \\anouncement suggestion letter\end{cases}$$
 
 注意：
 
@@ -108,20 +108,36 @@ Response 60"
 
 1.&nbsp;文章要点 一句话 10"~12"
 
-> In the\begin{cases} notice \anouncement suggestion letter\end{cases} (who) decide (to do what),\begin{cases}because the reason is\end{cases} (why).
+$$In the\begin{cases} notice \\anouncement suggestion letter\end{cases} (who) decide (to do what),\begin{cases}because the reason is\end{cases} (why).$$
 
 2.&nbsp;核心 谁发布了意见 什么态度 5"~8"
 
-> In the conversation the \begin{cases} man \women \end{cases} \begin{cases} \begin{cases} agree \disagree \end{cases} hold a\begin{cases} positive \negative \end{cases} attitude
-> \end{cases} to
+$$In the conversation the 
+\begin{cases} 
+  man
+  \\women 
+\end{cases} 
+\begin{cases} 
+  \begin{cases} 
+    agree 
+    \\disagree
+  \end{cases} 
+\\hold a 
+  \begin{cases}
+    positive 
+    \\negative 
+  \end{cases} 
+attitude 
+\end{cases}
+to$$
 
-> the \begin{cases} notice \anouncement suggestion letter\end{cases}for the following reasons.
+$$the \begin{cases} notice \\anouncement suggestion letter\end{cases}for the following reasons.$$
 
 3.&nbsp;陈述理由 一个理由 15"
 
 > The first reason is ......(reason1).
 
-> 同样此处可以加入 the \begin{cases} besides \meanwhile \moreover \on the other hand \end{cases},但是要注意不可用错关系 并且时间足够
+$$同样此处可以加入 the \begin{cases} besides \\meanwhile \\moreover \\on the other hand \end{cases},但是要注意不可用错关系 并且时间足够$$
 
 > The second reason is ......(reason2).
 
@@ -129,7 +145,7 @@ Response 60"
 
 4.&nbsp; 总结 5"
 
-> That's the reason why the \begin{cases} man \women\end{cases} \begin{cases} agree \disagree \end{cases} to the \begin{cases} notice \anouncement suggestion letter\end{cases}.
+$$That's the reason why the \begin{cases} man \\women\end{cases} \begin{cases} agree \\disagree \end{cases} to the \begin{cases} notice \\anouncement suggestion letter\end{cases}.$$
 
 Task 4
 
@@ -163,9 +179,9 @@ Response 60"
 
 1.&nbsp;简单根据内容总结。解释、原因、影响可能都有，也可能各自合并。
 
-> In this lecture the professor use \begin{cases}example experiment experience \end{cases} to
+$$In this lecture the professor use \begin{cases}example experiment experience \end{cases} to$$
 
-> explain \begin{cases}What is ..(解释性).. What will ..(影响).. What the reason cause ..（原因性）..\end{cases}
+$$explain \begin{cases}What is ..(解释性).. What will ..(影响).. What the reason cause ..（原因性）..\end{cases}$$
 
 2.&nbsp;根据 Lecture 内容分成三种情况
 
@@ -177,7 +193,7 @@ Response 60"
 
 2.&nbsp;b&nbsp; 相关联事例或一个经历性的内容
 
-> In \begin{cases}his her\end{cases} \begin{cases}example experience \end{cases}
+$$In \begin{cases}his her\end{cases} \begin{cases}example experience \end{cases}$$
 
 > Firstly, ......
 
@@ -199,9 +215,9 @@ Response 60"
 
 3.&nbsp;回归文本
 
-> In the passage \begin{cases} .....is........解释 .....will cause.... 影响 .....is due to....原因\end{cases} which can be proved
+$$In the passage \begin{cases} .....is........解释 .....will cause.... 影响 .....is due to....原因\end{cases} which can be proved$$
 
-> by the \begin{cases}example experiment experience \end{cases} in the Lecture
+$$by the \begin{cases}example experiment experience \end{cases} in the Lecture$$
 
 如果听力水平一般，内容不一定能听全，则以 Passage 为主
 
@@ -217,7 +233,7 @@ Response 60"
 
 3.&nbsp;总结
 
-> That's an \begin{cases}example experiment experience \end{cases} about \begin{cases}related to about\end{cases} the passage.
+$$That's an \begin{cases}example experiment experience \end{cases} about \begin{cases}related to about\end{cases} the passage.$$
 
 Task 5
 
@@ -244,19 +260,19 @@ Response 60"
 
 1.&nbsp;Briefing 15"
 
-> In the conversation the \begin{cases} man \woman\end{cases} \begin{cases} comes across \meets\end{cases}a problem which is ...(problem1),
+$$In the conversation the \begin{cases} man \\woman\end{cases} \begin{cases} comes across \\meets\end{cases}a problem which is ...(problem1),$$
 
-> there are two\begin{cases} solutions \options\end{cases} provided that he can choose.
+$$there are two\begin{cases} solutions \\options\end{cases} provided that he can choose.$$
 
 2.&nbsp;Describe 15"\*2
 
-> The first solution is ..(solution1)..,\begin{cases} but \however \the only problem is\end{cases} ...(problem1).
+$$The first solution is ..(solution1)..,\begin{cases} but \\however \\the only problem is\end{cases} ...(problem1).$$
 
-> The second solution is ..(solution2)..,\begin{cases} but \however \the only problem is\end{cases} ...(problem2).
+$$The second solution is ..(solution2)..,\begin{cases} but \\however \\the only problem is\end{cases} ...(problem2).$$
 
 3.&nbsp;Personal decision 15"
 
-> As far as I'm concerned,I prefer the\begin{cases} first \second\end{cases}solution,because ..(reason)...
+$$As far as I'm concerned,I prefer the\begin{cases} first \\second\end{cases}solution,because ..(reason)...$$
 
 Task 6
 
