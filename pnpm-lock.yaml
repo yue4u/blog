@@ -194,7 +194,7 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.4(supports-color@5.5.0)
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
+      json5: 2.2.3
       lodash: 4.17.21
       resolve: 1.22.0
       semver: 5.7.1
@@ -220,7 +220,7 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.4(supports-color@5.5.0)
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
+      json5: 2.2.3
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -3785,7 +3785,7 @@ packages:
     dependencies:
       '@lezer/common': 0.15.12
       '@lezer/lr': 0.15.8
-      json5: 2.2.1
+      json5: 2.2.3
     dev: true
 
   /@msgpackr-extract/msgpackr-extract-darwin-arm64@2.0.2:
@@ -3923,7 +3923,7 @@ packages:
       clone: 2.1.2
       dotenv: 7.0.0
       dotenv-expand: 5.1.0
-      json5: 2.2.1
+      json5: 2.2.3
       msgpackr: 1.6.1
       nullthrows: 1.1.1
       semver: 5.7.1
@@ -4173,7 +4173,7 @@ packages:
     engines: {node: '>= 12.0.0', parcel: ^2.6.0}
     dependencies:
       '@parcel/plugin': 2.6.0(@parcel/core@2.6.0)
-      json5: 2.2.1
+      json5: 2.2.3
     transitivePeerDependencies:
       - '@parcel/core'
     dev: true
@@ -9211,7 +9211,7 @@ packages:
       gatsby: 4.16.0(@types/node@16.11.39)(babel-eslint@10.1.0)(react-dom@18.1.0)(react@18.1.0)(typescript@4.7.3)
       gatsby-core-utils: 3.16.0
       gray-matter: 4.0.3
-      json5: 2.2.1
+      json5: 2.2.3
       loader-utils: 1.4.0
       lodash: 4.17.21
       mdast-util-to-string: 1.1.0
@@ -11351,17 +11351,11 @@ packages:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: true
 
-  /json5@1.0.1:
-    resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
+  /json5@1.0.2:
+    resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
     dependencies:
       minimist: 1.2.6
-    dev: true
-
-  /json5@2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
     dev: true
 
   /json5@2.2.3:
@@ -11572,7 +11566,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 1.0.1
+      json5: 1.0.2
     dev: true
 
   /loader-utils@2.0.2:
@@ -11581,7 +11575,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 2.2.1
+      json5: 2.2.3
     dev: true
 
   /loader-utils@3.2.0:
@@ -16371,7 +16365,7 @@ packages:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
       '@types/json5': 0.0.29
-      json5: 1.0.1
+      json5: 1.0.2
       minimist: 1.2.6
       strip-bom: 3.0.0
     dev: true
