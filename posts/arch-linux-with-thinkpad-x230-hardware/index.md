@@ -2,7 +2,7 @@
 title: Arch Linux Thinkpad x230 - Hardware
 date: 2019-03-24 01:24:50
 tags:
-  - arch linux
+  - Arch Linux
   - thinkpad
 ---
 

@@ -2,7 +2,7 @@
 title: Arch Linux & Desktop PC Setup
 date: 2020-12-02 01:35:28
 tags:
-  - arch linux
+  - Arch Linux
   - intel
   - nvidia
 ---
