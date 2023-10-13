@@ -81,8 +81,8 @@ devDependencies:
     specifier: ^4.16.0
     version: 4.16.0(gatsby@4.16.0)
   gatsby-transformer-remark:
-    specifier: ^5.16.0
-    version: 5.16.0(gatsby@4.16.0)
+    specifier: ^5.25.1
+    version: 5.25.1(gatsby@4.16.0)
   gatsby-transformer-sharp:
     specifier: ^4.16.0
     version: 4.16.0(gatsby-plugin-sharp@4.16.1)(gatsby@4.16.0)(graphql@16.5.0)
@@ -260,7 +260,7 @@ packages:
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-visitor-keys: 2.1.0
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /@babel/generator@7.18.2:
@@ -314,7 +314,7 @@ packages:
       '@babel/core': 7.18.2
       '@babel/helper-validator-option': 7.16.7
       browserslist: 4.20.4
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /@babel/helper-compilation-targets@7.18.2(@babel/core@7.22.9):
@@ -327,7 +327,7 @@ packages:
       '@babel/core': 7.22.9
       '@babel/helper-validator-option': 7.16.7
       browserslist: 4.20.4
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /@babel/helper-compilation-targets@7.22.9(@babel/core@7.18.2):
@@ -465,7 +465,7 @@ packages:
       debug: 4.3.4(supports-color@5.5.0)
       lodash.debounce: 4.0.8
       resolve: 1.22.0
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -483,7 +483,7 @@ packages:
       debug: 4.3.4(supports-color@5.5.0)
       lodash.debounce: 4.0.8
       resolve: 1.22.0
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2262,7 +2262,7 @@ packages:
       babel-plugin-polyfill-corejs2: 0.3.1(@babel/core@7.18.2)
       babel-plugin-polyfill-corejs3: 0.5.2(@babel/core@7.18.2)
       babel-plugin-polyfill-regenerator: 0.3.1(@babel/core@7.18.2)
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2279,7 +2279,7 @@ packages:
       babel-plugin-polyfill-corejs2: 0.3.1(@babel/core@7.22.9)
       babel-plugin-polyfill-corejs3: 0.5.2(@babel/core@7.22.9)
       babel-plugin-polyfill-regenerator: 0.3.1(@babel/core@7.22.9)
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2517,7 +2517,7 @@ packages:
       babel-plugin-polyfill-corejs3: 0.5.2(@babel/core@7.18.2)
       babel-plugin-polyfill-regenerator: 0.3.1(@babel/core@7.18.2)
       core-js-compat: 3.22.8
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3728,6 +3728,54 @@ packages:
     dependencies:
       '@lezer/common': 0.15.12
     dev: true
+
+  /@lmdb/lmdb-darwin-arm64@2.5.3:
+    resolution: {integrity: sha512-RXwGZ/0eCqtCY8FLTM/koR60w+MXyvBUpToXiIyjOcBnC81tAlTUHrRUavCEWPI9zc9VgvpK3+cbumPyR8BSuA==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@lmdb/lmdb-darwin-x64@2.5.3:
+    resolution: {integrity: sha512-337dNzh5yCdNCTk8kPfoU7jR3otibSlPDGW0vKZT97rKnQMb9tNdto3RtWoGPsQ8hKmlRZpojOJtmwjncq1MoA==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@lmdb/lmdb-linux-arm64@2.5.3:
+    resolution: {integrity: sha512-VJw60Mdgb4n+L0fO1PqfB0C7TyEQolJAC8qpqvG3JoQwvyOv6LH7Ib/WE3wxEW9nuHmVz9jkK7lk5HfWWgoO1Q==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@lmdb/lmdb-linux-arm@2.5.3:
+    resolution: {integrity: sha512-mU2HFJDGwECkoD9dHQEfeTG5mp8hNS2BCfwoiOpVPMeapjYpQz9Uw3FkUjRZ4dGHWKbin40oWHuL0bk2bCx+Sg==}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@lmdb/lmdb-linux-x64@2.5.3:
+    resolution: {integrity: sha512-qaReO5aV8griBDsBr8uBF/faO3ieGjY1RY4p8JvTL6Mu1ylLrTVvOONqKFlNaCwrmUjWw5jnf7VafxDAeQHTow==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@lmdb/lmdb-win32-x64@2.5.3:
+    resolution: {integrity: sha512-cK+Elf3RjEzrm3SerAhrFWL5oQAsZSJ/LmjL1joIpTfEP1etJJ9CTRvdaV6XLYAxaEkfdhk/9hOvHLbR9yIhCA==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@mdx-js/mdx@1.6.22:
     resolution: {integrity: sha512-AMxuLxPz2j5/6TpF/XSdKpQP1NlG0z11dFOlq+2IP/lSgl11GY8ji6S/rgsViN/L0BDvHvUMruRb7ub+24LUYA==}
@@ -5860,7 +5908,7 @@ packages:
       '@babel/compat-data': 7.17.10
       '@babel/core': 7.18.2
       '@babel/helper-define-polyfill-provider': 0.3.1(@babel/core@7.18.2)
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5873,7 +5921,7 @@ packages:
       '@babel/compat-data': 7.17.10
       '@babel/core': 7.22.9
       '@babel/helper-define-polyfill-provider': 0.3.1(@babel/core@7.22.9)
-      semver: 6.3.0
+      semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7711,7 +7759,7 @@ packages:
   /domutils@1.5.1:
     resolution: {integrity: sha512-gSu5Oi/I+3wDENBsOWBiRK1eoGxcywYSqg3rR960/+EfY0CF4EX1VPkgHOZ3WiS/Jg2DtliF6BhWcHlfpYUcGw==}
     dependencies:
-      dom-serializer: 0.1.1
+      dom-serializer: 0.2.2
       domelementtype: 1.3.1
     dev: true
 
@@ -8230,7 +8278,7 @@ packages:
       object.values: 1.1.5
       prop-types: 15.8.1
       resolve: 2.0.0-next.3
-      semver: 6.3.0
+      semver: 6.3.1
       string.prototype.matchall: 4.0.7
     dev: true
 
@@ -9053,6 +9101,27 @@ packages:
       xdg-basedir: 4.0.0
     dev: true
 
+  /gatsby-core-utils@3.25.0:
+    resolution: {integrity: sha512-lmMDwbnKpqAi+8WWd7MvCTCx3E0u7j8sbVgydERNCYVxKVpzD/aLCH4WPb4EE9m1H1rSm76w0Z+MaentyB/c/Q==}
+    engines: {node: '>=14.15.0'}
+    dependencies:
+      '@babel/runtime': 7.18.3
+      ci-info: 2.0.0
+      configstore: 5.0.1
+      fastq: 1.13.0
+      file-type: 16.5.3
+      fs-extra: 10.1.0
+      got: 11.8.5
+      import-from: 4.0.0
+      lmdb: 2.5.3
+      lock: 1.1.0
+      node-object-hash: 2.3.10
+      proper-lockfile: 4.1.2
+      resolve-from: 5.0.0
+      tmp: 0.2.1
+      xdg-basedir: 4.0.0
+    dev: true
+
   /gatsby-graphiql-explorer@2.16.0:
     resolution: {integrity: sha512-5FtKArE1u3tMchWcHeyUX5vf2fKEWsN9Z+5H/BdcSjjuLu9EfM6eCayXVDLqk5ywDaLyKeCYpz44mPLc9f26+g==}
     engines: {node: '>=14.15.0'}
@@ -9543,15 +9612,15 @@ packages:
       - encoding
     dev: true
 
-  /gatsby-transformer-remark@5.16.0(gatsby@4.16.0):
-    resolution: {integrity: sha512-hJO7VPWwDq71QsSQ28GafVVczmMQm3Qt0oydzKdcSbF4b2tc8+QTQGn3EhPDDUt+2mDBat2hNohS8EvNaiEpEA==}
+  /gatsby-transformer-remark@5.25.1(gatsby@4.16.0):
+    resolution: {integrity: sha512-6k3uOnZYsJSgmZIWq9Y+Cqb6pysusCUBYpQY1+V9ofpSRbrZGGfuoCeFKd27x/c0jI5jneuL3NXnxwn/JJK1Ig==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       gatsby: ^4.0.0-next
     dependencies:
       '@babel/runtime': 7.18.3
       gatsby: 4.16.0(@types/node@16.11.39)(babel-eslint@10.1.0)(react-dom@18.1.0)(react@18.1.0)(typescript@4.7.3)
-      gatsby-core-utils: 3.16.0
+      gatsby-core-utils: 3.25.0
       gray-matter: 4.0.3
       hast-util-raw: 6.1.0
       hast-util-to-html: 7.1.3
@@ -11548,6 +11617,24 @@ packages:
       lmdb-win32-x64: 2.3.10
     dev: true
 
+  /lmdb@2.5.3:
+    resolution: {integrity: sha512-iBA0cb13CobBSoGJLfZgnrykLlfJipDAnvtf+YwIqqzBEsTeQYsXrHaSBkaHd5wCWeabwrNvhjZoFMUrlo+eLw==}
+    requiresBuild: true
+    dependencies:
+      msgpackr: 1.6.1
+      node-addon-api: 4.3.0
+      node-gyp-build-optional-packages: 5.0.3
+      ordered-binary: 1.2.5
+      weak-lru-cache: 1.2.2
+    optionalDependencies:
+      '@lmdb/lmdb-darwin-arm64': 2.5.3
+      '@lmdb/lmdb-darwin-x64': 2.5.3
+      '@lmdb/lmdb-linux-arm': 2.5.3
+      '@lmdb/lmdb-linux-arm64': 2.5.3
+      '@lmdb/lmdb-linux-x64': 2.5.3
+      '@lmdb/lmdb-win32-x64': 2.5.3
+    dev: true
+
   /load-bmfont@1.4.1:
     resolution: {integrity: sha512-8UyQoYmdRDy81Brz6aLAUhfZLwr5zV0L3taTQ4hju7m6biuwiWiJXjPhBJxbUQJA8PrkvJ/7Enqmwk2sM14soA==}
     dependencies:
@@ -11854,7 +11941,7 @@ packages:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
     dependencies:
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /make-error@1.3.6:
@@ -12907,6 +12994,11 @@ packages:
     dev: true
     optional: true
 
+  /node-gyp-build-optional-packages@5.0.3:
+    resolution: {integrity: sha512-k75jcVzk5wnnc/FMxsf4udAoTEUv2jY3ycfdSd3yWu6Cnd1oee6/CfZJApyscA4FJOmdoixWwiwOyf16RzD5JA==}
+    hasBin: true
+    dev: true
+
   /node-gyp-build@4.4.0:
     resolution: {integrity: sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==}
     hasBin: true
@@ -13300,7 +13392,7 @@ packages:
       got: 9.6.0
       registry-auth-token: 4.2.1
       registry-url: 5.1.0
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /pako@1.0.11:
@@ -15276,7 +15368,7 @@ packages:
     resolution: {integrity: sha512-GX0Ix/CJcHyB8c4ykpHGIAvLyOwOobtM/8d+TQkAd81/bEjgPHrfba41Vpesr7jX/t8Uh+R3EX9eAS5be+jQYg==}
     engines: {node: '>=8'}
     dependencies:
-      semver: 6.3.0
+      semver: 6.3.1
     dev: true
 
   /semver@5.7.1:
@@ -15623,7 +15715,7 @@ packages:
     dev: true
 
   /source-map@0.5.7:
-    resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
+    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -15662,7 +15754,7 @@ packages:
     dev: true
 
   /sprintf-js@1.0.3:
-    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
+    resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: true
 
   /sprintf-js@1.1.2:
@@ -15870,7 +15962,7 @@ packages:
     dev: true
 
   /strip-bom-string@1.0.0:
-    resolution: {integrity: sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=}
+    resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
     engines: {node: '>=0.10.0'}
     dev: true
 
